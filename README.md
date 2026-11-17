@@ -7,6 +7,22 @@ engine at a time (MySQL, MariaDB, PostgreSQL, MyRocks, MongoDB, Percona XtraDB C
 - `extractor/` — Docker-based extractors that produce the per-version JSON, the index/history and the doc links.
 - `server.py` — local server for `docs/` plus the Update button's API (`python3 server.py [port]`).
 
+## Agent skill (Claude Code, Codex, other agents)
+
+`skills/configdelta/` is an agent skill that answers "what changed between versions X and Y" from the published
+data, with no browser. It is a `SKILL.md` plus a standard-library Python script.
+
+```sh
+# Claude Code
+cp -R skills/configdelta ~/.claude/skills/
+# Codex (skills directory; or point your AGENTS.md at skills/configdelta/SKILL.md)
+cp -R skills/configdelta ~/.codex/skills/
+
+python3 skills/configdelta/scripts/configdelta.py compare pxc 8.0.46-38.1 8.4.11-12.1
+```
+
+Set `CONFIGDELTA_URL` to a local `docs/` directory to run against a checkout instead of the published site.
+
 ## Hosting on GitHub Pages
 
 Repository **Settings → Pages → Build and deployment → Source: Deploy from a branch**,
