@@ -1,0 +1,129 @@
+[
+ {
+  "id": "mysql",
+  "name": "MySQL",
+  "kinds": [
+   {
+    "id": "variables",
+    "label": "System variables"
+   },
+   {
+    "id": "status",
+    "label": "Status variables"
+   }
+  ],
+  "vendors": {
+   "oracle": {
+    "name": "Oracle MySQL",
+    "short": "MySQL"
+   },
+   "percona": {
+    "name": "Percona Server",
+    "short": "Percona"
+   }
+  },
+  "optionOnly": true
+ },
+ {
+  "id": "mariadb",
+  "name": "MariaDB",
+  "kinds": [
+   {
+    "id": "variables",
+    "label": "System variables"
+   },
+   {
+    "id": "status",
+    "label": "Status variables"
+   }
+  ],
+  "vendors": {
+   "mariadb": {
+    "name": "MariaDB",
+    "short": "MariaDB"
+   }
+  }
+ },
+ {
+  "id": "postgres",
+  "name": "PostgreSQL",
+  "kinds": [
+   {
+    "id": "variables",
+    "label": "Settings"
+   }
+  ],
+  "deprecations": false,
+  "vendors": {
+   "postgresql": {
+    "name": "PostgreSQL",
+    "short": "PostgreSQL"
+   }
+  }
+ },
+ {
+  "id": "rocksdb",
+  "name": "RocksDB (MyRocks)",
+  "kinds": [
+   {
+    "id": "variables",
+    "label": "MyRocks variables"
+   },
+   {
+    "id": "status",
+    "label": "MyRocks status variables"
+   }
+  ],
+  "vendors": {
+   "percona": {
+    "name": "Percona Server",
+    "short": "Percona"
+   }
+  }
+ },
+ {
+  "id": "mongodb",
+  "name": "MongoDB",
+  "kinds": [
+   {
+    "id": "variables",
+    "label": "Server parameters"
+   },
+   {
+    "id": "status",
+    "label": "Status metrics"
+   }
+  ],
+  "deprecations": false,
+  "vendors": {
+   "mongodb": {
+    "name": "MongoDB Community",
+    "short": "MongoDB"
+   },
+   "percona": {
+    "name": "Percona Server for MongoDB",
+    "short": "Percona"
+   }
+  }
+ },
+ {
+  "id": "pxc",
+  "name": "Percona XtraDB Cluster",
+  "kinds": [
+   {
+    "id": "variables",
+    "label": "Galera / PXC variables"
+   },
+   {
+    "id": "status",
+    "label": "Galera status variables"
+   }
+  ],
+  "vendors": {
+   "percona": {
+    "name": "Percona XtraDB Cluster",
+    "short": "PXC"
+   }
+  }
+ }
+]

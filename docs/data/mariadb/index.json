@@ -1,0 +1,296 @@
+[
+ {
+  "file": "mariadb-10.11.10.json",
+  "vendor": "mariadb",
+  "version": "10.11.10",
+  "series": "10.11",
+  "server_version": "10.11.10-MariaDB-ubu2204"
+ },
+ {
+  "file": "mariadb-10.11.11.json",
+  "vendor": "mariadb",
+  "version": "10.11.11",
+  "series": "10.11",
+  "server_version": "10.11.11-MariaDB-ubu2204"
+ },
+ {
+  "file": "mariadb-10.11.13.json",
+  "vendor": "mariadb",
+  "version": "10.11.13",
+  "series": "10.11",
+  "server_version": "10.11.13-MariaDB-ubu2204"
+ },
+ {
+  "file": "mariadb-10.11.14.json",
+  "vendor": "mariadb",
+  "version": "10.11.14",
+  "series": "10.11",
+  "server_version": "10.11.14-MariaDB-ubu2204"
+ },
+ {
+  "file": "mariadb-10.11.15.json",
+  "vendor": "mariadb",
+  "version": "10.11.15",
+  "series": "10.11",
+  "server_version": "10.11.15-MariaDB-ubu2204"
+ },
+ {
+  "file": "mariadb-10.11.16.json",
+  "vendor": "mariadb",
+  "version": "10.11.16",
+  "series": "10.11",
+  "server_version": "10.11.16-MariaDB-ubu2204"
+ },
+ {
+  "file": "mariadb-10.11.17.json",
+  "vendor": "mariadb",
+  "version": "10.11.17",
+  "series": "10.11",
+  "server_version": "10.11.17-MariaDB-ubu2204"
+ },
+ {
+  "file": "mariadb-10.11.18.json",
+  "vendor": "mariadb",
+  "version": "10.11.18",
+  "series": "10.11",
+  "server_version": "10.11.18-MariaDB-ubu2204"
+ },
+ {
+  "file": "mariadb-10.11.19.json",
+  "vendor": "mariadb",
+  "version": "10.11.19",
+  "series": "10.11",
+  "server_version": "10.11.19-MariaDB-ubu2204"
+ },
+ {
+  "file": "mariadb-10.11.2.json",
+  "vendor": "mariadb",
+  "version": "10.11.2",
+  "series": "10.11",
+  "server_version": "10.11.2-MariaDB-1:10.11.2+maria~ubu2204"
+ },
+ {
+  "file": "mariadb-10.11.3.json",
+  "vendor": "mariadb",
+  "version": "10.11.3",
+  "series": "10.11",
+  "server_version": "10.11.3-MariaDB-1:10.11.3+maria~ubu2204"
+ },
+ {
+  "file": "mariadb-10.11.4.json",
+  "vendor": "mariadb",
+  "version": "10.11.4",
+  "series": "10.11",
+  "server_version": "10.11.4-MariaDB-1:10.11.4+maria~ubu2204"
+ },
+ {
+  "file": "mariadb-10.11.5.json",
+  "vendor": "mariadb",
+  "version": "10.11.5",
+  "series": "10.11",
+  "server_version": "10.11.5-MariaDB-1:10.11.5+maria~ubu2204"
+ },
+ {
+  "file": "mariadb-10.11.6.json",
+  "vendor": "mariadb",
+  "version": "10.11.6",
+  "series": "10.11",
+  "server_version": "10.11.6-MariaDB-1:10.11.6+maria~ubu2204"
+ },
+ {
+  "file": "mariadb-10.11.7.json",
+  "vendor": "mariadb",
+  "version": "10.11.7",
+  "series": "10.11",
+  "server_version": "10.11.7-MariaDB-1:10.11.7+maria~ubu2204"
+ },
+ {
+  "file": "mariadb-10.11.8.json",
+  "vendor": "mariadb",
+  "version": "10.11.8",
+  "series": "10.11",
+  "server_version": "10.11.8-MariaDB-ubu2204"
+ },
+ {
+  "file": "mariadb-10.11.9.json",
+  "vendor": "mariadb",
+  "version": "10.11.9",
+  "series": "10.11",
+  "server_version": "10.11.9-MariaDB-ubu2204"
+ },
+ {
+  "file": "mariadb-11.4.10.json",
+  "vendor": "mariadb",
+  "version": "11.4.10",
+  "series": "11.4",
+  "server_version": "11.4.10-MariaDB-ubu2404"
+ },
+ {
+  "file": "mariadb-11.4.11.json",
+  "vendor": "mariadb",
+  "version": "11.4.11",
+  "series": "11.4",
+  "server_version": "11.4.11-MariaDB-ubu2404"
+ },
+ {
+  "file": "mariadb-11.4.12.json",
+  "vendor": "mariadb",
+  "version": "11.4.12",
+  "series": "11.4",
+  "server_version": "11.4.12-MariaDB-ubu2404"
+ },
+ {
+  "file": "mariadb-11.4.13.json",
+  "vendor": "mariadb",
+  "version": "11.4.13",
+  "series": "11.4",
+  "server_version": "11.4.13-MariaDB-ubu2404"
+ },
+ {
+  "file": "mariadb-11.4.2.json",
+  "vendor": "mariadb",
+  "version": "11.4.2",
+  "series": "11.4",
+  "server_version": "11.4.2-MariaDB-ubu2404"
+ },
+ {
+  "file": "mariadb-11.4.3.json",
+  "vendor": "mariadb",
+  "version": "11.4.3",
+  "series": "11.4",
+  "server_version": "11.4.3-MariaDB-ubu2404"
+ },
+ {
+  "file": "mariadb-11.4.4.json",
+  "vendor": "mariadb",
+  "version": "11.4.4",
+  "series": "11.4",
+  "server_version": "11.4.4-MariaDB-ubu2404"
+ },
+ {
+  "file": "mariadb-11.4.5.json",
+  "vendor": "mariadb",
+  "version": "11.4.5",
+  "series": "11.4",
+  "server_version": "11.4.5-MariaDB-ubu2404"
+ },
+ {
+  "file": "mariadb-11.4.7.json",
+  "vendor": "mariadb",
+  "version": "11.4.7",
+  "series": "11.4",
+  "server_version": "11.4.7-MariaDB-ubu2404"
+ },
+ {
+  "file": "mariadb-11.4.8.json",
+  "vendor": "mariadb",
+  "version": "11.4.8",
+  "series": "11.4",
+  "server_version": "11.4.8-MariaDB-ubu2404"
+ },
+ {
+  "file": "mariadb-11.4.9.json",
+  "vendor": "mariadb",
+  "version": "11.4.9",
+  "series": "11.4",
+  "server_version": "11.4.9-MariaDB-ubu2404"
+ },
+ {
+  "file": "mariadb-11.8.2.json",
+  "vendor": "mariadb",
+  "version": "11.8.2",
+  "series": "11.8",
+  "server_version": "11.8.2-MariaDB-ubu2404"
+ },
+ {
+  "file": "mariadb-11.8.3.json",
+  "vendor": "mariadb",
+  "version": "11.8.3",
+  "series": "11.8",
+  "server_version": "11.8.3-MariaDB-ubu2404"
+ },
+ {
+  "file": "mariadb-11.8.4.json",
+  "vendor": "mariadb",
+  "version": "11.8.4",
+  "series": "11.8",
+  "server_version": "11.8.4-MariaDB-ubu2404"
+ },
+ {
+  "file": "mariadb-11.8.5.json",
+  "vendor": "mariadb",
+  "version": "11.8.5",
+  "series": "11.8",
+  "server_version": "11.8.5-MariaDB-ubu2404"
+ },
+ {
+  "file": "mariadb-11.8.6.json",
+  "vendor": "mariadb",
+  "version": "11.8.6",
+  "series": "11.8",
+  "server_version": "11.8.6-MariaDB-ubu2404"
+ },
+ {
+  "file": "mariadb-11.8.7.json",
+  "vendor": "mariadb",
+  "version": "11.8.7",
+  "series": "11.8",
+  "server_version": "11.8.7-MariaDB-ubu2404"
+ },
+ {
+  "file": "mariadb-11.8.8.json",
+  "vendor": "mariadb",
+  "version": "11.8.8",
+  "series": "11.8",
+  "server_version": "11.8.8-MariaDB-ubu2404"
+ },
+ {
+  "file": "mariadb-11.8.9.json",
+  "vendor": "mariadb",
+  "version": "11.8.9",
+  "series": "11.8",
+  "server_version": "11.8.9-MariaDB-ubu2404"
+ },
+ {
+  "file": "mariadb-12.0.2.json",
+  "vendor": "mariadb",
+  "version": "12.0.2",
+  "series": "12.0",
+  "server_version": "12.0.2-MariaDB-ubu2404"
+ },
+ {
+  "file": "mariadb-12.1.2.json",
+  "vendor": "mariadb",
+  "version": "12.1.2",
+  "series": "12.1",
+  "server_version": "12.1.2-MariaDB-ubu2404"
+ },
+ {
+  "file": "mariadb-12.2.2.json",
+  "vendor": "mariadb",
+  "version": "12.2.2",
+  "series": "12.2",
+  "server_version": "12.2.2-MariaDB-ubu2404"
+ },
+ {
+  "file": "mariadb-12.3.2.json",
+  "vendor": "mariadb",
+  "version": "12.3.2",
+  "series": "12.3",
+  "server_version": "12.3.2-MariaDB-ubu2404"
+ },
+ {
+  "file": "mariadb-12.3.3.json",
+  "vendor": "mariadb",
+  "version": "12.3.3",
+  "series": "12.3",
+  "server_version": "12.3.3-MariaDB-ubu2404"
+ },
+ {
+  "file": "mariadb-13.0.2.json",
+  "vendor": "mariadb",
+  "version": "13.0.2",
+  "series": "13.0",
+  "server_version": "13.0.2-MariaDB-ubu2604"
+ }
+]

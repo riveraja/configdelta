@@ -1,0 +1,1112 @@
+{
+ "image": "percona/percona-xtradb-cluster:8.4.5-5.1",
+ "series": "8.4",
+ "server_version": "8.4.5-5.1",
+ "status": [
+  "wsrep_apply_oooe",
+  "wsrep_apply_oool",
+  "wsrep_apply_waits",
+  "wsrep_apply_window",
+  "wsrep_causal_reads",
+  "wsrep_cert_bucket_count",
+  "wsrep_cert_deps_distance",
+  "wsrep_cert_index_size",
+  "wsrep_cert_interval",
+  "wsrep_cluster_capabilities",
+  "wsrep_cluster_conf_id",
+  "wsrep_cluster_size",
+  "wsrep_cluster_state_uuid",
+  "wsrep_cluster_status",
+  "wsrep_cluster_weight",
+  "wsrep_commit_oooe",
+  "wsrep_commit_oool",
+  "wsrep_commit_window",
+  "wsrep_connected",
+  "wsrep_desync_count",
+  "wsrep_evs_delayed",
+  "wsrep_evs_evict_list",
+  "wsrep_evs_repl_latency",
+  "wsrep_evs_state",
+  "wsrep_flow_control_active",
+  "wsrep_flow_control_interval",
+  "wsrep_flow_control_interval_high",
+  "wsrep_flow_control_interval_low",
+  "wsrep_flow_control_paused",
+  "wsrep_flow_control_paused_ns",
+  "wsrep_flow_control_recv",
+  "wsrep_flow_control_requested",
+  "wsrep_flow_control_sent",
+  "wsrep_flow_control_status",
+  "wsrep_gcache_pool_size",
+  "wsrep_gcomm_uuid",
+  "wsrep_gmcast_segment",
+  "wsrep_incoming_addresses",
+  "wsrep_ist_receive_seqno_current",
+  "wsrep_ist_receive_seqno_end",
+  "wsrep_ist_receive_seqno_start",
+  "wsrep_ist_receive_status",
+  "wsrep_last_applied",
+  "wsrep_last_committed",
+  "wsrep_local_bf_aborts",
+  "wsrep_local_cached_downto",
+  "wsrep_local_cert_failures",
+  "wsrep_local_commits",
+  "wsrep_local_index",
+  "wsrep_local_recv_queue",
+  "wsrep_local_recv_queue_avg",
+  "wsrep_local_recv_queue_max",
+  "wsrep_local_recv_queue_min",
+  "wsrep_local_replays",
+  "wsrep_local_send_queue",
+  "wsrep_local_send_queue_avg",
+  "wsrep_local_send_queue_max",
+  "wsrep_local_send_queue_min",
+  "wsrep_local_state",
+  "wsrep_local_state_comment",
+  "wsrep_local_state_uuid",
+  "wsrep_monitor_status (L/A/C)",
+  "wsrep_open_connections",
+  "wsrep_open_transactions",
+  "wsrep_protocol_GCS",
+  "wsrep_protocol_application",
+  "wsrep_protocol_replicator",
+  "wsrep_protocol_version",
+  "wsrep_provider_capabilities",
+  "wsrep_provider_name",
+  "wsrep_provider_vendor",
+  "wsrep_provider_version",
+  "wsrep_ready",
+  "wsrep_received",
+  "wsrep_received_bytes",
+  "wsrep_repl_data_bytes",
+  "wsrep_repl_keys",
+  "wsrep_repl_keys_bytes",
+  "wsrep_repl_other_bytes",
+  "wsrep_replicated",
+  "wsrep_replicated_bytes",
+  "wsrep_thread_count"
+ ],
+ "variables": {
+  "pxc_encrypt_cluster_traffic": {
+   "cmdline_option": true,
+   "default": "TRUE",
+   "default_source": "help",
+   "desc": "PXC cluster traffic SSL auto-configuration (Defaults to on; use --skip-pxc-encrypt-cluster-traffic to disable.)",
+   "scope": "global"
+  },
+  "pxc_maint_mode": {
+   "cmdline_option": true,
+   "default": "DISABLED",
+   "default_source": "help",
+   "desc": "ProxySQL assisted PXC maintenance mode",
+   "scope": "global"
+  },
+  "pxc_maint_transition_period": {
+   "cmdline_option": true,
+   "default": "10",
+   "default_source": "help",
+   "desc": "Period before the shutdown signal is delivered",
+   "scope": "global"
+  },
+  "pxc_strict_mode": {
+   "cmdline_option": true,
+   "default": "ENFORCING",
+   "default_source": "help",
+   "desc": "PXC strict mode help control behavior of experimental features",
+   "scope": "global"
+  },
+  "wsrep_applier_fk_checks": {
+   "cmdline_option": true,
+   "default": "TRUE",
+   "default_source": "help",
+   "desc": "Should applier thread do foreign key constraint checks (Defaults to on; use --skip-wsrep-applier-FK-checks to disable.)",
+   "orig": "wsrep_applier_FK_checks",
+   "scope": "global"
+  },
+  "wsrep_applier_threads": {
+   "cmdline_option": true,
+   "default": "1",
+   "default_source": "help",
+   "desc": "Number of applier threads to launch",
+   "scope": "global"
+  },
+  "wsrep_applier_uk_checks": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Should applier thread do secondary index uniqueness chesks",
+   "orig": "wsrep_applier_UK_checks",
+   "scope": "global"
+  },
+  "wsrep_auto_increment_control": {
+   "cmdline_option": true,
+   "default": "TRUE",
+   "default_source": "help",
+   "desc": "To automatically control the assignment of autoincrement variables (Defaults to on; use --skip-wsrep-auto-increment-control to disable.)",
+   "scope": "global"
+  },
+  "wsrep_causal_reads": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "deprecated": "(DEPRECATED) setting this variable is equivalent to setting wsrep_sync_wait READ flag",
+   "desc": "(DEPRECATED) setting this variable is equivalent to setting wsrep_sync_wait READ flag",
+   "scope": "global"
+  },
+  "wsrep_certification_rules": {
+   "cmdline_option": true,
+   "default": "strict",
+   "default_source": "help",
+   "desc": "Certification rules to use in the cluster. Possible values are: \"strict\": stricter rules that could result in more certification failures. \"optimized\": relaxed rules that allow more concurrency and cause less certification failures.",
+   "scope": "global"
+  },
+  "wsrep_certify_nonpk": {
+   "cmdline_option": true,
+   "default": "TRUE",
+   "default_source": "help",
+   "desc": "Certify tables with no primary key (Defaults to on; use --skip-wsrep-certify-nonPK to disable.)",
+   "orig": "wsrep_certify_nonPK",
+   "scope": "global"
+  },
+  "wsrep_cluster_address": {
+   "cmdline_option": true,
+   "default": "gcomm://",
+   "default_source": "derived",
+   "desc": "Address to initially connect to cluster",
+   "scope": "global"
+  },
+  "wsrep_cluster_name": {
+   "cmdline_option": true,
+   "default": "my_wsrep_cluster",
+   "default_source": "derived",
+   "desc": "Name for the cluster",
+   "scope": "global"
+  },
+  "wsrep_data_home_dir": {
+   "cmdline_option": true,
+   "default": "/var/lib/mysql/",
+   "default_source": "help",
+   "desc": "home directory for wsrep provider",
+   "scope": "global"
+  },
+  "wsrep_dbug_option": {
+   "cmdline_option": true,
+   "default": "",
+   "default_source": "help",
+   "desc": "DBUG options to provider library",
+   "scope": "global"
+  },
+  "wsrep_debug": {
+   "cmdline_option": true,
+   "default": "NONE",
+   "default_source": "help",
+   "desc": "WSREP debug level logging",
+   "scope": "global"
+  },
+  "wsrep_desync": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "To desynchronize the node from the cluster",
+   "scope": "global"
+  },
+  "wsrep_dirty_reads": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Allow reads from a node is not in primary component",
+   "scope": "global"
+  },
+  "wsrep_disk_pages_encrypt": {
+   "cmdline_option": true,
+   "default": "NONE",
+   "default_source": "help",
+   "desc": "Encrypt WriteSet cache. This variable is solely for testing purposes. wsrep_provider_options should be used in production.",
+   "scope": "global"
+  },
+  "wsrep_gcache_encrypt": {
+   "cmdline_option": true,
+   "default": "NONE",
+   "default_source": "help",
+   "desc": "Encrypt GCache. This variable is solely for testing purposes. wsrep_provider_options should be used in production.",
+   "scope": "global"
+  },
+  "wsrep_ignore_apply_errors": {
+   "cmdline_option": true,
+   "default": "0",
+   "default_source": "help",
+   "desc": "Ignore replication errors",
+   "scope": "global"
+  },
+  "wsrep_load_data_splitting": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "deprecated": "'@@wsrep_load_data_splitting' is deprecated and will be removed in a future release.",
+   "desc": "To commit LOAD DATA transaction after every 10K rows inserted (deprecated)",
+   "scope": "global"
+  },
+  "wsrep_log_conflicts": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "To log multi-master conflicts",
+   "scope": "global"
+  },
+  "wsrep_max_ws_rows": {
+   "cmdline_option": true,
+   "default": "0",
+   "default_source": "help",
+   "desc": "Max number of rows in write set",
+   "scope": "global"
+  },
+  "wsrep_max_ws_size": {
+   "cmdline_option": true,
+   "default": "2147483647",
+   "default_source": "help",
+   "desc": "Max write set size (bytes)",
+   "scope": "global"
+  },
+  "wsrep_min_log_verbosity": {
+   "cmdline_option": true,
+   "default": "3",
+   "default_source": "help",
+   "desc": "Set the minimum logging verbosity level of wsrep plugin and Galera",
+   "scope": "global"
+  },
+  "wsrep_mode": {
+   "cmdline_option": true,
+   "default": "",
+   "default_source": "help",
+   "desc": "Set of WSREP features that are enabled. Legal values: IGNORE_NATIVE_REPLICATION_FILTER_RULES",
+   "scope": "global"
+  },
+  "wsrep_node_address": {
+   "cmdline_option": true,
+   "default": "192.168.215.4",
+   "default_source": "derived",
+   "desc": "Node address",
+   "scope": "global"
+  },
+  "wsrep_node_incoming_address": {
+   "cmdline_option": true,
+   "default": "AUTO",
+   "default_source": "derived",
+   "desc": "Client connection address",
+   "scope": "global"
+  },
+  "wsrep_node_name": {
+   "cmdline_option": true,
+   "default": "vdiffhost",
+   "default_source": "help",
+   "desc": "Node name",
+   "scope": "global"
+  },
+  "wsrep_notify_cmd": {
+   "cmdline_option": true,
+   "default": "",
+   "default_source": "help",
+   "desc": "",
+   "scope": "global"
+  },
+  "wsrep_osu_method": {
+   "cmdline_option": true,
+   "default": "TOI",
+   "default_source": "help",
+   "desc": "Method for Online Schema Upgrade",
+   "orig": "wsrep_OSU_method",
+   "scope": "global"
+  },
+  "wsrep_provider": {
+   "cmdline_option": true,
+   "default": "none",
+   "default_source": "help",
+   "desc": "Path to replication provider library",
+   "scope": "global"
+  },
+  "wsrep_provider_options.allocator.disk_pages_encryption": {
+   "cmdline_option": false,
+   "default": "no",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.allocator.encryption_cache_page_size": {
+   "cmdline_option": false,
+   "default": "32K",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.allocator.encryption_cache_size": {
+   "cmdline_option": false,
+   "default": "16777216",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.base_dir": {
+   "cmdline_option": false,
+   "default": "/var/lib/mysql/",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.base_host": {
+   "cmdline_option": false,
+   "default": "192.168.215.4",
+   "default_source": "derived",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.base_port": {
+   "cmdline_option": false,
+   "default": "4567",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.cert.log_conflicts": {
+   "cmdline_option": false,
+   "default": "no",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.cert.optimistic_pa": {
+   "cmdline_option": false,
+   "default": "no",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.debug": {
+   "cmdline_option": false,
+   "default": "no",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.evs.auto_evict": {
+   "cmdline_option": false,
+   "default": "0",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.evs.causal_keepalive_period": {
+   "cmdline_option": false,
+   "default": "PT1S",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.evs.debug_log_mask": {
+   "cmdline_option": false,
+   "default": "0x1",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.evs.delay_margin": {
+   "cmdline_option": false,
+   "default": "PT1S",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.evs.delayed_keep_period": {
+   "cmdline_option": false,
+   "default": "PT30S",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.evs.inactive_check_period": {
+   "cmdline_option": false,
+   "default": "PT0.5S",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.evs.inactive_timeout": {
+   "cmdline_option": false,
+   "default": "PT15S",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.evs.info_log_mask": {
+   "cmdline_option": false,
+   "default": "0",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.evs.install_timeout": {
+   "cmdline_option": false,
+   "default": "PT7.5S",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.evs.join_retrans_period": {
+   "cmdline_option": false,
+   "default": "PT1S",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.evs.keepalive_period": {
+   "cmdline_option": false,
+   "default": "PT1S",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.evs.max_install_timeouts": {
+   "cmdline_option": false,
+   "default": "3",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.evs.send_window": {
+   "cmdline_option": false,
+   "default": "10",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.evs.stats_report_period": {
+   "cmdline_option": false,
+   "default": "PT1M",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.evs.suspect_timeout": {
+   "cmdline_option": false,
+   "default": "PT5S",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.evs.use_aggregate": {
+   "cmdline_option": false,
+   "default": "true",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.evs.user_send_window": {
+   "cmdline_option": false,
+   "default": "4",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.evs.version": {
+   "cmdline_option": false,
+   "default": "1",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.evs.view_forget_timeout": {
+   "cmdline_option": false,
+   "default": "P1D",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.gcache.dir": {
+   "cmdline_option": false,
+   "default": "/var/lib/mysql/",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.gcache.encryption": {
+   "cmdline_option": false,
+   "default": "no",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.gcache.encryption_cache_page_size": {
+   "cmdline_option": false,
+   "default": "32K",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.gcache.encryption_cache_size": {
+   "cmdline_option": false,
+   "default": "16777216",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.gcache.freeze_purge_at_seqno": {
+   "cmdline_option": false,
+   "default": "-1",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.gcache.keep_pages_count": {
+   "cmdline_option": false,
+   "default": "0",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.gcache.keep_pages_size": {
+   "cmdline_option": false,
+   "default": "0",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.gcache.mem_size": {
+   "cmdline_option": false,
+   "default": "0",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.gcache.name": {
+   "cmdline_option": false,
+   "default": "galera.cache",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.gcache.page_size": {
+   "cmdline_option": false,
+   "default": "128M",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.gcache.recover": {
+   "cmdline_option": false,
+   "default": "yes",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.gcache.size": {
+   "cmdline_option": false,
+   "default": "128M",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.gcomm.thread_prio": {
+   "cmdline_option": false,
+   "default": "",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.gcs.fc_auto_evict_threshold": {
+   "cmdline_option": false,
+   "default": "0.75",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.gcs.fc_auto_evict_window": {
+   "cmdline_option": false,
+   "default": "0",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.gcs.fc_debug": {
+   "cmdline_option": false,
+   "default": "0",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.gcs.fc_factor": {
+   "cmdline_option": false,
+   "default": "1.0",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.gcs.fc_limit": {
+   "cmdline_option": false,
+   "default": "100",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.gcs.fc_master_slave": {
+   "cmdline_option": false,
+   "default": "no",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.gcs.fc_single_primary": {
+   "cmdline_option": false,
+   "default": "no",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.gcs.max_packet_size": {
+   "cmdline_option": false,
+   "default": "64500",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.gcs.max_throttle": {
+   "cmdline_option": false,
+   "default": "0.25",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.gcs.recv_q_hard_limit": {
+   "cmdline_option": false,
+   "default": "9223372036854775807",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.gcs.recv_q_soft_limit": {
+   "cmdline_option": false,
+   "default": "0.25",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.gcs.sync_donor": {
+   "cmdline_option": false,
+   "default": "no",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.gmcast.listen_addr": {
+   "cmdline_option": false,
+   "default": "ssl://0.0.0.0:4567",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.gmcast.mcast_addr": {
+   "cmdline_option": false,
+   "default": "",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.gmcast.mcast_ttl": {
+   "cmdline_option": false,
+   "default": "1",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.gmcast.peer_timeout": {
+   "cmdline_option": false,
+   "default": "PT3S",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.gmcast.segment": {
+   "cmdline_option": false,
+   "default": "0",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.gmcast.time_wait": {
+   "cmdline_option": false,
+   "default": "PT5S",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.gmcast.version": {
+   "cmdline_option": false,
+   "default": "0",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.ist.recv_addr": {
+   "cmdline_option": false,
+   "default": "192.168.215.4",
+   "default_source": "derived",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.pc.announce_timeout": {
+   "cmdline_option": false,
+   "default": "PT3S",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.pc.checksum": {
+   "cmdline_option": false,
+   "default": "false",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.pc.ignore_quorum": {
+   "cmdline_option": false,
+   "default": "false",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.pc.ignore_sb": {
+   "cmdline_option": false,
+   "default": "false",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.pc.linger": {
+   "cmdline_option": false,
+   "default": "PT20S",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.pc.npvo": {
+   "cmdline_option": false,
+   "default": "false",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.pc.recovery": {
+   "cmdline_option": false,
+   "default": "true",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.pc.version": {
+   "cmdline_option": false,
+   "default": "0",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.pc.wait_prim": {
+   "cmdline_option": false,
+   "default": "true",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.pc.wait_prim_timeout": {
+   "cmdline_option": false,
+   "default": "PT30S",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.pc.wait_restored_prim_timeout": {
+   "cmdline_option": false,
+   "default": "PT0S",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.pc.weight": {
+   "cmdline_option": false,
+   "default": "1",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.protonet.backend": {
+   "cmdline_option": false,
+   "default": "asio",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.protonet.version": {
+   "cmdline_option": false,
+   "default": "0",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.repl.causal_read_timeout": {
+   "cmdline_option": false,
+   "default": "PT30S",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.repl.commit_order": {
+   "cmdline_option": false,
+   "default": "3",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.repl.key_format": {
+   "cmdline_option": false,
+   "default": "FLAT8",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.repl.max_ws_size": {
+   "cmdline_option": false,
+   "default": "2147483647",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.repl.proto_max": {
+   "cmdline_option": false,
+   "default": "11",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.socket.checksum": {
+   "cmdline_option": false,
+   "default": "2",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.socket.recv_buf_size": {
+   "cmdline_option": false,
+   "default": "auto",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.socket.send_buf_size": {
+   "cmdline_option": false,
+   "default": "auto",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.socket.ssl": {
+   "cmdline_option": false,
+   "default": "YES",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.socket.ssl_ca": {
+   "cmdline_option": false,
+   "default": "ca.pem",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.socket.ssl_cert": {
+   "cmdline_option": false,
+   "default": "server-cert.pem",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.socket.ssl_cipher": {
+   "cmdline_option": false,
+   "default": "",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.socket.ssl_key": {
+   "cmdline_option": false,
+   "default": "server-key.pem",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_provider_options.socket.ssl_reload": {
+   "cmdline_option": false,
+   "default": "1",
+   "default_source": "help",
+   "desc": "",
+   "scope": "provider option"
+  },
+  "wsrep_recover": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Recover database state after crash and exit",
+   "scope": "global"
+  },
+  "wsrep_reject_queries": {
+   "cmdline_option": true,
+   "default": "NONE",
+   "default_source": "help",
+   "desc": "Variable to set to reject queries",
+   "scope": "global"
+  },
+  "wsrep_replicate_myisam": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "To enable myisam replication",
+   "scope": "global"
+  },
+  "wsrep_restart_replica": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Should MySQL replica be restarted automatically, when node joins back to cluster",
+   "scope": "global"
+  },
+  "wsrep_restart_slave": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "deprecated": "'@@wsrep_restart_slave' is deprecated and will be removed in a future release. Please use wsrep_restart_replica instead.",
+   "desc": "This option is deprecated. Use wsrep_restart_replica instead.",
+   "replacement": "wsrep_restart_replica",
+   "scope": "global"
+  },
+  "wsrep_retry_autocommit": {
+   "cmdline_option": true,
+   "default": "1",
+   "default_source": "help",
+   "desc": "Max number of times to retry a failed autocommit statement",
+   "scope": "global"
+  },
+  "wsrep_rsu_commit_timeout": {
+   "cmdline_option": true,
+   "default": "5000",
+   "default_source": "help",
+   "desc": "Wait for wsrep_RSU_commit_timeout (in micro-seconds) to allow active connection to complete COMMIT action before starting RSU",
+   "orig": "wsrep_RSU_commit_timeout",
+   "scope": "global"
+  },
+  "wsrep_slave_fk_checks": {
+   "cmdline_option": true,
+   "default": "TRUE",
+   "default_source": "help",
+   "deprecated": "'@@wsrep_slave_FK_checks' is deprecated and will be removed in a future release. Please use wsrep_applier_FK_checks instead.",
+   "desc": "This option is deprecated. Use wsrep_applier_FK_checks instead. (Defaults to on; use --skip-wsrep-slave-FK-checks to disable.)",
+   "orig": "wsrep_slave_FK_checks",
+   "replacement": "wsrep_applier_FK_checks",
+   "scope": "global"
+  },
+  "wsrep_slave_threads": {
+   "cmdline_option": true,
+   "default": "1",
+   "default_source": "help",
+   "deprecated": "'@@wsrep_slave_threads' is deprecated and will be removed in a future release. Please use wsrep_applier_threads instead.",
+   "desc": "This option is deprecated. Use wsrep_applier_threads instead.",
+   "replacement": "wsrep_applier_threads",
+   "scope": "global"
+  },
+  "wsrep_slave_uk_checks": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "deprecated": "'@@wsrep_slave_UK_checks' is deprecated and will be removed in a future release. Please use wsrep_applier_UK_checks instead.",
+   "desc": "This option is deprecated. Use wsrep_applier_UK_checks instead.",
+   "orig": "wsrep_slave_UK_checks",
+   "replacement": "wsrep_applier_UK_checks",
+   "scope": "global"
+  },
+  "wsrep_sr_store": {
+   "cmdline_option": true,
+   "default": "table",
+   "default_source": "help",
+   "desc": "Storage for streaming replication fragments",
+   "orig": "wsrep_SR_store",
+   "scope": "global"
+  },
+  "wsrep_sst_allowed_methods": {
+   "cmdline_option": true,
+   "default": "xtrabackup-v2,clone",
+   "default_source": "help",
+   "desc": "SST methods accepted by server",
+   "scope": "global"
+  },
+  "wsrep_sst_donor": {
+   "cmdline_option": true,
+   "default": "",
+   "default_source": "help",
+   "desc": "preferred donor node for the SST",
+   "scope": "global"
+  },
+  "wsrep_sst_donor_rejects_queries": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Reject client queries when donating state snapshot transfer",
+   "scope": "global"
+  },
+  "wsrep_sst_method": {
+   "cmdline_option": true,
+   "default": "xtrabackup-v2",
+   "default_source": "help",
+   "desc": "State snapshot transfer method",
+   "scope": "global"
+  },
+  "wsrep_sst_receive_address": {
+   "cmdline_option": true,
+   "default": "AUTO",
+   "default_source": "help",
+   "desc": "Address where node is waiting for SST contact",
+   "scope": "global"
+  },
+  "wsrep_start_position": {
+   "cmdline_option": true,
+   "default": "00000000-0000-0000-0000-000000000000:-1",
+   "default_source": "derived",
+   "desc": "global transaction position to start from",
+   "scope": "global"
+  },
+  "wsrep_sync_wait": {
+   "cmdline_option": true,
+   "default": "0",
+   "default_source": "help",
+   "desc": "Ensure \"synchronous\" read view before executing an operation of the type specified by bitmask: 1 - READ(includes SELECT, SHOW and BEGIN/START TRANSACTION); 2 - UPDATE and DELETE; 4 - INSERT and REPLACE",
+   "scope": "global"
+  },
+  "wsrep_trx_fragment_size": {
+   "cmdline_option": true,
+   "default": "0",
+   "default_source": "help",
+   "desc": "Size of transaction fragments for streaming replication (measured in units of 'wsrep_trx_fragment_unit')",
+   "scope": "global"
+  },
+  "wsrep_trx_fragment_unit": {
+   "cmdline_option": true,
+   "default": "bytes",
+   "default_source": "help",
+   "desc": "Unit for streaming replication transaction fragments' size: bytes, rows, statements",
+   "scope": "global"
+  },
+  "wsrep_use_async_monitor": {
+   "cmdline_option": true,
+   "default": "TRUE",
+   "default_source": "help",
+   "desc": "Use Async Monitors to avoid deadlock of replicated transactions in a multi-threaded replica. Deadlock is possible when the PXC replica tries to commit the replicated transactions in galera in a different order than its order in the relay log. Use 'wsrep_use_async_monitor' to avoid such deadlocks.This variable is only allowed to be changed through command line. (Defaults to on; use --skip-wsrep-use-async-monitor to disable.)",
+   "scope": "global"
+  }
+ },
+ "vendor": "percona",
+ "version": "8.4.5-5.1"
+}

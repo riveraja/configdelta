@@ -1,0 +1,3709 @@
+{
+ "image": "postgres:15.4",
+ "series": "15",
+ "server_version": "15.4 (Debian 15.4-2.pgdg120+1)",
+ "status": [],
+ "variables": {
+  "allow_in_place_tablespaces": {
+   "category": "Developer Options",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Allows tablespaces directly inside pg_tblspc, for testing.",
+   "scope": "superuser",
+   "type": "bool"
+  },
+  "allow_system_table_mods": {
+   "category": "Developer Options",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Allows modifications of the structure of system tables.",
+   "scope": "superuser",
+   "type": "bool"
+  },
+  "application_name": {
+   "category": "Reporting and Logging / What to Log",
+   "cmdline_option": false,
+   "default": "",
+   "default_source": "help",
+   "desc": "Sets the application name to be reported in statistics and logs.",
+   "scope": "user",
+   "type": "string"
+  },
+  "archive_cleanup_command": {
+   "category": "Write-Ahead Log / Archive Recovery",
+   "cmdline_option": false,
+   "default": "",
+   "default_source": "help",
+   "desc": "Sets the shell command that will be executed at every restart point.",
+   "scope": "sighup",
+   "type": "string"
+  },
+  "archive_command": {
+   "category": "Write-Ahead Log / Archiving",
+   "cmdline_option": false,
+   "default": "",
+   "default_source": "help",
+   "desc": "Sets the shell command that will be called to archive a WAL file. This is used only if \"archive_library\" is not set.",
+   "scope": "sighup",
+   "type": "string"
+  },
+  "archive_library": {
+   "category": "Write-Ahead Log / Archiving",
+   "cmdline_option": false,
+   "default": "",
+   "default_source": "help",
+   "desc": "Sets the library that will be called to archive a WAL file. An empty string indicates that \"archive_command\" should be used.",
+   "scope": "sighup",
+   "type": "string"
+  },
+  "archive_mode": {
+   "category": "Write-Ahead Log / Archiving",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Allows archiving of WAL files using archive_command.",
+   "enum": [
+    "always",
+    "on",
+    "off"
+   ],
+   "scope": "postmaster",
+   "type": "enum"
+  },
+  "archive_timeout": {
+   "category": "Write-Ahead Log / Archiving",
+   "cmdline_option": false,
+   "default": "0 s",
+   "default_source": "help",
+   "desc": "Sets the amount of time to wait before forcing a switch to the next WAL file.",
+   "max": "1073741823",
+   "min": "0",
+   "scope": "sighup",
+   "type": "integer"
+  },
+  "array_nulls": {
+   "category": "Version and Platform Compatibility / Previous PostgreSQL Versions",
+   "cmdline_option": false,
+   "default": "on",
+   "default_source": "help",
+   "desc": "Enable input of NULL elements in arrays. When turned on, unquoted NULL in an array input value means a null value; otherwise it is taken literally.",
+   "scope": "user",
+   "type": "bool"
+  },
+  "authentication_timeout": {
+   "category": "Connections and Authentication / Authentication",
+   "cmdline_option": false,
+   "default": "60 s",
+   "default_source": "help",
+   "desc": "Sets the maximum allowed time to complete client authentication.",
+   "max": "600",
+   "min": "1",
+   "scope": "sighup",
+   "type": "integer"
+  },
+  "autovacuum": {
+   "category": "Autovacuum",
+   "cmdline_option": false,
+   "default": "on",
+   "default_source": "help",
+   "desc": "Starts the autovacuum subprocess.",
+   "scope": "sighup",
+   "type": "bool"
+  },
+  "autovacuum_analyze_scale_factor": {
+   "category": "Autovacuum",
+   "cmdline_option": false,
+   "default": "0.1",
+   "default_source": "help",
+   "desc": "Number of tuple inserts, updates, or deletes prior to analyze as a fraction of reltuples.",
+   "max": "100",
+   "min": "0",
+   "scope": "sighup",
+   "type": "real"
+  },
+  "autovacuum_analyze_threshold": {
+   "category": "Autovacuum",
+   "cmdline_option": false,
+   "default": "50",
+   "default_source": "help",
+   "desc": "Minimum number of tuple inserts, updates, or deletes prior to analyze.",
+   "max": "2147483647",
+   "min": "0",
+   "scope": "sighup",
+   "type": "integer"
+  },
+  "autovacuum_freeze_max_age": {
+   "category": "Autovacuum",
+   "cmdline_option": false,
+   "default": "200000000",
+   "default_source": "help",
+   "desc": "Age at which to autovacuum a table to prevent transaction ID wraparound.",
+   "max": "2000000000",
+   "min": "100000",
+   "scope": "postmaster",
+   "type": "integer"
+  },
+  "autovacuum_max_workers": {
+   "category": "Autovacuum",
+   "cmdline_option": false,
+   "default": "3",
+   "default_source": "help",
+   "desc": "Sets the maximum number of simultaneously running autovacuum worker processes.",
+   "max": "262143",
+   "min": "1",
+   "scope": "postmaster",
+   "type": "integer"
+  },
+  "autovacuum_multixact_freeze_max_age": {
+   "category": "Autovacuum",
+   "cmdline_option": false,
+   "default": "400000000",
+   "default_source": "help",
+   "desc": "Multixact age at which to autovacuum a table to prevent multixact wraparound.",
+   "max": "2000000000",
+   "min": "10000",
+   "scope": "postmaster",
+   "type": "integer"
+  },
+  "autovacuum_naptime": {
+   "category": "Autovacuum",
+   "cmdline_option": false,
+   "default": "60 s",
+   "default_source": "help",
+   "desc": "Time to sleep between autovacuum runs.",
+   "max": "2147483",
+   "min": "1",
+   "scope": "sighup",
+   "type": "integer"
+  },
+  "autovacuum_vacuum_cost_delay": {
+   "category": "Autovacuum",
+   "cmdline_option": false,
+   "default": "2 ms",
+   "default_source": "help",
+   "desc": "Vacuum cost delay in milliseconds, for autovacuum.",
+   "max": "100",
+   "min": "-1",
+   "scope": "sighup",
+   "type": "real"
+  },
+  "autovacuum_vacuum_cost_limit": {
+   "category": "Autovacuum",
+   "cmdline_option": false,
+   "default": "-1",
+   "default_source": "help",
+   "desc": "Vacuum cost amount available before napping, for autovacuum.",
+   "max": "10000",
+   "min": "-1",
+   "scope": "sighup",
+   "type": "integer"
+  },
+  "autovacuum_vacuum_insert_scale_factor": {
+   "category": "Autovacuum",
+   "cmdline_option": false,
+   "default": "0.2",
+   "default_source": "help",
+   "desc": "Number of tuple inserts prior to vacuum as a fraction of reltuples.",
+   "max": "100",
+   "min": "0",
+   "scope": "sighup",
+   "type": "real"
+  },
+  "autovacuum_vacuum_insert_threshold": {
+   "category": "Autovacuum",
+   "cmdline_option": false,
+   "default": "1000",
+   "default_source": "help",
+   "desc": "Minimum number of tuple inserts prior to vacuum, or -1 to disable insert vacuums.",
+   "max": "2147483647",
+   "min": "-1",
+   "scope": "sighup",
+   "type": "integer"
+  },
+  "autovacuum_vacuum_scale_factor": {
+   "category": "Autovacuum",
+   "cmdline_option": false,
+   "default": "0.2",
+   "default_source": "help",
+   "desc": "Number of tuple updates or deletes prior to vacuum as a fraction of reltuples.",
+   "max": "100",
+   "min": "0",
+   "scope": "sighup",
+   "type": "real"
+  },
+  "autovacuum_vacuum_threshold": {
+   "category": "Autovacuum",
+   "cmdline_option": false,
+   "default": "50",
+   "default_source": "help",
+   "desc": "Minimum number of tuple updates or deletes prior to vacuum.",
+   "max": "2147483647",
+   "min": "0",
+   "scope": "sighup",
+   "type": "integer"
+  },
+  "autovacuum_work_mem": {
+   "category": "Resource Usage / Memory",
+   "cmdline_option": false,
+   "default": "-1 kB",
+   "default_source": "help",
+   "desc": "Sets the maximum memory to be used by each autovacuum worker process.",
+   "max": "2147483647",
+   "min": "-1",
+   "scope": "sighup",
+   "type": "integer"
+  },
+  "backend_flush_after": {
+   "category": "Resource Usage / Asynchronous Behavior",
+   "cmdline_option": false,
+   "default": "0 8kB",
+   "default_source": "help",
+   "desc": "Number of pages after which previously performed writes are flushed to disk.",
+   "max": "256",
+   "min": "0",
+   "scope": "user",
+   "type": "integer"
+  },
+  "backslash_quote": {
+   "category": "Version and Platform Compatibility / Previous PostgreSQL Versions",
+   "cmdline_option": false,
+   "default": "safe_encoding",
+   "default_source": "help",
+   "desc": "Sets whether \"\\'\" is allowed in string literals.",
+   "enum": [
+    "safe_encoding",
+    "on",
+    "off"
+   ],
+   "scope": "user",
+   "type": "enum"
+  },
+  "backtrace_functions": {
+   "category": "Developer Options",
+   "cmdline_option": false,
+   "default": "",
+   "default_source": "help",
+   "desc": "Log backtrace for errors in these functions.",
+   "scope": "superuser",
+   "type": "string"
+  },
+  "bgwriter_delay": {
+   "category": "Resource Usage / Background Writer",
+   "cmdline_option": false,
+   "default": "200 ms",
+   "default_source": "help",
+   "desc": "Background writer sleep time between rounds.",
+   "max": "10000",
+   "min": "10",
+   "scope": "sighup",
+   "type": "integer"
+  },
+  "bgwriter_flush_after": {
+   "category": "Resource Usage / Background Writer",
+   "cmdline_option": false,
+   "default": "64 8kB",
+   "default_source": "help",
+   "desc": "Number of pages after which previously performed writes are flushed to disk.",
+   "max": "256",
+   "min": "0",
+   "scope": "sighup",
+   "type": "integer"
+  },
+  "bgwriter_lru_maxpages": {
+   "category": "Resource Usage / Background Writer",
+   "cmdline_option": false,
+   "default": "100",
+   "default_source": "help",
+   "desc": "Background writer maximum number of LRU pages to flush per round.",
+   "max": "1073741823",
+   "min": "0",
+   "scope": "sighup",
+   "type": "integer"
+  },
+  "bgwriter_lru_multiplier": {
+   "category": "Resource Usage / Background Writer",
+   "cmdline_option": false,
+   "default": "2",
+   "default_source": "help",
+   "desc": "Multiple of the average buffer usage to free per round.",
+   "max": "10",
+   "min": "0",
+   "scope": "sighup",
+   "type": "real"
+  },
+  "block_size": {
+   "category": "Preset Options",
+   "cmdline_option": false,
+   "default": "8192",
+   "default_source": "help",
+   "desc": "Shows the size of a disk block.",
+   "max": "8192",
+   "min": "8192",
+   "scope": "internal",
+   "type": "integer"
+  },
+  "bonjour": {
+   "category": "Connections and Authentication / Connection Settings",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Enables advertising the server via Bonjour.",
+   "scope": "postmaster",
+   "type": "bool"
+  },
+  "bonjour_name": {
+   "category": "Connections and Authentication / Connection Settings",
+   "cmdline_option": false,
+   "default": "",
+   "default_source": "help",
+   "desc": "Sets the Bonjour service name.",
+   "scope": "postmaster",
+   "type": "string"
+  },
+  "bytea_output": {
+   "category": "Client Connection Defaults / Statement Behavior",
+   "cmdline_option": false,
+   "default": "hex",
+   "default_source": "help",
+   "desc": "Sets the output format for bytea.",
+   "enum": [
+    "escape",
+    "hex"
+   ],
+   "scope": "user",
+   "type": "enum"
+  },
+  "check_function_bodies": {
+   "category": "Client Connection Defaults / Statement Behavior",
+   "cmdline_option": false,
+   "default": "on",
+   "default_source": "help",
+   "desc": "Check routine bodies during CREATE FUNCTION and CREATE PROCEDURE.",
+   "scope": "user",
+   "type": "bool"
+  },
+  "checkpoint_completion_target": {
+   "category": "Write-Ahead Log / Checkpoints",
+   "cmdline_option": false,
+   "default": "0.9",
+   "default_source": "help",
+   "desc": "Time spent flushing dirty buffers during checkpoint, as fraction of checkpoint interval.",
+   "max": "1",
+   "min": "0",
+   "scope": "sighup",
+   "type": "real"
+  },
+  "checkpoint_flush_after": {
+   "category": "Write-Ahead Log / Checkpoints",
+   "cmdline_option": false,
+   "default": "32 8kB",
+   "default_source": "help",
+   "desc": "Number of pages after which previously performed writes are flushed to disk.",
+   "max": "256",
+   "min": "0",
+   "scope": "sighup",
+   "type": "integer"
+  },
+  "checkpoint_timeout": {
+   "category": "Write-Ahead Log / Checkpoints",
+   "cmdline_option": false,
+   "default": "300 s",
+   "default_source": "help",
+   "desc": "Sets the maximum time between automatic WAL checkpoints.",
+   "max": "86400",
+   "min": "30",
+   "scope": "sighup",
+   "type": "integer"
+  },
+  "checkpoint_warning": {
+   "category": "Write-Ahead Log / Checkpoints",
+   "cmdline_option": false,
+   "default": "30 s",
+   "default_source": "help",
+   "desc": "Sets the maximum time before warning if checkpoints triggered by WAL volume happen too frequently. Write a message to the server log if checkpoints caused by the filling of WAL segment files happen more frequently than this amount of time. Zero turns off the warning.",
+   "max": "2147483647",
+   "min": "0",
+   "scope": "sighup",
+   "type": "integer"
+  },
+  "client_connection_check_interval": {
+   "category": "Connections and Authentication / Connection Settings",
+   "cmdline_option": false,
+   "default": "0 ms",
+   "default_source": "help",
+   "desc": "Sets the time interval between checks for disconnection while running queries.",
+   "max": "2147483647",
+   "min": "0",
+   "scope": "user",
+   "type": "integer"
+  },
+  "client_encoding": {
+   "category": "Client Connection Defaults / Locale and Formatting",
+   "cmdline_option": false,
+   "default": "SQL_ASCII",
+   "default_source": "help",
+   "desc": "Sets the client's character set encoding.",
+   "scope": "user",
+   "type": "string"
+  },
+  "client_min_messages": {
+   "category": "Client Connection Defaults / Statement Behavior",
+   "cmdline_option": false,
+   "default": "notice",
+   "default_source": "help",
+   "desc": "Sets the message levels that are sent to the client. Each level includes all the levels that follow it. The later the level, the fewer messages are sent.",
+   "enum": [
+    "debug5",
+    "debug4",
+    "debug3",
+    "debug2",
+    "debug1",
+    "log",
+    "notice",
+    "warning",
+    "error"
+   ],
+   "scope": "user",
+   "type": "enum"
+  },
+  "cluster_name": {
+   "category": "Reporting and Logging / Process Title",
+   "cmdline_option": false,
+   "default": "",
+   "default_source": "help",
+   "desc": "Sets the name of the cluster, which is included in the process title.",
+   "scope": "postmaster",
+   "type": "string"
+  },
+  "commit_delay": {
+   "category": "Write-Ahead Log / Settings",
+   "cmdline_option": false,
+   "default": "0",
+   "default_source": "help",
+   "desc": "Sets the delay in microseconds between transaction commit and flushing WAL to disk.",
+   "max": "100000",
+   "min": "0",
+   "scope": "superuser",
+   "type": "integer"
+  },
+  "commit_siblings": {
+   "category": "Write-Ahead Log / Settings",
+   "cmdline_option": false,
+   "default": "5",
+   "default_source": "help",
+   "desc": "Sets the minimum number of concurrent open transactions required before performing commit_delay.",
+   "max": "1000",
+   "min": "0",
+   "scope": "user",
+   "type": "integer"
+  },
+  "compute_query_id": {
+   "category": "Statistics / Monitoring",
+   "cmdline_option": false,
+   "default": "auto",
+   "default_source": "help",
+   "desc": "Enables in-core computation of query identifiers.",
+   "enum": [
+    "auto",
+    "regress",
+    "on",
+    "off"
+   ],
+   "scope": "superuser",
+   "type": "enum"
+  },
+  "config_file": {
+   "category": "File Locations",
+   "cmdline_option": false,
+   "default": "/var/lib/postgresql/data/postgresql.conf",
+   "default_source": "runtime",
+   "desc": "Sets the server's main configuration file.",
+   "scope": "postmaster",
+   "type": "string"
+  },
+  "constraint_exclusion": {
+   "category": "Query Tuning / Other Planner Options",
+   "cmdline_option": false,
+   "default": "partition",
+   "default_source": "help",
+   "desc": "Enables the planner to use constraints to optimize queries. Table scans will be skipped if their constraints guarantee that no rows match the query.",
+   "enum": [
+    "partition",
+    "on",
+    "off"
+   ],
+   "scope": "user",
+   "type": "enum"
+  },
+  "cpu_index_tuple_cost": {
+   "category": "Query Tuning / Planner Cost Constants",
+   "cmdline_option": false,
+   "default": "0.005",
+   "default_source": "help",
+   "desc": "Sets the planner's estimate of the cost of processing each index entry during an index scan.",
+   "max": "1.79769e+308",
+   "min": "0",
+   "scope": "user",
+   "type": "real"
+  },
+  "cpu_operator_cost": {
+   "category": "Query Tuning / Planner Cost Constants",
+   "cmdline_option": false,
+   "default": "0.0025",
+   "default_source": "help",
+   "desc": "Sets the planner's estimate of the cost of processing each operator or function call.",
+   "max": "1.79769e+308",
+   "min": "0",
+   "scope": "user",
+   "type": "real"
+  },
+  "cpu_tuple_cost": {
+   "category": "Query Tuning / Planner Cost Constants",
+   "cmdline_option": false,
+   "default": "0.01",
+   "default_source": "help",
+   "desc": "Sets the planner's estimate of the cost of processing each tuple (row).",
+   "max": "1.79769e+308",
+   "min": "0",
+   "scope": "user",
+   "type": "real"
+  },
+  "cursor_tuple_fraction": {
+   "category": "Query Tuning / Other Planner Options",
+   "cmdline_option": false,
+   "default": "0.1",
+   "default_source": "help",
+   "desc": "Sets the planner's estimate of the fraction of a cursor's rows that will be retrieved.",
+   "max": "1",
+   "min": "0",
+   "scope": "user",
+   "type": "real"
+  },
+  "data_checksums": {
+   "category": "Preset Options",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Shows whether data checksums are turned on for this cluster.",
+   "scope": "internal",
+   "type": "bool"
+  },
+  "data_directory": {
+   "category": "File Locations",
+   "cmdline_option": false,
+   "default": "/var/lib/postgresql/data",
+   "default_source": "runtime",
+   "desc": "Sets the server's data directory.",
+   "scope": "postmaster",
+   "type": "string"
+  },
+  "data_directory_mode": {
+   "category": "Preset Options",
+   "cmdline_option": false,
+   "default": "448",
+   "default_source": "help",
+   "desc": "Shows the mode of the data directory. The parameter value is a numeric mode specification in the form accepted by the chmod and umask system calls. (To use the customary octal format the number must start with a 0 (zero).)",
+   "max": "511",
+   "min": "0",
+   "scope": "internal",
+   "type": "integer"
+  },
+  "data_sync_retry": {
+   "category": "Error Handling",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Whether to continue running after a failure to sync data files.",
+   "scope": "postmaster",
+   "type": "bool"
+  },
+  "datestyle": {
+   "category": "Client Connection Defaults / Locale and Formatting",
+   "cmdline_option": false,
+   "default": "ISO, MDY",
+   "default_source": "help",
+   "desc": "Sets the display format for date and time values. Also controls interpretation of ambiguous date inputs.",
+   "orig": "DateStyle",
+   "scope": "user",
+   "type": "string"
+  },
+  "db_user_namespace": {
+   "category": "Connections and Authentication / Authentication",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Enables per-database user names.",
+   "scope": "sighup",
+   "type": "bool"
+  },
+  "deadlock_timeout": {
+   "category": "Lock Management",
+   "cmdline_option": false,
+   "default": "1000 ms",
+   "default_source": "help",
+   "desc": "Sets the time to wait on a lock before checking for deadlock.",
+   "max": "2147483647",
+   "min": "1",
+   "scope": "superuser",
+   "type": "integer"
+  },
+  "debug_assertions": {
+   "category": "Preset Options",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Shows whether the running server has assertion checks enabled.",
+   "scope": "internal",
+   "type": "bool"
+  },
+  "debug_discard_caches": {
+   "category": "Developer Options",
+   "cmdline_option": false,
+   "default": "0",
+   "default_source": "help",
+   "desc": "Aggressively flush system caches for debugging purposes.",
+   "max": "0",
+   "min": "0",
+   "scope": "superuser",
+   "type": "integer"
+  },
+  "debug_pretty_print": {
+   "category": "Reporting and Logging / What to Log",
+   "cmdline_option": false,
+   "default": "on",
+   "default_source": "help",
+   "desc": "Indents parse and plan tree displays.",
+   "scope": "user",
+   "type": "bool"
+  },
+  "debug_print_parse": {
+   "category": "Reporting and Logging / What to Log",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Logs each query's parse tree.",
+   "scope": "user",
+   "type": "bool"
+  },
+  "debug_print_plan": {
+   "category": "Reporting and Logging / What to Log",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Logs each query's execution plan.",
+   "scope": "user",
+   "type": "bool"
+  },
+  "debug_print_rewritten": {
+   "category": "Reporting and Logging / What to Log",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Logs each query's rewritten parse tree.",
+   "scope": "user",
+   "type": "bool"
+  },
+  "default_statistics_target": {
+   "category": "Query Tuning / Other Planner Options",
+   "cmdline_option": false,
+   "default": "100",
+   "default_source": "help",
+   "desc": "Sets the default statistics target. This applies to table columns that have not had a column-specific target set via ALTER TABLE SET STATISTICS.",
+   "max": "10000",
+   "min": "1",
+   "scope": "user",
+   "type": "integer"
+  },
+  "default_table_access_method": {
+   "category": "Client Connection Defaults / Statement Behavior",
+   "cmdline_option": false,
+   "default": "heap",
+   "default_source": "help",
+   "desc": "Sets the default table access method for new tables.",
+   "scope": "user",
+   "type": "string"
+  },
+  "default_tablespace": {
+   "category": "Client Connection Defaults / Statement Behavior",
+   "cmdline_option": false,
+   "default": "",
+   "default_source": "help",
+   "desc": "Sets the default tablespace to create tables and indexes in. An empty string selects the database's default tablespace.",
+   "scope": "user",
+   "type": "string"
+  },
+  "default_text_search_config": {
+   "category": "Client Connection Defaults / Locale and Formatting",
+   "cmdline_option": false,
+   "default": "pg_catalog.simple",
+   "default_source": "help",
+   "desc": "Sets default text search configuration.",
+   "scope": "user",
+   "type": "string"
+  },
+  "default_toast_compression": {
+   "category": "Client Connection Defaults / Statement Behavior",
+   "cmdline_option": false,
+   "default": "pglz",
+   "default_source": "help",
+   "desc": "Sets the default compression method for compressible values.",
+   "enum": [
+    "pglz",
+    "lz4"
+   ],
+   "scope": "user",
+   "type": "enum"
+  },
+  "default_transaction_deferrable": {
+   "category": "Client Connection Defaults / Statement Behavior",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Sets the default deferrable status of new transactions.",
+   "scope": "user",
+   "type": "bool"
+  },
+  "default_transaction_isolation": {
+   "category": "Client Connection Defaults / Statement Behavior",
+   "cmdline_option": false,
+   "default": "read committed",
+   "default_source": "help",
+   "desc": "Sets the transaction isolation level of each new transaction.",
+   "enum": [
+    "serializable",
+    "repeatable read",
+    "read committed",
+    "read uncommitted"
+   ],
+   "scope": "user",
+   "type": "enum"
+  },
+  "default_transaction_read_only": {
+   "category": "Client Connection Defaults / Statement Behavior",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Sets the default read-only status of new transactions.",
+   "scope": "user",
+   "type": "bool"
+  },
+  "dynamic_library_path": {
+   "category": "Client Connection Defaults / Other Defaults",
+   "cmdline_option": false,
+   "default": "$libdir",
+   "default_source": "help",
+   "desc": "Sets the path for dynamically loadable modules. If a dynamically loadable module needs to be opened and the specified name does not have a directory component (i.e., the name does not contain a slash), the system will search this path for the specified file.",
+   "scope": "superuser",
+   "type": "string"
+  },
+  "dynamic_shared_memory_type": {
+   "category": "Resource Usage / Memory",
+   "cmdline_option": false,
+   "default": "posix",
+   "default_source": "help",
+   "desc": "Selects the dynamic shared memory implementation used.",
+   "enum": [
+    "posix",
+    "sysv",
+    "mmap"
+   ],
+   "scope": "postmaster",
+   "type": "enum"
+  },
+  "effective_cache_size": {
+   "category": "Query Tuning / Planner Cost Constants",
+   "cmdline_option": false,
+   "default": "524288 8kB",
+   "default_source": "help",
+   "desc": "Sets the planner's assumption about the total size of the data caches. That is, the total size of the caches (kernel cache and shared buffers) used for PostgreSQL data files. This is measured in disk pages, which are normally 8 kB each.",
+   "max": "2147483647",
+   "min": "1",
+   "scope": "user",
+   "type": "integer"
+  },
+  "effective_io_concurrency": {
+   "category": "Resource Usage / Asynchronous Behavior",
+   "cmdline_option": false,
+   "default": "1",
+   "default_source": "help",
+   "desc": "Number of simultaneous requests that can be handled efficiently by the disk subsystem.",
+   "max": "1000",
+   "min": "0",
+   "scope": "user",
+   "type": "integer"
+  },
+  "enable_async_append": {
+   "category": "Query Tuning / Planner Method Configuration",
+   "cmdline_option": false,
+   "default": "on",
+   "default_source": "help",
+   "desc": "Enables the planner's use of async append plans.",
+   "scope": "user",
+   "type": "bool"
+  },
+  "enable_bitmapscan": {
+   "category": "Query Tuning / Planner Method Configuration",
+   "cmdline_option": false,
+   "default": "on",
+   "default_source": "help",
+   "desc": "Enables the planner's use of bitmap-scan plans.",
+   "scope": "user",
+   "type": "bool"
+  },
+  "enable_gathermerge": {
+   "category": "Query Tuning / Planner Method Configuration",
+   "cmdline_option": false,
+   "default": "on",
+   "default_source": "help",
+   "desc": "Enables the planner's use of gather merge plans.",
+   "scope": "user",
+   "type": "bool"
+  },
+  "enable_hashagg": {
+   "category": "Query Tuning / Planner Method Configuration",
+   "cmdline_option": false,
+   "default": "on",
+   "default_source": "help",
+   "desc": "Enables the planner's use of hashed aggregation plans.",
+   "scope": "user",
+   "type": "bool"
+  },
+  "enable_hashjoin": {
+   "category": "Query Tuning / Planner Method Configuration",
+   "cmdline_option": false,
+   "default": "on",
+   "default_source": "help",
+   "desc": "Enables the planner's use of hash join plans.",
+   "scope": "user",
+   "type": "bool"
+  },
+  "enable_incremental_sort": {
+   "category": "Query Tuning / Planner Method Configuration",
+   "cmdline_option": false,
+   "default": "on",
+   "default_source": "help",
+   "desc": "Enables the planner's use of incremental sort steps.",
+   "scope": "user",
+   "type": "bool"
+  },
+  "enable_indexonlyscan": {
+   "category": "Query Tuning / Planner Method Configuration",
+   "cmdline_option": false,
+   "default": "on",
+   "default_source": "help",
+   "desc": "Enables the planner's use of index-only-scan plans.",
+   "scope": "user",
+   "type": "bool"
+  },
+  "enable_indexscan": {
+   "category": "Query Tuning / Planner Method Configuration",
+   "cmdline_option": false,
+   "default": "on",
+   "default_source": "help",
+   "desc": "Enables the planner's use of index-scan plans.",
+   "scope": "user",
+   "type": "bool"
+  },
+  "enable_material": {
+   "category": "Query Tuning / Planner Method Configuration",
+   "cmdline_option": false,
+   "default": "on",
+   "default_source": "help",
+   "desc": "Enables the planner's use of materialization.",
+   "scope": "user",
+   "type": "bool"
+  },
+  "enable_memoize": {
+   "category": "Query Tuning / Planner Method Configuration",
+   "cmdline_option": false,
+   "default": "on",
+   "default_source": "help",
+   "desc": "Enables the planner's use of memoization.",
+   "scope": "user",
+   "type": "bool"
+  },
+  "enable_mergejoin": {
+   "category": "Query Tuning / Planner Method Configuration",
+   "cmdline_option": false,
+   "default": "on",
+   "default_source": "help",
+   "desc": "Enables the planner's use of merge join plans.",
+   "scope": "user",
+   "type": "bool"
+  },
+  "enable_nestloop": {
+   "category": "Query Tuning / Planner Method Configuration",
+   "cmdline_option": false,
+   "default": "on",
+   "default_source": "help",
+   "desc": "Enables the planner's use of nested-loop join plans.",
+   "scope": "user",
+   "type": "bool"
+  },
+  "enable_parallel_append": {
+   "category": "Query Tuning / Planner Method Configuration",
+   "cmdline_option": false,
+   "default": "on",
+   "default_source": "help",
+   "desc": "Enables the planner's use of parallel append plans.",
+   "scope": "user",
+   "type": "bool"
+  },
+  "enable_parallel_hash": {
+   "category": "Query Tuning / Planner Method Configuration",
+   "cmdline_option": false,
+   "default": "on",
+   "default_source": "help",
+   "desc": "Enables the planner's use of parallel hash plans.",
+   "scope": "user",
+   "type": "bool"
+  },
+  "enable_partition_pruning": {
+   "category": "Query Tuning / Planner Method Configuration",
+   "cmdline_option": false,
+   "default": "on",
+   "default_source": "help",
+   "desc": "Enables plan-time and execution-time partition pruning. Allows the query planner and executor to compare partition bounds to conditions in the query to determine which partitions must be scanned.",
+   "scope": "user",
+   "type": "bool"
+  },
+  "enable_partitionwise_aggregate": {
+   "category": "Query Tuning / Planner Method Configuration",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Enables partitionwise aggregation and grouping.",
+   "scope": "user",
+   "type": "bool"
+  },
+  "enable_partitionwise_join": {
+   "category": "Query Tuning / Planner Method Configuration",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Enables partitionwise join.",
+   "scope": "user",
+   "type": "bool"
+  },
+  "enable_seqscan": {
+   "category": "Query Tuning / Planner Method Configuration",
+   "cmdline_option": false,
+   "default": "on",
+   "default_source": "help",
+   "desc": "Enables the planner's use of sequential-scan plans.",
+   "scope": "user",
+   "type": "bool"
+  },
+  "enable_sort": {
+   "category": "Query Tuning / Planner Method Configuration",
+   "cmdline_option": false,
+   "default": "on",
+   "default_source": "help",
+   "desc": "Enables the planner's use of explicit sort steps.",
+   "scope": "user",
+   "type": "bool"
+  },
+  "enable_tidscan": {
+   "category": "Query Tuning / Planner Method Configuration",
+   "cmdline_option": false,
+   "default": "on",
+   "default_source": "help",
+   "desc": "Enables the planner's use of TID scan plans.",
+   "scope": "user",
+   "type": "bool"
+  },
+  "escape_string_warning": {
+   "category": "Version and Platform Compatibility / Previous PostgreSQL Versions",
+   "cmdline_option": false,
+   "default": "on",
+   "default_source": "help",
+   "desc": "Warn about backslash escapes in ordinary string literals.",
+   "scope": "user",
+   "type": "bool"
+  },
+  "event_source": {
+   "category": "Reporting and Logging / Where to Log",
+   "cmdline_option": false,
+   "default": "PostgreSQL",
+   "default_source": "help",
+   "desc": "Sets the application name used to identify PostgreSQL messages in the event log.",
+   "scope": "postmaster",
+   "type": "string"
+  },
+  "exit_on_error": {
+   "category": "Error Handling",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Terminate session on any error.",
+   "scope": "user",
+   "type": "bool"
+  },
+  "extension_destdir": {
+   "category": "File Locations",
+   "cmdline_option": false,
+   "default": "",
+   "default_source": "help",
+   "desc": "Path to prepend for extension loading. This directory is prepended to paths when loading extensions (control and SQL files), and to the '$libdir' directive when loading modules that back functions. The location is made configurable to allow build-time testing of extensions that do not have been installed to their proper location yet.",
+   "scope": "superuser",
+   "type": "string"
+  },
+  "external_pid_file": {
+   "category": "File Locations",
+   "cmdline_option": false,
+   "default": "",
+   "default_source": "runtime",
+   "desc": "Writes the postmaster PID to the specified file.",
+   "scope": "postmaster",
+   "type": "string"
+  },
+  "extra_float_digits": {
+   "category": "Client Connection Defaults / Locale and Formatting",
+   "cmdline_option": false,
+   "default": "1",
+   "default_source": "help",
+   "desc": "Sets the number of digits displayed for floating-point values. This affects real, double precision, and geometric data types. A zero or negative parameter value is added to the standard number of digits (FLT_DIG or DBL_DIG as appropriate). Any value greater than zero selects precise output mode.",
+   "max": "3",
+   "min": "-15",
+   "scope": "user",
+   "type": "integer"
+  },
+  "force_parallel_mode": {
+   "category": "Developer Options",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Forces use of parallel query facilities. If possible, run query using a parallel worker and with parallel restrictions.",
+   "enum": [
+    "off",
+    "on",
+    "regress"
+   ],
+   "scope": "user",
+   "type": "enum"
+  },
+  "from_collapse_limit": {
+   "category": "Query Tuning / Other Planner Options",
+   "cmdline_option": false,
+   "default": "8",
+   "default_source": "help",
+   "desc": "Sets the FROM-list size beyond which subqueries are not collapsed. The planner will merge subqueries into upper queries if the resulting FROM list would have no more than this many items.",
+   "max": "2147483647",
+   "min": "1",
+   "scope": "user",
+   "type": "integer"
+  },
+  "fsync": {
+   "category": "Write-Ahead Log / Settings",
+   "cmdline_option": false,
+   "default": "on",
+   "default_source": "help",
+   "desc": "Forces synchronization of updates to disk. The server will use the fsync() system call in several places to make sure that updates are physically written to disk. This insures that a database cluster will recover to a consistent state after an operating system or hardware crash.",
+   "scope": "sighup",
+   "type": "bool"
+  },
+  "full_page_writes": {
+   "category": "Write-Ahead Log / Settings",
+   "cmdline_option": false,
+   "default": "on",
+   "default_source": "help",
+   "desc": "Writes full pages to WAL when first modified after a checkpoint. A page write in process during an operating system crash might be only partially written to disk.  During recovery, the row changes stored in WAL are not enough to recover.  This option writes pages when first modified after a checkpoint to WAL so full recovery is possible.",
+   "scope": "sighup",
+   "type": "bool"
+  },
+  "geqo": {
+   "category": "Query Tuning / Genetic Query Optimizer",
+   "cmdline_option": false,
+   "default": "on",
+   "default_source": "help",
+   "desc": "Enables genetic query optimization. This algorithm attempts to do planning without exhaustive searching.",
+   "scope": "user",
+   "type": "bool"
+  },
+  "geqo_effort": {
+   "category": "Query Tuning / Genetic Query Optimizer",
+   "cmdline_option": false,
+   "default": "5",
+   "default_source": "help",
+   "desc": "GEQO: effort is used to set the default for other GEQO parameters.",
+   "max": "10",
+   "min": "1",
+   "scope": "user",
+   "type": "integer"
+  },
+  "geqo_generations": {
+   "category": "Query Tuning / Genetic Query Optimizer",
+   "cmdline_option": false,
+   "default": "0",
+   "default_source": "help",
+   "desc": "GEQO: number of iterations of the algorithm. Zero selects a suitable default value.",
+   "max": "2147483647",
+   "min": "0",
+   "scope": "user",
+   "type": "integer"
+  },
+  "geqo_pool_size": {
+   "category": "Query Tuning / Genetic Query Optimizer",
+   "cmdline_option": false,
+   "default": "0",
+   "default_source": "help",
+   "desc": "GEQO: number of individuals in the population. Zero selects a suitable default value.",
+   "max": "2147483647",
+   "min": "0",
+   "scope": "user",
+   "type": "integer"
+  },
+  "geqo_seed": {
+   "category": "Query Tuning / Genetic Query Optimizer",
+   "cmdline_option": false,
+   "default": "0",
+   "default_source": "help",
+   "desc": "GEQO: seed for random path selection.",
+   "max": "1",
+   "min": "0",
+   "scope": "user",
+   "type": "real"
+  },
+  "geqo_selection_bias": {
+   "category": "Query Tuning / Genetic Query Optimizer",
+   "cmdline_option": false,
+   "default": "2",
+   "default_source": "help",
+   "desc": "GEQO: selective pressure within the population.",
+   "max": "2",
+   "min": "1.5",
+   "scope": "user",
+   "type": "real"
+  },
+  "geqo_threshold": {
+   "category": "Query Tuning / Genetic Query Optimizer",
+   "cmdline_option": false,
+   "default": "12",
+   "default_source": "help",
+   "desc": "Sets the threshold of FROM items beyond which GEQO is used.",
+   "max": "2147483647",
+   "min": "2",
+   "scope": "user",
+   "type": "integer"
+  },
+  "gin_fuzzy_search_limit": {
+   "category": "Client Connection Defaults / Other Defaults",
+   "cmdline_option": false,
+   "default": "0",
+   "default_source": "help",
+   "desc": "Sets the maximum allowed result for exact search by GIN.",
+   "max": "2147483647",
+   "min": "0",
+   "scope": "user",
+   "type": "integer"
+  },
+  "gin_pending_list_limit": {
+   "category": "Client Connection Defaults / Statement Behavior",
+   "cmdline_option": false,
+   "default": "4096 kB",
+   "default_source": "help",
+   "desc": "Sets the maximum size of the pending list for GIN index.",
+   "max": "2147483647",
+   "min": "64",
+   "scope": "user",
+   "type": "integer"
+  },
+  "hash_mem_multiplier": {
+   "category": "Resource Usage / Memory",
+   "cmdline_option": false,
+   "default": "2",
+   "default_source": "help",
+   "desc": "Multiple of work_mem to use for hash tables.",
+   "max": "1000",
+   "min": "1",
+   "scope": "user",
+   "type": "real"
+  },
+  "hba_file": {
+   "category": "File Locations",
+   "cmdline_option": false,
+   "default": "/var/lib/postgresql/data/pg_hba.conf",
+   "default_source": "runtime",
+   "desc": "Sets the server's \"hba\" configuration file.",
+   "scope": "postmaster",
+   "type": "string"
+  },
+  "hot_standby": {
+   "category": "Replication / Standby Servers",
+   "cmdline_option": false,
+   "default": "on",
+   "default_source": "help",
+   "desc": "Allows connections and queries during recovery.",
+   "scope": "postmaster",
+   "type": "bool"
+  },
+  "hot_standby_feedback": {
+   "category": "Replication / Standby Servers",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Allows feedback from a hot standby to the primary that will avoid query conflicts.",
+   "scope": "sighup",
+   "type": "bool"
+  },
+  "huge_page_size": {
+   "category": "Resource Usage / Memory",
+   "cmdline_option": false,
+   "default": "0 kB",
+   "default_source": "help",
+   "desc": "The size of huge page that should be requested.",
+   "max": "2147483647",
+   "min": "0",
+   "scope": "postmaster",
+   "type": "integer"
+  },
+  "huge_pages": {
+   "category": "Resource Usage / Memory",
+   "cmdline_option": false,
+   "default": "try",
+   "default_source": "help",
+   "desc": "Use of huge pages on Linux or Windows.",
+   "enum": [
+    "off",
+    "on",
+    "try"
+   ],
+   "scope": "postmaster",
+   "type": "enum"
+  },
+  "ident_file": {
+   "category": "File Locations",
+   "cmdline_option": false,
+   "default": "/var/lib/postgresql/data/pg_ident.conf",
+   "default_source": "runtime",
+   "desc": "Sets the server's \"ident\" configuration file.",
+   "scope": "postmaster",
+   "type": "string"
+  },
+  "idle_in_transaction_session_timeout": {
+   "category": "Client Connection Defaults / Statement Behavior",
+   "cmdline_option": false,
+   "default": "0 ms",
+   "default_source": "help",
+   "desc": "Sets the maximum allowed idle time between queries, when in a transaction. A value of 0 turns off the timeout.",
+   "max": "2147483647",
+   "min": "0",
+   "scope": "user",
+   "type": "integer"
+  },
+  "idle_session_timeout": {
+   "category": "Client Connection Defaults / Statement Behavior",
+   "cmdline_option": false,
+   "default": "0 ms",
+   "default_source": "help",
+   "desc": "Sets the maximum allowed idle time between queries, when not in a transaction. A value of 0 turns off the timeout.",
+   "max": "2147483647",
+   "min": "0",
+   "scope": "user",
+   "type": "integer"
+  },
+  "ignore_checksum_failure": {
+   "category": "Developer Options",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Continues processing after a checksum failure. Detection of a checksum failure normally causes PostgreSQL to report an error, aborting the current transaction. Setting ignore_checksum_failure to true causes the system to ignore the failure (but still report a warning), and continue processing. This behavior could cause crashes or other serious problems. Only has an effect if checksums are enabled.",
+   "scope": "superuser",
+   "type": "bool"
+  },
+  "ignore_invalid_pages": {
+   "category": "Developer Options",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Continues recovery after an invalid pages failure. Detection of WAL records having references to invalid pages during recovery causes PostgreSQL to raise a PANIC-level error, aborting the recovery. Setting ignore_invalid_pages to true causes the system to ignore invalid page references in WAL records (but still report a warning), and continue recovery. This behavior may cause crashes, data loss, propagate or hide corruption, or other serious problems. Only has an effect during recovery or in standby mode.",
+   "scope": "postmaster",
+   "type": "bool"
+  },
+  "ignore_system_indexes": {
+   "category": "Developer Options",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Disables reading from system indexes. It does not prevent updating the indexes, so it is safe to use.  The worst consequence is slowness.",
+   "scope": "backend",
+   "type": "bool"
+  },
+  "in_hot_standby": {
+   "category": "Preset Options",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Shows whether hot standby is currently active.",
+   "scope": "internal",
+   "type": "bool"
+  },
+  "integer_datetimes": {
+   "category": "Preset Options",
+   "cmdline_option": false,
+   "default": "on",
+   "default_source": "help",
+   "desc": "Shows whether datetimes are integer based.",
+   "scope": "internal",
+   "type": "bool"
+  },
+  "intervalstyle": {
+   "category": "Client Connection Defaults / Locale and Formatting",
+   "cmdline_option": false,
+   "default": "postgres",
+   "default_source": "help",
+   "desc": "Sets the display format for interval values.",
+   "enum": [
+    "postgres",
+    "postgres_verbose",
+    "sql_standard",
+    "iso_8601"
+   ],
+   "orig": "IntervalStyle",
+   "scope": "user",
+   "type": "enum"
+  },
+  "jit": {
+   "category": "Query Tuning / Other Planner Options",
+   "cmdline_option": false,
+   "default": "on",
+   "default_source": "help",
+   "desc": "Allow JIT compilation.",
+   "scope": "user",
+   "type": "bool"
+  },
+  "jit_above_cost": {
+   "category": "Query Tuning / Planner Cost Constants",
+   "cmdline_option": false,
+   "default": "100000",
+   "default_source": "help",
+   "desc": "Perform JIT compilation if query is more expensive. -1 disables JIT compilation.",
+   "max": "1.79769e+308",
+   "min": "-1",
+   "scope": "user",
+   "type": "real"
+  },
+  "jit_debugging_support": {
+   "category": "Developer Options",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Register JIT-compiled functions with debugger.",
+   "scope": "superuser-backend",
+   "type": "bool"
+  },
+  "jit_dump_bitcode": {
+   "category": "Developer Options",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Write out LLVM bitcode to facilitate JIT debugging.",
+   "scope": "superuser",
+   "type": "bool"
+  },
+  "jit_expressions": {
+   "category": "Developer Options",
+   "cmdline_option": false,
+   "default": "on",
+   "default_source": "help",
+   "desc": "Allow JIT compilation of expressions.",
+   "scope": "user",
+   "type": "bool"
+  },
+  "jit_inline_above_cost": {
+   "category": "Query Tuning / Planner Cost Constants",
+   "cmdline_option": false,
+   "default": "500000",
+   "default_source": "help",
+   "desc": "Perform JIT inlining if query is more expensive. -1 disables inlining.",
+   "max": "1.79769e+308",
+   "min": "-1",
+   "scope": "user",
+   "type": "real"
+  },
+  "jit_optimize_above_cost": {
+   "category": "Query Tuning / Planner Cost Constants",
+   "cmdline_option": false,
+   "default": "500000",
+   "default_source": "help",
+   "desc": "Optimize JIT-compiled functions if query is more expensive. -1 disables optimization.",
+   "max": "1.79769e+308",
+   "min": "-1",
+   "scope": "user",
+   "type": "real"
+  },
+  "jit_profiling_support": {
+   "category": "Developer Options",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Register JIT-compiled functions with perf profiler.",
+   "scope": "superuser-backend",
+   "type": "bool"
+  },
+  "jit_provider": {
+   "category": "Client Connection Defaults / Shared Library Preloading",
+   "cmdline_option": false,
+   "default": "llvmjit",
+   "default_source": "help",
+   "desc": "JIT provider to use.",
+   "scope": "postmaster",
+   "type": "string"
+  },
+  "jit_tuple_deforming": {
+   "category": "Developer Options",
+   "cmdline_option": false,
+   "default": "on",
+   "default_source": "help",
+   "desc": "Allow JIT compilation of tuple deforming.",
+   "scope": "user",
+   "type": "bool"
+  },
+  "join_collapse_limit": {
+   "category": "Query Tuning / Other Planner Options",
+   "cmdline_option": false,
+   "default": "8",
+   "default_source": "help",
+   "desc": "Sets the FROM-list size beyond which JOIN constructs are not flattened. The planner will flatten explicit JOIN constructs into lists of FROM items whenever a list of no more than this many items would result.",
+   "max": "2147483647",
+   "min": "1",
+   "scope": "user",
+   "type": "integer"
+  },
+  "krb_caseins_users": {
+   "category": "Connections and Authentication / Authentication",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Sets whether Kerberos and GSSAPI user names should be treated as case-insensitive.",
+   "scope": "sighup",
+   "type": "bool"
+  },
+  "krb_server_keyfile": {
+   "category": "Connections and Authentication / Authentication",
+   "cmdline_option": false,
+   "default": "FILE:/etc/postgresql-common/krb5.keytab",
+   "default_source": "help",
+   "desc": "Sets the location of the Kerberos server key file.",
+   "scope": "sighup",
+   "type": "string"
+  },
+  "lc_collate": {
+   "category": "Preset Options",
+   "cmdline_option": false,
+   "default": "C",
+   "default_source": "help",
+   "desc": "Shows the collation order locale.",
+   "scope": "internal",
+   "type": "string"
+  },
+  "lc_ctype": {
+   "category": "Preset Options",
+   "cmdline_option": false,
+   "default": "C",
+   "default_source": "help",
+   "desc": "Shows the character classification and case conversion locale.",
+   "scope": "internal",
+   "type": "string"
+  },
+  "lc_messages": {
+   "category": "Client Connection Defaults / Locale and Formatting",
+   "cmdline_option": false,
+   "default": "",
+   "default_source": "help",
+   "desc": "Sets the language in which messages are displayed.",
+   "scope": "superuser",
+   "type": "string"
+  },
+  "lc_monetary": {
+   "category": "Client Connection Defaults / Locale and Formatting",
+   "cmdline_option": false,
+   "default": "C",
+   "default_source": "help",
+   "desc": "Sets the locale for formatting monetary amounts.",
+   "scope": "user",
+   "type": "string"
+  },
+  "lc_numeric": {
+   "category": "Client Connection Defaults / Locale and Formatting",
+   "cmdline_option": false,
+   "default": "C",
+   "default_source": "help",
+   "desc": "Sets the locale for formatting numbers.",
+   "scope": "user",
+   "type": "string"
+  },
+  "lc_time": {
+   "category": "Client Connection Defaults / Locale and Formatting",
+   "cmdline_option": false,
+   "default": "C",
+   "default_source": "help",
+   "desc": "Sets the locale for formatting date and time values.",
+   "scope": "user",
+   "type": "string"
+  },
+  "listen_addresses": {
+   "category": "Connections and Authentication / Connection Settings",
+   "cmdline_option": false,
+   "default": "localhost",
+   "default_source": "help",
+   "desc": "Sets the host name or IP address(es) to listen to.",
+   "scope": "postmaster",
+   "type": "string"
+  },
+  "lo_compat_privileges": {
+   "category": "Version and Platform Compatibility / Previous PostgreSQL Versions",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Enables backward compatibility mode for privilege checks on large objects. Skips privilege checks when reading or modifying large objects, for compatibility with PostgreSQL releases prior to 9.0.",
+   "scope": "superuser",
+   "type": "bool"
+  },
+  "local_preload_libraries": {
+   "category": "Client Connection Defaults / Shared Library Preloading",
+   "cmdline_option": false,
+   "default": "",
+   "default_source": "help",
+   "desc": "Lists unprivileged shared libraries to preload into each backend.",
+   "scope": "user",
+   "type": "string"
+  },
+  "lock_timeout": {
+   "category": "Client Connection Defaults / Statement Behavior",
+   "cmdline_option": false,
+   "default": "0 ms",
+   "default_source": "help",
+   "desc": "Sets the maximum allowed duration of any wait for a lock. A value of 0 turns off the timeout.",
+   "max": "2147483647",
+   "min": "0",
+   "scope": "user",
+   "type": "integer"
+  },
+  "log_autovacuum_min_duration": {
+   "category": "Reporting and Logging / What to Log",
+   "cmdline_option": false,
+   "default": "600000 ms",
+   "default_source": "help",
+   "desc": "Sets the minimum execution time above which autovacuum actions will be logged. Zero prints all actions. -1 turns autovacuum logging off.",
+   "max": "2147483647",
+   "min": "-1",
+   "scope": "sighup",
+   "type": "integer"
+  },
+  "log_checkpoints": {
+   "category": "Reporting and Logging / What to Log",
+   "cmdline_option": false,
+   "default": "on",
+   "default_source": "help",
+   "desc": "Logs each checkpoint.",
+   "scope": "sighup",
+   "type": "bool"
+  },
+  "log_connections": {
+   "category": "Reporting and Logging / What to Log",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Logs each successful connection.",
+   "scope": "superuser-backend",
+   "type": "bool"
+  },
+  "log_destination": {
+   "category": "Reporting and Logging / Where to Log",
+   "cmdline_option": false,
+   "default": "stderr",
+   "default_source": "help",
+   "desc": "Sets the destination for server log output. Valid values are combinations of \"stderr\", \"syslog\", \"csvlog\", \"jsonlog\", and \"eventlog\", depending on the platform.",
+   "scope": "sighup",
+   "type": "string"
+  },
+  "log_directory": {
+   "category": "Reporting and Logging / Where to Log",
+   "cmdline_option": false,
+   "default": "log",
+   "default_source": "help",
+   "desc": "Sets the destination directory for log files. Can be specified as relative to the data directory or as absolute path.",
+   "scope": "sighup",
+   "type": "string"
+  },
+  "log_disconnections": {
+   "category": "Reporting and Logging / What to Log",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Logs end of a session, including duration.",
+   "scope": "superuser-backend",
+   "type": "bool"
+  },
+  "log_duration": {
+   "category": "Reporting and Logging / What to Log",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Logs the duration of each completed SQL statement.",
+   "scope": "superuser",
+   "type": "bool"
+  },
+  "log_error_verbosity": {
+   "category": "Reporting and Logging / What to Log",
+   "cmdline_option": false,
+   "default": "default",
+   "default_source": "help",
+   "desc": "Sets the verbosity of logged messages.",
+   "enum": [
+    "terse",
+    "default",
+    "verbose"
+   ],
+   "scope": "superuser",
+   "type": "enum"
+  },
+  "log_executor_stats": {
+   "category": "Statistics / Monitoring",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Writes executor performance statistics to the server log.",
+   "scope": "superuser",
+   "type": "bool"
+  },
+  "log_file_mode": {
+   "category": "Reporting and Logging / Where to Log",
+   "cmdline_option": false,
+   "default": "384",
+   "default_source": "help",
+   "desc": "Sets the file permissions for log files. The parameter value is expected to be a numeric mode specification in the form accepted by the chmod and umask system calls. (To use the customary octal format the number must start with a 0 (zero).)",
+   "max": "511",
+   "min": "0",
+   "scope": "sighup",
+   "type": "integer"
+  },
+  "log_filename": {
+   "category": "Reporting and Logging / Where to Log",
+   "cmdline_option": false,
+   "default": "postgresql-%Y-%m-%d_%H%M%S.log",
+   "default_source": "help",
+   "desc": "Sets the file name pattern for log files.",
+   "scope": "sighup",
+   "type": "string"
+  },
+  "log_hostname": {
+   "category": "Reporting and Logging / What to Log",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Logs the host name in the connection logs. By default, connection logs only show the IP address of the connecting host. If you want them to show the host name you can turn this on, but depending on your host name resolution setup it might impose a non-negligible performance penalty.",
+   "scope": "sighup",
+   "type": "bool"
+  },
+  "log_line_prefix": {
+   "category": "Reporting and Logging / What to Log",
+   "cmdline_option": false,
+   "default": "%m [%p] ",
+   "default_source": "help",
+   "desc": "Controls information prefixed to each log line. If blank, no prefix is used.",
+   "scope": "sighup",
+   "type": "string"
+  },
+  "log_lock_waits": {
+   "category": "Reporting and Logging / What to Log",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Logs long lock waits.",
+   "scope": "superuser",
+   "type": "bool"
+  },
+  "log_min_duration_sample": {
+   "category": "Reporting and Logging / When to Log",
+   "cmdline_option": false,
+   "default": "-1 ms",
+   "default_source": "help",
+   "desc": "Sets the minimum execution time above which a sample of statements will be logged. Sampling is determined by log_statement_sample_rate. Zero logs a sample of all queries. -1 turns this feature off.",
+   "max": "2147483647",
+   "min": "-1",
+   "scope": "superuser",
+   "type": "integer"
+  },
+  "log_min_duration_statement": {
+   "category": "Reporting and Logging / When to Log",
+   "cmdline_option": false,
+   "default": "-1 ms",
+   "default_source": "help",
+   "desc": "Sets the minimum execution time above which all statements will be logged. Zero prints all queries. -1 turns this feature off.",
+   "max": "2147483647",
+   "min": "-1",
+   "scope": "superuser",
+   "type": "integer"
+  },
+  "log_min_error_statement": {
+   "category": "Reporting and Logging / When to Log",
+   "cmdline_option": false,
+   "default": "error",
+   "default_source": "help",
+   "desc": "Causes all statements generating error at or above this level to be logged. Each level includes all the levels that follow it. The later the level, the fewer messages are sent.",
+   "enum": [
+    "debug5",
+    "debug4",
+    "debug3",
+    "debug2",
+    "debug1",
+    "info",
+    "notice",
+    "warning",
+    "error",
+    "log",
+    "fatal",
+    "panic"
+   ],
+   "scope": "superuser",
+   "type": "enum"
+  },
+  "log_min_messages": {
+   "category": "Reporting and Logging / When to Log",
+   "cmdline_option": false,
+   "default": "warning",
+   "default_source": "help",
+   "desc": "Sets the message levels that are logged. Each level includes all the levels that follow it. The later the level, the fewer messages are sent.",
+   "enum": [
+    "debug5",
+    "debug4",
+    "debug3",
+    "debug2",
+    "debug1",
+    "info",
+    "notice",
+    "warning",
+    "error",
+    "log",
+    "fatal",
+    "panic"
+   ],
+   "scope": "superuser",
+   "type": "enum"
+  },
+  "log_parameter_max_length": {
+   "category": "Reporting and Logging / What to Log",
+   "cmdline_option": false,
+   "default": "-1 B",
+   "default_source": "help",
+   "desc": "Sets the maximum length in bytes of data logged for bind parameter values when logging statements. -1 to print values in full.",
+   "max": "1073741823",
+   "min": "-1",
+   "scope": "superuser",
+   "type": "integer"
+  },
+  "log_parameter_max_length_on_error": {
+   "category": "Reporting and Logging / What to Log",
+   "cmdline_option": false,
+   "default": "0 B",
+   "default_source": "help",
+   "desc": "Sets the maximum length in bytes of data logged for bind parameter values when logging statements, on error. -1 to print values in full.",
+   "max": "1073741823",
+   "min": "-1",
+   "scope": "user",
+   "type": "integer"
+  },
+  "log_parser_stats": {
+   "category": "Statistics / Monitoring",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Writes parser performance statistics to the server log.",
+   "scope": "superuser",
+   "type": "bool"
+  },
+  "log_planner_stats": {
+   "category": "Statistics / Monitoring",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Writes planner performance statistics to the server log.",
+   "scope": "superuser",
+   "type": "bool"
+  },
+  "log_recovery_conflict_waits": {
+   "category": "Reporting and Logging / What to Log",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Logs standby recovery conflict waits.",
+   "scope": "sighup",
+   "type": "bool"
+  },
+  "log_replication_commands": {
+   "category": "Reporting and Logging / What to Log",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Logs each replication command.",
+   "scope": "superuser",
+   "type": "bool"
+  },
+  "log_rotation_age": {
+   "category": "Reporting and Logging / Where to Log",
+   "cmdline_option": false,
+   "default": "1440 min",
+   "default_source": "help",
+   "desc": "Sets the amount of time to wait before forcing log file rotation.",
+   "max": "35791394",
+   "min": "0",
+   "scope": "sighup",
+   "type": "integer"
+  },
+  "log_rotation_size": {
+   "category": "Reporting and Logging / Where to Log",
+   "cmdline_option": false,
+   "default": "10240 kB",
+   "default_source": "help",
+   "desc": "Sets the maximum size a log file can reach before being rotated.",
+   "max": "2097151",
+   "min": "0",
+   "scope": "sighup",
+   "type": "integer"
+  },
+  "log_startup_progress_interval": {
+   "category": "Reporting and Logging / When to Log",
+   "cmdline_option": false,
+   "default": "10000 ms",
+   "default_source": "help",
+   "desc": "Time between progress updates for long-running startup operations. 0 turns this feature off.",
+   "max": "2147483647",
+   "min": "0",
+   "scope": "sighup",
+   "type": "integer"
+  },
+  "log_statement": {
+   "category": "Reporting and Logging / What to Log",
+   "cmdline_option": false,
+   "default": "none",
+   "default_source": "help",
+   "desc": "Sets the type of statements logged.",
+   "enum": [
+    "none",
+    "ddl",
+    "mod",
+    "all"
+   ],
+   "scope": "superuser",
+   "type": "enum"
+  },
+  "log_statement_sample_rate": {
+   "category": "Reporting and Logging / When to Log",
+   "cmdline_option": false,
+   "default": "1",
+   "default_source": "help",
+   "desc": "Fraction of statements exceeding log_min_duration_sample to be logged. Use a value between 0.0 (never log) and 1.0 (always log).",
+   "max": "1",
+   "min": "0",
+   "scope": "superuser",
+   "type": "real"
+  },
+  "log_statement_stats": {
+   "category": "Statistics / Monitoring",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Writes cumulative performance statistics to the server log.",
+   "scope": "superuser",
+   "type": "bool"
+  },
+  "log_temp_files": {
+   "category": "Reporting and Logging / What to Log",
+   "cmdline_option": false,
+   "default": "-1 kB",
+   "default_source": "help",
+   "desc": "Log the use of temporary files larger than this number of kilobytes. Zero logs all files. The default is -1 (turning this feature off).",
+   "max": "2147483647",
+   "min": "-1",
+   "scope": "superuser",
+   "type": "integer"
+  },
+  "log_timezone": {
+   "category": "Reporting and Logging / What to Log",
+   "cmdline_option": false,
+   "default": "GMT",
+   "default_source": "help",
+   "desc": "Sets the time zone to use in log messages.",
+   "scope": "sighup",
+   "type": "string"
+  },
+  "log_transaction_sample_rate": {
+   "category": "Reporting and Logging / When to Log",
+   "cmdline_option": false,
+   "default": "0",
+   "default_source": "help",
+   "desc": "Sets the fraction of transactions from which to log all statements. Use a value between 0.0 (never log) and 1.0 (log all statements for all transactions).",
+   "max": "1",
+   "min": "0",
+   "scope": "superuser",
+   "type": "real"
+  },
+  "log_truncate_on_rotation": {
+   "category": "Reporting and Logging / Where to Log",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Truncate existing log files of same name during log rotation.",
+   "scope": "sighup",
+   "type": "bool"
+  },
+  "logging_collector": {
+   "category": "Reporting and Logging / Where to Log",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Start a subprocess to capture stderr output and/or csvlogs into log files.",
+   "scope": "postmaster",
+   "type": "bool"
+  },
+  "logical_decoding_work_mem": {
+   "category": "Resource Usage / Memory",
+   "cmdline_option": false,
+   "default": "65536 kB",
+   "default_source": "help",
+   "desc": "Sets the maximum memory to be used for logical decoding. This much memory can be used by each internal reorder buffer before spilling to disk.",
+   "max": "2147483647",
+   "min": "64",
+   "scope": "user",
+   "type": "integer"
+  },
+  "maintenance_io_concurrency": {
+   "category": "Resource Usage / Asynchronous Behavior",
+   "cmdline_option": false,
+   "default": "10",
+   "default_source": "help",
+   "desc": "A variant of effective_io_concurrency that is used for maintenance work.",
+   "max": "1000",
+   "min": "0",
+   "scope": "user",
+   "type": "integer"
+  },
+  "maintenance_work_mem": {
+   "category": "Resource Usage / Memory",
+   "cmdline_option": false,
+   "default": "65536 kB",
+   "default_source": "help",
+   "desc": "Sets the maximum memory to be used for maintenance operations. This includes operations such as VACUUM and CREATE INDEX.",
+   "max": "2147483647",
+   "min": "1024",
+   "scope": "user",
+   "type": "integer"
+  },
+  "max_connections": {
+   "category": "Connections and Authentication / Connection Settings",
+   "cmdline_option": false,
+   "default": "100",
+   "default_source": "help",
+   "desc": "Sets the maximum number of concurrent connections.",
+   "max": "262143",
+   "min": "1",
+   "scope": "postmaster",
+   "type": "integer"
+  },
+  "max_files_per_process": {
+   "category": "Resource Usage / Kernel Resources",
+   "cmdline_option": false,
+   "default": "1000",
+   "default_source": "help",
+   "desc": "Sets the maximum number of simultaneously open files for each server process.",
+   "max": "2147483647",
+   "min": "64",
+   "scope": "postmaster",
+   "type": "integer"
+  },
+  "max_function_args": {
+   "category": "Preset Options",
+   "cmdline_option": false,
+   "default": "100",
+   "default_source": "help",
+   "desc": "Shows the maximum number of function arguments.",
+   "max": "100",
+   "min": "100",
+   "scope": "internal",
+   "type": "integer"
+  },
+  "max_identifier_length": {
+   "category": "Preset Options",
+   "cmdline_option": false,
+   "default": "63",
+   "default_source": "help",
+   "desc": "Shows the maximum identifier length.",
+   "max": "63",
+   "min": "63",
+   "scope": "internal",
+   "type": "integer"
+  },
+  "max_index_keys": {
+   "category": "Preset Options",
+   "cmdline_option": false,
+   "default": "32",
+   "default_source": "help",
+   "desc": "Shows the maximum number of index keys.",
+   "max": "32",
+   "min": "32",
+   "scope": "internal",
+   "type": "integer"
+  },
+  "max_locks_per_transaction": {
+   "category": "Lock Management",
+   "cmdline_option": false,
+   "default": "64",
+   "default_source": "help",
+   "desc": "Sets the maximum number of locks per transaction. The shared lock table is sized on the assumption that at most max_locks_per_transaction * max_connections distinct objects will need to be locked at any one time.",
+   "max": "2147483647",
+   "min": "10",
+   "scope": "postmaster",
+   "type": "integer"
+  },
+  "max_logical_replication_workers": {
+   "category": "Replication / Subscribers",
+   "cmdline_option": false,
+   "default": "4",
+   "default_source": "help",
+   "desc": "Maximum number of logical replication worker processes.",
+   "max": "262143",
+   "min": "0",
+   "scope": "postmaster",
+   "type": "integer"
+  },
+  "max_parallel_maintenance_workers": {
+   "category": "Resource Usage / Asynchronous Behavior",
+   "cmdline_option": false,
+   "default": "2",
+   "default_source": "help",
+   "desc": "Sets the maximum number of parallel processes per maintenance operation.",
+   "max": "1024",
+   "min": "0",
+   "scope": "user",
+   "type": "integer"
+  },
+  "max_parallel_workers": {
+   "category": "Resource Usage / Asynchronous Behavior",
+   "cmdline_option": false,
+   "default": "8",
+   "default_source": "help",
+   "desc": "Sets the maximum number of parallel workers that can be active at one time.",
+   "max": "1024",
+   "min": "0",
+   "scope": "user",
+   "type": "integer"
+  },
+  "max_parallel_workers_per_gather": {
+   "category": "Resource Usage / Asynchronous Behavior",
+   "cmdline_option": false,
+   "default": "2",
+   "default_source": "help",
+   "desc": "Sets the maximum number of parallel processes per executor node.",
+   "max": "1024",
+   "min": "0",
+   "scope": "user",
+   "type": "integer"
+  },
+  "max_pred_locks_per_page": {
+   "category": "Lock Management",
+   "cmdline_option": false,
+   "default": "2",
+   "default_source": "help",
+   "desc": "Sets the maximum number of predicate-locked tuples per page. If more than this number of tuples on the same page are locked by a connection, those locks are replaced by a page-level lock.",
+   "max": "2147483647",
+   "min": "0",
+   "scope": "sighup",
+   "type": "integer"
+  },
+  "max_pred_locks_per_relation": {
+   "category": "Lock Management",
+   "cmdline_option": false,
+   "default": "-2",
+   "default_source": "help",
+   "desc": "Sets the maximum number of predicate-locked pages and tuples per relation. If more than this total of pages and tuples in the same relation are locked by a connection, those locks are replaced by a relation-level lock.",
+   "max": "2147483647",
+   "min": "-2147483648",
+   "scope": "sighup",
+   "type": "integer"
+  },
+  "max_pred_locks_per_transaction": {
+   "category": "Lock Management",
+   "cmdline_option": false,
+   "default": "64",
+   "default_source": "help",
+   "desc": "Sets the maximum number of predicate locks per transaction. The shared predicate lock table is sized on the assumption that at most max_pred_locks_per_transaction * max_connections distinct objects will need to be locked at any one time.",
+   "max": "2147483647",
+   "min": "10",
+   "scope": "postmaster",
+   "type": "integer"
+  },
+  "max_prepared_transactions": {
+   "category": "Resource Usage / Memory",
+   "cmdline_option": false,
+   "default": "0",
+   "default_source": "help",
+   "desc": "Sets the maximum number of simultaneously prepared transactions.",
+   "max": "262143",
+   "min": "0",
+   "scope": "postmaster",
+   "type": "integer"
+  },
+  "max_replication_slots": {
+   "category": "Replication / Sending Servers",
+   "cmdline_option": false,
+   "default": "10",
+   "default_source": "help",
+   "desc": "Sets the maximum number of simultaneously defined replication slots.",
+   "max": "262143",
+   "min": "0",
+   "scope": "postmaster",
+   "type": "integer"
+  },
+  "max_slot_wal_keep_size": {
+   "category": "Replication / Sending Servers",
+   "cmdline_option": false,
+   "default": "-1 MB",
+   "default_source": "help",
+   "desc": "Sets the maximum WAL size that can be reserved by replication slots. Replication slots will be marked as failed, and segments released for deletion or recycling, if this much space is occupied by WAL on disk.",
+   "max": "2147483647",
+   "min": "-1",
+   "scope": "sighup",
+   "type": "integer"
+  },
+  "max_stack_depth": {
+   "category": "Resource Usage / Memory",
+   "cmdline_option": false,
+   "default": "100 kB",
+   "default_source": "help",
+   "desc": "Sets the maximum stack depth, in kilobytes.",
+   "max": "2147483647",
+   "min": "100",
+   "scope": "superuser",
+   "type": "integer"
+  },
+  "max_standby_archive_delay": {
+   "category": "Replication / Standby Servers",
+   "cmdline_option": false,
+   "default": "30000 ms",
+   "default_source": "help",
+   "desc": "Sets the maximum delay before canceling queries when a hot standby server is processing archived WAL data.",
+   "max": "2147483647",
+   "min": "-1",
+   "scope": "sighup",
+   "type": "integer"
+  },
+  "max_standby_streaming_delay": {
+   "category": "Replication / Standby Servers",
+   "cmdline_option": false,
+   "default": "30000 ms",
+   "default_source": "help",
+   "desc": "Sets the maximum delay before canceling queries when a hot standby server is processing streamed WAL data.",
+   "max": "2147483647",
+   "min": "-1",
+   "scope": "sighup",
+   "type": "integer"
+  },
+  "max_sync_workers_per_subscription": {
+   "category": "Replication / Subscribers",
+   "cmdline_option": false,
+   "default": "2",
+   "default_source": "help",
+   "desc": "Maximum number of table synchronization workers per subscription.",
+   "max": "262143",
+   "min": "0",
+   "scope": "sighup",
+   "type": "integer"
+  },
+  "max_wal_senders": {
+   "category": "Replication / Sending Servers",
+   "cmdline_option": false,
+   "default": "10",
+   "default_source": "help",
+   "desc": "Sets the maximum number of simultaneously running WAL sender processes.",
+   "max": "262143",
+   "min": "0",
+   "scope": "postmaster",
+   "type": "integer"
+  },
+  "max_wal_size": {
+   "category": "Write-Ahead Log / Checkpoints",
+   "cmdline_option": false,
+   "default": "1024 MB",
+   "default_source": "help",
+   "desc": "Sets the WAL size that triggers a checkpoint.",
+   "max": "2147483647",
+   "min": "2",
+   "scope": "sighup",
+   "type": "integer"
+  },
+  "max_worker_processes": {
+   "category": "Resource Usage / Asynchronous Behavior",
+   "cmdline_option": false,
+   "default": "8",
+   "default_source": "help",
+   "desc": "Maximum number of concurrent worker processes.",
+   "max": "262143",
+   "min": "0",
+   "scope": "postmaster",
+   "type": "integer"
+  },
+  "min_dynamic_shared_memory": {
+   "category": "Resource Usage / Memory",
+   "cmdline_option": false,
+   "default": "0 MB",
+   "default_source": "help",
+   "desc": "Amount of dynamic shared memory reserved at startup.",
+   "max": "2147483647",
+   "min": "0",
+   "scope": "postmaster",
+   "type": "integer"
+  },
+  "min_parallel_index_scan_size": {
+   "category": "Query Tuning / Planner Cost Constants",
+   "cmdline_option": false,
+   "default": "64 8kB",
+   "default_source": "help",
+   "desc": "Sets the minimum amount of index data for a parallel scan. If the planner estimates that it will read a number of index pages too small to reach this limit, a parallel scan will not be considered.",
+   "max": "715827882",
+   "min": "0",
+   "scope": "user",
+   "type": "integer"
+  },
+  "min_parallel_table_scan_size": {
+   "category": "Query Tuning / Planner Cost Constants",
+   "cmdline_option": false,
+   "default": "1024 8kB",
+   "default_source": "help",
+   "desc": "Sets the minimum amount of table data for a parallel scan. If the planner estimates that it will read a number of table pages too small to reach this limit, a parallel scan will not be considered.",
+   "max": "715827882",
+   "min": "0",
+   "scope": "user",
+   "type": "integer"
+  },
+  "min_wal_size": {
+   "category": "Write-Ahead Log / Checkpoints",
+   "cmdline_option": false,
+   "default": "80 MB",
+   "default_source": "help",
+   "desc": "Sets the minimum size to shrink the WAL to.",
+   "max": "2147483647",
+   "min": "2",
+   "scope": "sighup",
+   "type": "integer"
+  },
+  "old_snapshot_threshold": {
+   "category": "Resource Usage / Asynchronous Behavior",
+   "cmdline_option": false,
+   "default": "-1 min",
+   "default_source": "help",
+   "desc": "Time before a snapshot is too old to read pages changed after the snapshot was taken. A value of -1 disables this feature.",
+   "max": "86400",
+   "min": "-1",
+   "scope": "postmaster",
+   "type": "integer"
+  },
+  "parallel_leader_participation": {
+   "category": "Resource Usage / Asynchronous Behavior",
+   "cmdline_option": false,
+   "default": "on",
+   "default_source": "help",
+   "desc": "Controls whether Gather and Gather Merge also run subplans. Should gather nodes also run subplans or just gather tuples?",
+   "scope": "user",
+   "type": "bool"
+  },
+  "parallel_setup_cost": {
+   "category": "Query Tuning / Planner Cost Constants",
+   "cmdline_option": false,
+   "default": "1000",
+   "default_source": "help",
+   "desc": "Sets the planner's estimate of the cost of starting up worker processes for parallel query.",
+   "max": "1.79769e+308",
+   "min": "0",
+   "scope": "user",
+   "type": "real"
+  },
+  "parallel_tuple_cost": {
+   "category": "Query Tuning / Planner Cost Constants",
+   "cmdline_option": false,
+   "default": "0.1",
+   "default_source": "help",
+   "desc": "Sets the planner's estimate of the cost of passing each tuple (row) from worker to leader backend.",
+   "max": "1.79769e+308",
+   "min": "0",
+   "scope": "user",
+   "type": "real"
+  },
+  "password_encryption": {
+   "category": "Connections and Authentication / Authentication",
+   "cmdline_option": false,
+   "default": "scram-sha-256",
+   "default_source": "help",
+   "desc": "Chooses the algorithm for encrypting passwords.",
+   "enum": [
+    "md5",
+    "scram-sha-256"
+   ],
+   "scope": "user",
+   "type": "enum"
+  },
+  "plan_cache_mode": {
+   "category": "Query Tuning / Other Planner Options",
+   "cmdline_option": false,
+   "default": "auto",
+   "default_source": "help",
+   "desc": "Controls the planner's selection of custom or generic plan. Prepared statements can have custom and generic plans, and the planner will attempt to choose which is better.  This can be set to override the default behavior.",
+   "enum": [
+    "auto",
+    "force_generic_plan",
+    "force_custom_plan"
+   ],
+   "scope": "user",
+   "type": "enum"
+  },
+  "port": {
+   "category": "Connections and Authentication / Connection Settings",
+   "cmdline_option": false,
+   "default": "5432",
+   "default_source": "help",
+   "desc": "Sets the TCP port the server listens on.",
+   "max": "65535",
+   "min": "1",
+   "scope": "postmaster",
+   "type": "integer"
+  },
+  "post_auth_delay": {
+   "category": "Developer Options",
+   "cmdline_option": false,
+   "default": "0 s",
+   "default_source": "help",
+   "desc": "Sets the amount of time to wait after authentication on connection startup. This allows attaching a debugger to the process.",
+   "max": "2147",
+   "min": "0",
+   "scope": "backend",
+   "type": "integer"
+  },
+  "pre_auth_delay": {
+   "category": "Developer Options",
+   "cmdline_option": false,
+   "default": "0 s",
+   "default_source": "help",
+   "desc": "Sets the amount of time to wait before authentication on connection startup. This allows attaching a debugger to the process.",
+   "max": "60",
+   "min": "0",
+   "scope": "sighup",
+   "type": "integer"
+  },
+  "primary_conninfo": {
+   "category": "Replication / Standby Servers",
+   "cmdline_option": false,
+   "default": "",
+   "default_source": "help",
+   "desc": "Sets the connection string to be used to connect to the sending server.",
+   "scope": "sighup",
+   "type": "string"
+  },
+  "primary_slot_name": {
+   "category": "Replication / Standby Servers",
+   "cmdline_option": false,
+   "default": "",
+   "default_source": "help",
+   "desc": "Sets the name of the replication slot to use on the sending server.",
+   "scope": "sighup",
+   "type": "string"
+  },
+  "promote_trigger_file": {
+   "category": "Replication / Standby Servers",
+   "cmdline_option": false,
+   "default": "",
+   "default_source": "help",
+   "desc": "Specifies a file name whose presence ends recovery in the standby.",
+   "scope": "sighup",
+   "type": "string"
+  },
+  "quote_all_identifiers": {
+   "category": "Version and Platform Compatibility / Previous PostgreSQL Versions",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "When generating SQL fragments, quote all identifiers.",
+   "scope": "user",
+   "type": "bool"
+  },
+  "random_page_cost": {
+   "category": "Query Tuning / Planner Cost Constants",
+   "cmdline_option": false,
+   "default": "4",
+   "default_source": "help",
+   "desc": "Sets the planner's estimate of the cost of a nonsequentially fetched disk page.",
+   "max": "1.79769e+308",
+   "min": "0",
+   "scope": "user",
+   "type": "real"
+  },
+  "recovery_end_command": {
+   "category": "Write-Ahead Log / Archive Recovery",
+   "cmdline_option": false,
+   "default": "",
+   "default_source": "help",
+   "desc": "Sets the shell command that will be executed once at the end of recovery.",
+   "scope": "sighup",
+   "type": "string"
+  },
+  "recovery_init_sync_method": {
+   "category": "Error Handling",
+   "cmdline_option": false,
+   "default": "fsync",
+   "default_source": "help",
+   "desc": "Sets the method for synchronizing the data directory before crash recovery.",
+   "enum": [
+    "fsync",
+    "syncfs"
+   ],
+   "scope": "sighup",
+   "type": "enum"
+  },
+  "recovery_min_apply_delay": {
+   "category": "Replication / Standby Servers",
+   "cmdline_option": false,
+   "default": "0 ms",
+   "default_source": "help",
+   "desc": "Sets the minimum delay for applying changes during recovery.",
+   "max": "2147483647",
+   "min": "0",
+   "scope": "sighup",
+   "type": "integer"
+  },
+  "recovery_prefetch": {
+   "category": "Write-Ahead Log / Recovery",
+   "cmdline_option": false,
+   "default": "try",
+   "default_source": "help",
+   "desc": "Prefetch referenced blocks during recovery. Look ahead in the WAL to find references to uncached data.",
+   "enum": [
+    "off",
+    "on",
+    "try"
+   ],
+   "scope": "sighup",
+   "type": "enum"
+  },
+  "recovery_target": {
+   "category": "Write-Ahead Log / Recovery Target",
+   "cmdline_option": false,
+   "default": "",
+   "default_source": "help",
+   "desc": "Set to \"immediate\" to end recovery as soon as a consistent state is reached.",
+   "scope": "postmaster",
+   "type": "string"
+  },
+  "recovery_target_action": {
+   "category": "Write-Ahead Log / Recovery Target",
+   "cmdline_option": false,
+   "default": "pause",
+   "default_source": "help",
+   "desc": "Sets the action to perform upon reaching the recovery target.",
+   "enum": [
+    "pause",
+    "promote",
+    "shutdown"
+   ],
+   "scope": "postmaster",
+   "type": "enum"
+  },
+  "recovery_target_inclusive": {
+   "category": "Write-Ahead Log / Recovery Target",
+   "cmdline_option": false,
+   "default": "on",
+   "default_source": "help",
+   "desc": "Sets whether to include or exclude transaction with recovery target.",
+   "scope": "postmaster",
+   "type": "bool"
+  },
+  "recovery_target_lsn": {
+   "category": "Write-Ahead Log / Recovery Target",
+   "cmdline_option": false,
+   "default": "",
+   "default_source": "help",
+   "desc": "Sets the LSN of the write-ahead log location up to which recovery will proceed.",
+   "scope": "postmaster",
+   "type": "string"
+  },
+  "recovery_target_name": {
+   "category": "Write-Ahead Log / Recovery Target",
+   "cmdline_option": false,
+   "default": "",
+   "default_source": "help",
+   "desc": "Sets the named restore point up to which recovery will proceed.",
+   "scope": "postmaster",
+   "type": "string"
+  },
+  "recovery_target_time": {
+   "category": "Write-Ahead Log / Recovery Target",
+   "cmdline_option": false,
+   "default": "",
+   "default_source": "help",
+   "desc": "Sets the time stamp up to which recovery will proceed.",
+   "scope": "postmaster",
+   "type": "string"
+  },
+  "recovery_target_timeline": {
+   "category": "Write-Ahead Log / Recovery Target",
+   "cmdline_option": false,
+   "default": "latest",
+   "default_source": "help",
+   "desc": "Specifies the timeline to recover into.",
+   "scope": "postmaster",
+   "type": "string"
+  },
+  "recovery_target_xid": {
+   "category": "Write-Ahead Log / Recovery Target",
+   "cmdline_option": false,
+   "default": "",
+   "default_source": "help",
+   "desc": "Sets the transaction ID up to which recovery will proceed.",
+   "scope": "postmaster",
+   "type": "string"
+  },
+  "recursive_worktable_factor": {
+   "category": "Query Tuning / Other Planner Options",
+   "cmdline_option": false,
+   "default": "10",
+   "default_source": "help",
+   "desc": "Sets the planner's estimate of the average size of a recursive query's working table.",
+   "max": "1e+06",
+   "min": "0.001",
+   "scope": "user",
+   "type": "real"
+  },
+  "remove_temp_files_after_crash": {
+   "category": "Developer Options",
+   "cmdline_option": false,
+   "default": "on",
+   "default_source": "help",
+   "desc": "Remove temporary files after backend crash.",
+   "scope": "sighup",
+   "type": "bool"
+  },
+  "restart_after_crash": {
+   "category": "Error Handling",
+   "cmdline_option": false,
+   "default": "on",
+   "default_source": "help",
+   "desc": "Reinitialize server after backend crash.",
+   "scope": "sighup",
+   "type": "bool"
+  },
+  "restore_command": {
+   "category": "Write-Ahead Log / Archive Recovery",
+   "cmdline_option": false,
+   "default": "",
+   "default_source": "help",
+   "desc": "Sets the shell command that will be called to retrieve an archived WAL file.",
+   "scope": "sighup",
+   "type": "string"
+  },
+  "row_security": {
+   "category": "Client Connection Defaults / Statement Behavior",
+   "cmdline_option": false,
+   "default": "on",
+   "default_source": "help",
+   "desc": "Enable row security. When enabled, row security will be applied to all users.",
+   "scope": "user",
+   "type": "bool"
+  },
+  "search_path": {
+   "category": "Client Connection Defaults / Statement Behavior",
+   "cmdline_option": false,
+   "default": "\"$user\", public",
+   "default_source": "help",
+   "desc": "Sets the schema search order for names that are not schema-qualified.",
+   "scope": "user",
+   "type": "string"
+  },
+  "segment_size": {
+   "category": "Preset Options",
+   "cmdline_option": false,
+   "default": "131072 8kB",
+   "default_source": "help",
+   "desc": "Shows the number of pages per disk file.",
+   "max": "131072",
+   "min": "131072",
+   "scope": "internal",
+   "type": "integer"
+  },
+  "seq_page_cost": {
+   "category": "Query Tuning / Planner Cost Constants",
+   "cmdline_option": false,
+   "default": "1",
+   "default_source": "help",
+   "desc": "Sets the planner's estimate of the cost of a sequentially fetched disk page.",
+   "max": "1.79769e+308",
+   "min": "0",
+   "scope": "user",
+   "type": "real"
+  },
+  "server_encoding": {
+   "category": "Preset Options",
+   "cmdline_option": false,
+   "default": "SQL_ASCII",
+   "default_source": "help",
+   "desc": "Shows the server (database) character set encoding.",
+   "scope": "internal",
+   "type": "string"
+  },
+  "server_version": {
+   "category": "Preset Options",
+   "cmdline_option": false,
+   "default": "15.4 (Debian 15.4-2.pgdg120+1)",
+   "default_source": "derived",
+   "desc": "Shows the server version.",
+   "scope": "internal",
+   "type": "string"
+  },
+  "server_version_num": {
+   "category": "Preset Options",
+   "cmdline_option": false,
+   "default": "150004",
+   "default_source": "derived",
+   "desc": "Shows the server version as an integer.",
+   "max": "150004",
+   "min": "150004",
+   "scope": "internal",
+   "type": "integer"
+  },
+  "session_preload_libraries": {
+   "category": "Client Connection Defaults / Shared Library Preloading",
+   "cmdline_option": false,
+   "default": "",
+   "default_source": "help",
+   "desc": "Lists shared libraries to preload into each backend.",
+   "scope": "superuser",
+   "type": "string"
+  },
+  "session_replication_role": {
+   "category": "Client Connection Defaults / Statement Behavior",
+   "cmdline_option": false,
+   "default": "origin",
+   "default_source": "help",
+   "desc": "Sets the session's behavior for triggers and rewrite rules.",
+   "enum": [
+    "origin",
+    "replica",
+    "local"
+   ],
+   "scope": "superuser",
+   "type": "enum"
+  },
+  "shared_buffers": {
+   "category": "Resource Usage / Memory",
+   "cmdline_option": false,
+   "default": "16384 8kB",
+   "default_source": "help",
+   "desc": "Sets the number of shared memory buffers used by the server.",
+   "max": "1073741823",
+   "min": "16",
+   "scope": "postmaster",
+   "type": "integer"
+  },
+  "shared_memory_size": {
+   "category": "Preset Options",
+   "cmdline_option": false,
+   "default": "0 MB",
+   "default_source": "help",
+   "desc": "Shows the size of the server's main shared memory area (rounded up to the nearest MB).",
+   "max": "2147483647",
+   "min": "0",
+   "scope": "internal",
+   "type": "integer"
+  },
+  "shared_memory_size_in_huge_pages": {
+   "category": "Preset Options",
+   "cmdline_option": false,
+   "default": "-1",
+   "default_source": "help",
+   "desc": "Shows the number of huge pages needed for the main shared memory area. -1 indicates that the value could not be determined.",
+   "max": "2147483647",
+   "min": "-1",
+   "scope": "internal",
+   "type": "integer"
+  },
+  "shared_memory_type": {
+   "category": "Resource Usage / Memory",
+   "cmdline_option": false,
+   "default": "mmap",
+   "default_source": "help",
+   "desc": "Selects the shared memory implementation used for the main shared memory region.",
+   "enum": [
+    "sysv",
+    "mmap"
+   ],
+   "scope": "postmaster",
+   "type": "enum"
+  },
+  "shared_preload_libraries": {
+   "category": "Client Connection Defaults / Shared Library Preloading",
+   "cmdline_option": false,
+   "default": "",
+   "default_source": "help",
+   "desc": "Lists shared libraries to preload into server.",
+   "scope": "postmaster",
+   "type": "string"
+  },
+  "ssl": {
+   "category": "Connections and Authentication / SSL",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Enables SSL connections.",
+   "scope": "sighup",
+   "type": "bool"
+  },
+  "ssl_ca_file": {
+   "category": "Connections and Authentication / SSL",
+   "cmdline_option": false,
+   "default": "",
+   "default_source": "help",
+   "desc": "Location of the SSL certificate authority file.",
+   "scope": "sighup",
+   "type": "string"
+  },
+  "ssl_cert_file": {
+   "category": "Connections and Authentication / SSL",
+   "cmdline_option": false,
+   "default": "server.crt",
+   "default_source": "help",
+   "desc": "Location of the SSL server certificate file.",
+   "scope": "sighup",
+   "type": "string"
+  },
+  "ssl_ciphers": {
+   "category": "Connections and Authentication / SSL",
+   "cmdline_option": false,
+   "default": "HIGH:MEDIUM:+3DES:!aNULL",
+   "default_source": "help",
+   "desc": "Sets the list of allowed SSL ciphers.",
+   "scope": "sighup",
+   "type": "string"
+  },
+  "ssl_crl_dir": {
+   "category": "Connections and Authentication / SSL",
+   "cmdline_option": false,
+   "default": "",
+   "default_source": "help",
+   "desc": "Location of the SSL certificate revocation list directory.",
+   "scope": "sighup",
+   "type": "string"
+  },
+  "ssl_crl_file": {
+   "category": "Connections and Authentication / SSL",
+   "cmdline_option": false,
+   "default": "",
+   "default_source": "help",
+   "desc": "Location of the SSL certificate revocation list file.",
+   "scope": "sighup",
+   "type": "string"
+  },
+  "ssl_dh_params_file": {
+   "category": "Connections and Authentication / SSL",
+   "cmdline_option": false,
+   "default": "",
+   "default_source": "help",
+   "desc": "Location of the SSL DH parameters file.",
+   "scope": "sighup",
+   "type": "string"
+  },
+  "ssl_ecdh_curve": {
+   "category": "Connections and Authentication / SSL",
+   "cmdline_option": false,
+   "default": "prime256v1",
+   "default_source": "help",
+   "desc": "Sets the curve to use for ECDH.",
+   "scope": "sighup",
+   "type": "string"
+  },
+  "ssl_key_file": {
+   "category": "Connections and Authentication / SSL",
+   "cmdline_option": false,
+   "default": "server.key",
+   "default_source": "help",
+   "desc": "Location of the SSL server private key file.",
+   "scope": "sighup",
+   "type": "string"
+  },
+  "ssl_library": {
+   "category": "Preset Options",
+   "cmdline_option": false,
+   "default": "OpenSSL",
+   "default_source": "help",
+   "desc": "Shows the name of the SSL library.",
+   "scope": "internal",
+   "type": "string"
+  },
+  "ssl_max_protocol_version": {
+   "category": "Connections and Authentication / SSL",
+   "cmdline_option": false,
+   "default": "",
+   "default_source": "help",
+   "desc": "Sets the maximum SSL/TLS protocol version to use.",
+   "enum": [
+    "",
+    "TLSv1",
+    "TLSv1.1",
+    "TLSv1.2",
+    "TLSv1.3"
+   ],
+   "scope": "sighup",
+   "type": "enum"
+  },
+  "ssl_min_protocol_version": {
+   "category": "Connections and Authentication / SSL",
+   "cmdline_option": false,
+   "default": "TLSv1.2",
+   "default_source": "help",
+   "desc": "Sets the minimum SSL/TLS protocol version to use.",
+   "enum": [
+    "TLSv1",
+    "TLSv1.1",
+    "TLSv1.2",
+    "TLSv1.3"
+   ],
+   "scope": "sighup",
+   "type": "enum"
+  },
+  "ssl_passphrase_command": {
+   "category": "Connections and Authentication / SSL",
+   "cmdline_option": false,
+   "default": "",
+   "default_source": "help",
+   "desc": "Command to obtain passphrases for SSL.",
+   "scope": "sighup",
+   "type": "string"
+  },
+  "ssl_passphrase_command_supports_reload": {
+   "category": "Connections and Authentication / SSL",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Controls whether ssl_passphrase_command is called during server reload.",
+   "scope": "sighup",
+   "type": "bool"
+  },
+  "ssl_prefer_server_ciphers": {
+   "category": "Connections and Authentication / SSL",
+   "cmdline_option": false,
+   "default": "on",
+   "default_source": "help",
+   "desc": "Give priority to server ciphersuite order.",
+   "scope": "sighup",
+   "type": "bool"
+  },
+  "standard_conforming_strings": {
+   "category": "Version and Platform Compatibility / Previous PostgreSQL Versions",
+   "cmdline_option": false,
+   "default": "on",
+   "default_source": "help",
+   "desc": "Causes '...' strings to treat backslashes literally.",
+   "scope": "user",
+   "type": "bool"
+  },
+  "statement_timeout": {
+   "category": "Client Connection Defaults / Statement Behavior",
+   "cmdline_option": false,
+   "default": "0 ms",
+   "default_source": "help",
+   "desc": "Sets the maximum allowed duration of any statement. A value of 0 turns off the timeout.",
+   "max": "2147483647",
+   "min": "0",
+   "scope": "user",
+   "type": "integer"
+  },
+  "stats_fetch_consistency": {
+   "category": "Statistics / Cumulative Query and Index Statistics",
+   "cmdline_option": false,
+   "default": "cache",
+   "default_source": "help",
+   "desc": "Sets the consistency of accesses to statistics data.",
+   "enum": [
+    "none",
+    "cache",
+    "snapshot"
+   ],
+   "scope": "user",
+   "type": "enum"
+  },
+  "superuser_reserved_connections": {
+   "category": "Connections and Authentication / Connection Settings",
+   "cmdline_option": false,
+   "default": "3",
+   "default_source": "help",
+   "desc": "Sets the number of connection slots reserved for superusers.",
+   "max": "262143",
+   "min": "0",
+   "scope": "postmaster",
+   "type": "integer"
+  },
+  "synchronize_seqscans": {
+   "category": "Version and Platform Compatibility / Previous PostgreSQL Versions",
+   "cmdline_option": false,
+   "default": "on",
+   "default_source": "help",
+   "desc": "Enable synchronized sequential scans.",
+   "scope": "user",
+   "type": "bool"
+  },
+  "synchronous_commit": {
+   "category": "Write-Ahead Log / Settings",
+   "cmdline_option": false,
+   "default": "on",
+   "default_source": "help",
+   "desc": "Sets the current transaction's synchronization level.",
+   "enum": [
+    "local",
+    "remote_write",
+    "remote_apply",
+    "on",
+    "off"
+   ],
+   "scope": "user",
+   "type": "enum"
+  },
+  "synchronous_standby_names": {
+   "category": "Replication / Primary Server",
+   "cmdline_option": false,
+   "default": "",
+   "default_source": "help",
+   "desc": "Number of synchronous standbys and list of names of potential synchronous ones.",
+   "scope": "sighup",
+   "type": "string"
+  },
+  "syslog_facility": {
+   "category": "Reporting and Logging / Where to Log",
+   "cmdline_option": false,
+   "default": "local0",
+   "default_source": "help",
+   "desc": "Sets the syslog \"facility\" to be used when syslog enabled.",
+   "enum": [
+    "local0",
+    "local1",
+    "local2",
+    "local3",
+    "local4",
+    "local5",
+    "local6",
+    "local7"
+   ],
+   "scope": "sighup",
+   "type": "enum"
+  },
+  "syslog_ident": {
+   "category": "Reporting and Logging / Where to Log",
+   "cmdline_option": false,
+   "default": "postgres",
+   "default_source": "help",
+   "desc": "Sets the program name used to identify PostgreSQL messages in syslog.",
+   "scope": "sighup",
+   "type": "string"
+  },
+  "syslog_sequence_numbers": {
+   "category": "Reporting and Logging / Where to Log",
+   "cmdline_option": false,
+   "default": "on",
+   "default_source": "help",
+   "desc": "Add sequence number to syslog messages to avoid duplicate suppression.",
+   "scope": "sighup",
+   "type": "bool"
+  },
+  "syslog_split_messages": {
+   "category": "Reporting and Logging / Where to Log",
+   "cmdline_option": false,
+   "default": "on",
+   "default_source": "help",
+   "desc": "Split messages sent to syslog by lines and to fit into 1024 bytes.",
+   "scope": "sighup",
+   "type": "bool"
+  },
+  "tcp_keepalives_count": {
+   "category": "Connections and Authentication / Connection Settings",
+   "cmdline_option": false,
+   "default": "0",
+   "default_source": "help",
+   "desc": "Maximum number of TCP keepalive retransmits. Number of consecutive keepalive retransmits that can be lost before a connection is considered dead. A value of 0 uses the system default.",
+   "max": "2147483647",
+   "min": "0",
+   "scope": "user",
+   "type": "integer"
+  },
+  "tcp_keepalives_idle": {
+   "category": "Connections and Authentication / Connection Settings",
+   "cmdline_option": false,
+   "default": "0 s",
+   "default_source": "help",
+   "desc": "Time between issuing TCP keepalives. A value of 0 uses the system default.",
+   "max": "2147483647",
+   "min": "0",
+   "scope": "user",
+   "type": "integer"
+  },
+  "tcp_keepalives_interval": {
+   "category": "Connections and Authentication / Connection Settings",
+   "cmdline_option": false,
+   "default": "0 s",
+   "default_source": "help",
+   "desc": "Time between TCP keepalive retransmits. A value of 0 uses the system default.",
+   "max": "2147483647",
+   "min": "0",
+   "scope": "user",
+   "type": "integer"
+  },
+  "tcp_user_timeout": {
+   "category": "Connections and Authentication / Connection Settings",
+   "cmdline_option": false,
+   "default": "0 ms",
+   "default_source": "help",
+   "desc": "TCP user timeout. A value of 0 uses the system default.",
+   "max": "2147483647",
+   "min": "0",
+   "scope": "user",
+   "type": "integer"
+  },
+  "temp_buffers": {
+   "category": "Resource Usage / Memory",
+   "cmdline_option": false,
+   "default": "1024 8kB",
+   "default_source": "help",
+   "desc": "Sets the maximum number of temporary buffers used by each session.",
+   "max": "1073741823",
+   "min": "100",
+   "scope": "user",
+   "type": "integer"
+  },
+  "temp_file_limit": {
+   "category": "Resource Usage / Disk",
+   "cmdline_option": false,
+   "default": "-1 kB",
+   "default_source": "help",
+   "desc": "Limits the total size of all temporary files used by each process. -1 means no limit.",
+   "max": "2147483647",
+   "min": "-1",
+   "scope": "superuser",
+   "type": "integer"
+  },
+  "temp_tablespaces": {
+   "category": "Client Connection Defaults / Statement Behavior",
+   "cmdline_option": false,
+   "default": "",
+   "default_source": "help",
+   "desc": "Sets the tablespace(s) to use for temporary tables and sort files.",
+   "scope": "user",
+   "type": "string"
+  },
+  "timezone": {
+   "category": "Client Connection Defaults / Locale and Formatting",
+   "cmdline_option": false,
+   "default": "GMT",
+   "default_source": "help",
+   "desc": "Sets the time zone for displaying and interpreting time stamps.",
+   "orig": "TimeZone",
+   "scope": "user",
+   "type": "string"
+  },
+  "timezone_abbreviations": {
+   "category": "Client Connection Defaults / Locale and Formatting",
+   "cmdline_option": false,
+   "default": "Default",
+   "default_source": "runtime",
+   "desc": "Selects a file of time zone abbreviations.",
+   "scope": "user",
+   "type": "string"
+  },
+  "trace_notify": {
+   "category": "Developer Options",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Generates debugging output for LISTEN and NOTIFY.",
+   "scope": "user",
+   "type": "bool"
+  },
+  "trace_recovery_messages": {
+   "category": "Developer Options",
+   "cmdline_option": false,
+   "default": "log",
+   "default_source": "help",
+   "desc": "Enables logging of recovery-related debugging information. Each level includes all the levels that follow it. The later the level, the fewer messages are sent.",
+   "enum": [
+    "debug5",
+    "debug4",
+    "debug3",
+    "debug2",
+    "debug1",
+    "log",
+    "notice",
+    "warning",
+    "error"
+   ],
+   "scope": "sighup",
+   "type": "enum"
+  },
+  "trace_sort": {
+   "category": "Developer Options",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Emit information about resource usage in sorting.",
+   "scope": "user",
+   "type": "bool"
+  },
+  "track_activities": {
+   "category": "Statistics / Cumulative Query and Index Statistics",
+   "cmdline_option": false,
+   "default": "on",
+   "default_source": "help",
+   "desc": "Collects information about executing commands. Enables the collection of information on the currently executing command of each session, along with the time at which that command began execution.",
+   "scope": "superuser",
+   "type": "bool"
+  },
+  "track_activity_query_size": {
+   "category": "Statistics / Cumulative Query and Index Statistics",
+   "cmdline_option": false,
+   "default": "1024 B",
+   "default_source": "help",
+   "desc": "Sets the size reserved for pg_stat_activity.query, in bytes.",
+   "max": "1048576",
+   "min": "100",
+   "scope": "postmaster",
+   "type": "integer"
+  },
+  "track_commit_timestamp": {
+   "category": "Replication / Sending Servers",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Collects transaction commit time.",
+   "scope": "postmaster",
+   "type": "bool"
+  },
+  "track_counts": {
+   "category": "Statistics / Cumulative Query and Index Statistics",
+   "cmdline_option": false,
+   "default": "on",
+   "default_source": "help",
+   "desc": "Collects statistics on database activity.",
+   "scope": "superuser",
+   "type": "bool"
+  },
+  "track_functions": {
+   "category": "Statistics / Cumulative Query and Index Statistics",
+   "cmdline_option": false,
+   "default": "none",
+   "default_source": "help",
+   "desc": "Collects function-level statistics on database activity.",
+   "enum": [
+    "none",
+    "pl",
+    "all"
+   ],
+   "scope": "superuser",
+   "type": "enum"
+  },
+  "track_io_timing": {
+   "category": "Statistics / Cumulative Query and Index Statistics",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Collects timing statistics for database I/O activity.",
+   "scope": "superuser",
+   "type": "bool"
+  },
+  "track_wal_io_timing": {
+   "category": "Statistics / Cumulative Query and Index Statistics",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Collects timing statistics for WAL I/O activity.",
+   "scope": "superuser",
+   "type": "bool"
+  },
+  "transaction_deferrable": {
+   "category": "Client Connection Defaults / Statement Behavior",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Whether to defer a read-only serializable transaction until it can be executed with no possible serialization failures.",
+   "scope": "user",
+   "type": "bool"
+  },
+  "transaction_isolation": {
+   "category": "Client Connection Defaults / Statement Behavior",
+   "cmdline_option": false,
+   "default": "read committed",
+   "default_source": "help",
+   "desc": "Sets the current transaction's isolation level.",
+   "enum": [
+    "serializable",
+    "repeatable read",
+    "read committed",
+    "read uncommitted"
+   ],
+   "scope": "user",
+   "type": "enum"
+  },
+  "transaction_read_only": {
+   "category": "Client Connection Defaults / Statement Behavior",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Sets the current transaction's read-only status.",
+   "scope": "user",
+   "type": "bool"
+  },
+  "transform_null_equals": {
+   "category": "Version and Platform Compatibility / Other Platforms and Clients",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Treats \"expr=NULL\" as \"expr IS NULL\". When turned on, expressions of the form expr = NULL (or NULL = expr) are treated as expr IS NULL, that is, they return true if expr evaluates to the null value, and false otherwise. The correct behavior of expr = NULL is to always return null (unknown).",
+   "scope": "user",
+   "type": "bool"
+  },
+  "unix_socket_directories": {
+   "category": "Connections and Authentication / Connection Settings",
+   "cmdline_option": false,
+   "default": "/var/run/postgresql",
+   "default_source": "help",
+   "desc": "Sets the directories where Unix-domain sockets will be created.",
+   "scope": "postmaster",
+   "type": "string"
+  },
+  "unix_socket_group": {
+   "category": "Connections and Authentication / Connection Settings",
+   "cmdline_option": false,
+   "default": "",
+   "default_source": "help",
+   "desc": "Sets the owning group of the Unix-domain socket. The owning user of the socket is always the user that starts the server.",
+   "scope": "postmaster",
+   "type": "string"
+  },
+  "unix_socket_permissions": {
+   "category": "Connections and Authentication / Connection Settings",
+   "cmdline_option": false,
+   "default": "511",
+   "default_source": "help",
+   "desc": "Sets the access permissions of the Unix-domain socket. Unix-domain sockets use the usual Unix file system permission set. The parameter value is expected to be a numeric mode specification in the form accepted by the chmod and umask system calls. (To use the customary octal format the number must start with a 0 (zero).)",
+   "max": "511",
+   "min": "0",
+   "scope": "postmaster",
+   "type": "integer"
+  },
+  "update_process_title": {
+   "category": "Reporting and Logging / Process Title",
+   "cmdline_option": false,
+   "default": "on",
+   "default_source": "help",
+   "desc": "Updates the process title to show the active SQL command. Enables updating of the process title every time a new SQL command is received by the server.",
+   "scope": "superuser",
+   "type": "bool"
+  },
+  "vacuum_cost_delay": {
+   "category": "Resource Usage / Cost-Based Vacuum Delay",
+   "cmdline_option": false,
+   "default": "0 ms",
+   "default_source": "help",
+   "desc": "Vacuum cost delay in milliseconds.",
+   "max": "100",
+   "min": "0",
+   "scope": "user",
+   "type": "real"
+  },
+  "vacuum_cost_limit": {
+   "category": "Resource Usage / Cost-Based Vacuum Delay",
+   "cmdline_option": false,
+   "default": "200",
+   "default_source": "help",
+   "desc": "Vacuum cost amount available before napping.",
+   "max": "10000",
+   "min": "1",
+   "scope": "user",
+   "type": "integer"
+  },
+  "vacuum_cost_page_dirty": {
+   "category": "Resource Usage / Cost-Based Vacuum Delay",
+   "cmdline_option": false,
+   "default": "20",
+   "default_source": "help",
+   "desc": "Vacuum cost for a page dirtied by vacuum.",
+   "max": "10000",
+   "min": "0",
+   "scope": "user",
+   "type": "integer"
+  },
+  "vacuum_cost_page_hit": {
+   "category": "Resource Usage / Cost-Based Vacuum Delay",
+   "cmdline_option": false,
+   "default": "1",
+   "default_source": "help",
+   "desc": "Vacuum cost for a page found in the buffer cache.",
+   "max": "10000",
+   "min": "0",
+   "scope": "user",
+   "type": "integer"
+  },
+  "vacuum_cost_page_miss": {
+   "category": "Resource Usage / Cost-Based Vacuum Delay",
+   "cmdline_option": false,
+   "default": "2",
+   "default_source": "help",
+   "desc": "Vacuum cost for a page not found in the buffer cache.",
+   "max": "10000",
+   "min": "0",
+   "scope": "user",
+   "type": "integer"
+  },
+  "vacuum_defer_cleanup_age": {
+   "category": "Replication / Primary Server",
+   "cmdline_option": false,
+   "default": "0",
+   "default_source": "help",
+   "desc": "Number of transactions by which VACUUM and HOT cleanup should be deferred, if any.",
+   "max": "1000000",
+   "min": "0",
+   "scope": "sighup",
+   "type": "integer"
+  },
+  "vacuum_failsafe_age": {
+   "category": "Client Connection Defaults / Statement Behavior",
+   "cmdline_option": false,
+   "default": "1600000000",
+   "default_source": "help",
+   "desc": "Age at which VACUUM should trigger failsafe to avoid a wraparound outage.",
+   "max": "2100000000",
+   "min": "0",
+   "scope": "user",
+   "type": "integer"
+  },
+  "vacuum_freeze_min_age": {
+   "category": "Client Connection Defaults / Statement Behavior",
+   "cmdline_option": false,
+   "default": "50000000",
+   "default_source": "help",
+   "desc": "Minimum age at which VACUUM should freeze a table row.",
+   "max": "1000000000",
+   "min": "0",
+   "scope": "user",
+   "type": "integer"
+  },
+  "vacuum_freeze_table_age": {
+   "category": "Client Connection Defaults / Statement Behavior",
+   "cmdline_option": false,
+   "default": "150000000",
+   "default_source": "help",
+   "desc": "Age at which VACUUM should scan whole table to freeze tuples.",
+   "max": "2000000000",
+   "min": "0",
+   "scope": "user",
+   "type": "integer"
+  },
+  "vacuum_multixact_failsafe_age": {
+   "category": "Client Connection Defaults / Statement Behavior",
+   "cmdline_option": false,
+   "default": "1600000000",
+   "default_source": "help",
+   "desc": "Multixact age at which VACUUM should trigger failsafe to avoid a wraparound outage.",
+   "max": "2100000000",
+   "min": "0",
+   "scope": "user",
+   "type": "integer"
+  },
+  "vacuum_multixact_freeze_min_age": {
+   "category": "Client Connection Defaults / Statement Behavior",
+   "cmdline_option": false,
+   "default": "5000000",
+   "default_source": "help",
+   "desc": "Minimum age at which VACUUM should freeze a MultiXactId in a table row.",
+   "max": "1000000000",
+   "min": "0",
+   "scope": "user",
+   "type": "integer"
+  },
+  "vacuum_multixact_freeze_table_age": {
+   "category": "Client Connection Defaults / Statement Behavior",
+   "cmdline_option": false,
+   "default": "150000000",
+   "default_source": "help",
+   "desc": "Multixact age at which VACUUM should scan whole table to freeze tuples.",
+   "max": "2000000000",
+   "min": "0",
+   "scope": "user",
+   "type": "integer"
+  },
+  "wal_block_size": {
+   "category": "Preset Options",
+   "cmdline_option": false,
+   "default": "8192",
+   "default_source": "help",
+   "desc": "Shows the block size in the write ahead log.",
+   "max": "8192",
+   "min": "8192",
+   "scope": "internal",
+   "type": "integer"
+  },
+  "wal_buffers": {
+   "category": "Write-Ahead Log / Settings",
+   "cmdline_option": false,
+   "default": "-1 8kB",
+   "default_source": "help",
+   "desc": "Sets the number of disk-page buffers in shared memory for WAL.",
+   "max": "262143",
+   "min": "-1",
+   "scope": "postmaster",
+   "type": "integer"
+  },
+  "wal_compression": {
+   "category": "Write-Ahead Log / Settings",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Compresses full-page writes written in WAL file with specified method.",
+   "enum": [
+    "pglz",
+    "lz4",
+    "zstd",
+    "on",
+    "off"
+   ],
+   "scope": "superuser",
+   "type": "enum"
+  },
+  "wal_consistency_checking": {
+   "category": "Developer Options",
+   "cmdline_option": false,
+   "default": "",
+   "default_source": "help",
+   "desc": "Sets the WAL resource managers for which WAL consistency checks are done. Full-page images will be logged for all data blocks and cross-checked against the results of WAL replay.",
+   "scope": "superuser",
+   "type": "string"
+  },
+  "wal_decode_buffer_size": {
+   "category": "Write-Ahead Log / Recovery",
+   "cmdline_option": false,
+   "default": "524288 B",
+   "default_source": "help",
+   "desc": "Buffer size for reading ahead in the WAL during recovery. Maximum distance to read ahead in the WAL to prefetch referenced data blocks.",
+   "max": "1073741823",
+   "min": "65536",
+   "scope": "postmaster",
+   "type": "integer"
+  },
+  "wal_init_zero": {
+   "category": "Write-Ahead Log / Settings",
+   "cmdline_option": false,
+   "default": "on",
+   "default_source": "help",
+   "desc": "Writes zeroes to new WAL files before first use.",
+   "scope": "superuser",
+   "type": "bool"
+  },
+  "wal_keep_size": {
+   "category": "Replication / Sending Servers",
+   "cmdline_option": false,
+   "default": "0 MB",
+   "default_source": "help",
+   "desc": "Sets the size of WAL files held for standby servers.",
+   "max": "2147483647",
+   "min": "0",
+   "scope": "sighup",
+   "type": "integer"
+  },
+  "wal_level": {
+   "category": "Write-Ahead Log / Settings",
+   "cmdline_option": false,
+   "default": "replica",
+   "default_source": "help",
+   "desc": "Sets the level of information written to the WAL.",
+   "enum": [
+    "minimal",
+    "replica",
+    "logical"
+   ],
+   "scope": "postmaster",
+   "type": "enum"
+  },
+  "wal_log_hints": {
+   "category": "Write-Ahead Log / Settings",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Writes full pages to WAL when first modified after a checkpoint, even for a non-critical modification.",
+   "scope": "postmaster",
+   "type": "bool"
+  },
+  "wal_receiver_create_temp_slot": {
+   "category": "Replication / Standby Servers",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Sets whether a WAL receiver should create a temporary replication slot if no permanent slot is configured.",
+   "scope": "sighup",
+   "type": "bool"
+  },
+  "wal_receiver_status_interval": {
+   "category": "Replication / Standby Servers",
+   "cmdline_option": false,
+   "default": "10 s",
+   "default_source": "help",
+   "desc": "Sets the maximum interval between WAL receiver status reports to the sending server.",
+   "max": "2147483",
+   "min": "0",
+   "scope": "sighup",
+   "type": "integer"
+  },
+  "wal_receiver_timeout": {
+   "category": "Replication / Standby Servers",
+   "cmdline_option": false,
+   "default": "60000 ms",
+   "default_source": "help",
+   "desc": "Sets the maximum wait time to receive data from the sending server.",
+   "max": "2147483647",
+   "min": "0",
+   "scope": "sighup",
+   "type": "integer"
+  },
+  "wal_recycle": {
+   "category": "Write-Ahead Log / Settings",
+   "cmdline_option": false,
+   "default": "on",
+   "default_source": "help",
+   "desc": "Recycles WAL files by renaming them.",
+   "scope": "superuser",
+   "type": "bool"
+  },
+  "wal_retrieve_retry_interval": {
+   "category": "Replication / Standby Servers",
+   "cmdline_option": false,
+   "default": "5000 ms",
+   "default_source": "help",
+   "desc": "Sets the time to wait before retrying to retrieve WAL after a failed attempt.",
+   "max": "2147483647",
+   "min": "1",
+   "scope": "sighup",
+   "type": "integer"
+  },
+  "wal_segment_size": {
+   "category": "Preset Options",
+   "cmdline_option": false,
+   "default": "16777216 B",
+   "default_source": "help",
+   "desc": "Shows the size of write ahead log segments.",
+   "max": "1073741824",
+   "min": "1048576",
+   "scope": "internal",
+   "type": "integer"
+  },
+  "wal_sender_timeout": {
+   "category": "Replication / Sending Servers",
+   "cmdline_option": false,
+   "default": "60000 ms",
+   "default_source": "help",
+   "desc": "Sets the maximum time to wait for WAL replication.",
+   "max": "2147483647",
+   "min": "0",
+   "scope": "user",
+   "type": "integer"
+  },
+  "wal_skip_threshold": {
+   "category": "Write-Ahead Log / Settings",
+   "cmdline_option": false,
+   "default": "2048 kB",
+   "default_source": "help",
+   "desc": "Minimum size of new file to fsync instead of writing WAL.",
+   "max": "2147483647",
+   "min": "0",
+   "scope": "user",
+   "type": "integer"
+  },
+  "wal_sync_method": {
+   "category": "Write-Ahead Log / Settings",
+   "cmdline_option": false,
+   "default": "fdatasync",
+   "default_source": "help",
+   "desc": "Selects the method used for forcing WAL updates to disk.",
+   "enum": [
+    "fsync",
+    "fdatasync",
+    "open_sync",
+    "open_datasync"
+   ],
+   "scope": "sighup",
+   "type": "enum"
+  },
+  "wal_writer_delay": {
+   "category": "Write-Ahead Log / Settings",
+   "cmdline_option": false,
+   "default": "200 ms",
+   "default_source": "help",
+   "desc": "Time between WAL flushes performed in the WAL writer.",
+   "max": "10000",
+   "min": "1",
+   "scope": "sighup",
+   "type": "integer"
+  },
+  "wal_writer_flush_after": {
+   "category": "Write-Ahead Log / Settings",
+   "cmdline_option": false,
+   "default": "128 8kB",
+   "default_source": "help",
+   "desc": "Amount of WAL written out by WAL writer that triggers a flush.",
+   "max": "2147483647",
+   "min": "0",
+   "scope": "sighup",
+   "type": "integer"
+  },
+  "work_mem": {
+   "category": "Resource Usage / Memory",
+   "cmdline_option": false,
+   "default": "4096 kB",
+   "default_source": "help",
+   "desc": "Sets the maximum memory to be used for query workspaces. This much memory can be used by each internal sort operation and hash table before switching to temporary disk files.",
+   "max": "2147483647",
+   "min": "64",
+   "scope": "user",
+   "type": "integer"
+  },
+  "xmlbinary": {
+   "category": "Client Connection Defaults / Statement Behavior",
+   "cmdline_option": false,
+   "default": "base64",
+   "default_source": "help",
+   "desc": "Sets how binary values are to be encoded in XML.",
+   "enum": [
+    "base64",
+    "hex"
+   ],
+   "scope": "user",
+   "type": "enum"
+  },
+  "xmloption": {
+   "category": "Client Connection Defaults / Statement Behavior",
+   "cmdline_option": false,
+   "default": "content",
+   "default_source": "help",
+   "desc": "Sets whether XML data in implicit parsing and serialization operations is to be considered as documents or content fragments.",
+   "enum": [
+    "content",
+    "document"
+   ],
+   "scope": "user",
+   "type": "enum"
+  },
+  "zero_damaged_pages": {
+   "category": "Developer Options",
+   "cmdline_option": false,
+   "default": "off",
+   "default_source": "help",
+   "desc": "Continues processing past damaged page headers. Detection of a damaged page header normally causes PostgreSQL to report an error, aborting the current transaction. Setting zero_damaged_pages to true causes the system to instead report a warning, zero out the damaged page, and continue processing. This behavior will destroy data, namely all the rows on the damaged page.",
+   "scope": "superuser",
+   "type": "bool"
+  }
+ },
+ "vendor": "postgresql",
+ "version": "15.4"
+}

@@ -1,0 +1,590 @@
+[
+ {
+  "file": "postgresql-14.0.json",
+  "vendor": "postgresql",
+  "version": "14.0",
+  "series": "14",
+  "server_version": "14.0 (Debian 14.0-1.pgdg110+1)"
+ },
+ {
+  "file": "postgresql-14.1.json",
+  "vendor": "postgresql",
+  "version": "14.1",
+  "series": "14",
+  "server_version": "14.1 (Debian 14.1-1.pgdg110+1)"
+ },
+ {
+  "file": "postgresql-14.10.json",
+  "vendor": "postgresql",
+  "version": "14.10",
+  "series": "14",
+  "server_version": "14.10 (Debian 14.10-1.pgdg120+1)"
+ },
+ {
+  "file": "postgresql-14.11.json",
+  "vendor": "postgresql",
+  "version": "14.11",
+  "series": "14",
+  "server_version": "14.11 (Debian 14.11-1.pgdg120+2)"
+ },
+ {
+  "file": "postgresql-14.12.json",
+  "vendor": "postgresql",
+  "version": "14.12",
+  "series": "14",
+  "server_version": "14.12 (Debian 14.12-1.pgdg120+1)"
+ },
+ {
+  "file": "postgresql-14.13.json",
+  "vendor": "postgresql",
+  "version": "14.13",
+  "series": "14",
+  "server_version": "14.13 (Debian 14.13-1.pgdg120+1)"
+ },
+ {
+  "file": "postgresql-14.14.json",
+  "vendor": "postgresql",
+  "version": "14.14",
+  "series": "14",
+  "server_version": "14.14 (Debian 14.14-1.pgdg120+1)"
+ },
+ {
+  "file": "postgresql-14.15.json",
+  "vendor": "postgresql",
+  "version": "14.15",
+  "series": "14",
+  "server_version": "14.15 (Debian 14.15-1.pgdg120+1)"
+ },
+ {
+  "file": "postgresql-14.16.json",
+  "vendor": "postgresql",
+  "version": "14.16",
+  "series": "14",
+  "server_version": "14.16 (Debian 14.16-1.pgdg120+1)"
+ },
+ {
+  "file": "postgresql-14.17.json",
+  "vendor": "postgresql",
+  "version": "14.17",
+  "series": "14",
+  "server_version": "14.17 (Debian 14.17-1.pgdg120+1)"
+ },
+ {
+  "file": "postgresql-14.18.json",
+  "vendor": "postgresql",
+  "version": "14.18",
+  "series": "14",
+  "server_version": "14.18 (Debian 14.18-1.pgdg130+1)"
+ },
+ {
+  "file": "postgresql-14.19.json",
+  "vendor": "postgresql",
+  "version": "14.19",
+  "series": "14",
+  "server_version": "14.19 (Debian 14.19-1.pgdg13+1)"
+ },
+ {
+  "file": "postgresql-14.2.json",
+  "vendor": "postgresql",
+  "version": "14.2",
+  "series": "14",
+  "server_version": "14.2 (Debian 14.2-1.pgdg110+1)"
+ },
+ {
+  "file": "postgresql-14.20.json",
+  "vendor": "postgresql",
+  "version": "14.20",
+  "series": "14",
+  "server_version": "14.20 (Debian 14.20-1.pgdg13+1)"
+ },
+ {
+  "file": "postgresql-14.21.json",
+  "vendor": "postgresql",
+  "version": "14.21",
+  "series": "14",
+  "server_version": "14.21 (Debian 14.21-1.pgdg13+1)"
+ },
+ {
+  "file": "postgresql-14.22.json",
+  "vendor": "postgresql",
+  "version": "14.22",
+  "series": "14",
+  "server_version": "14.22 (Debian 14.22-1.pgdg13+1)"
+ },
+ {
+  "file": "postgresql-14.23.json",
+  "vendor": "postgresql",
+  "version": "14.23",
+  "series": "14",
+  "server_version": "14.23 (Debian 14.23-1.pgdg13+1)"
+ },
+ {
+  "file": "postgresql-14.24.json",
+  "vendor": "postgresql",
+  "version": "14.24",
+  "series": "14",
+  "server_version": "14.24 (Debian 14.24-1.pgdg13+2)"
+ },
+ {
+  "file": "postgresql-14.25.json",
+  "vendor": "postgresql",
+  "version": "14.25",
+  "series": "14",
+  "server_version": "14.25 (Debian 14.25-1.pgdg13+1)"
+ },
+ {
+  "file": "postgresql-14.3.json",
+  "vendor": "postgresql",
+  "version": "14.3",
+  "series": "14",
+  "server_version": "14.3 (Debian 14.3-1.pgdg110+1)"
+ },
+ {
+  "file": "postgresql-14.4.json",
+  "vendor": "postgresql",
+  "version": "14.4",
+  "series": "14",
+  "server_version": "14.4 (Debian 14.4-1.pgdg110+1)"
+ },
+ {
+  "file": "postgresql-14.5.json",
+  "vendor": "postgresql",
+  "version": "14.5",
+  "series": "14",
+  "server_version": "14.5 (Debian 14.5-2.pgdg110+2)"
+ },
+ {
+  "file": "postgresql-14.6.json",
+  "vendor": "postgresql",
+  "version": "14.6",
+  "series": "14",
+  "server_version": "14.6 (Debian 14.6-1.pgdg110+1)"
+ },
+ {
+  "file": "postgresql-14.7.json",
+  "vendor": "postgresql",
+  "version": "14.7",
+  "series": "14",
+  "server_version": "14.7 (Debian 14.7-1.pgdg110+1)"
+ },
+ {
+  "file": "postgresql-14.8.json",
+  "vendor": "postgresql",
+  "version": "14.8",
+  "series": "14",
+  "server_version": "14.8 (Debian 14.8-1.pgdg120+1)"
+ },
+ {
+  "file": "postgresql-14.9.json",
+  "vendor": "postgresql",
+  "version": "14.9",
+  "series": "14",
+  "server_version": "14.9 (Debian 14.9-1.pgdg120+1)"
+ },
+ {
+  "file": "postgresql-15.0.json",
+  "vendor": "postgresql",
+  "version": "15.0",
+  "series": "15",
+  "server_version": "15.0 (Debian 15.0-1.pgdg110+1)"
+ },
+ {
+  "file": "postgresql-15.1.json",
+  "vendor": "postgresql",
+  "version": "15.1",
+  "series": "15",
+  "server_version": "15.1 (Debian 15.1-1.pgdg110+1)"
+ },
+ {
+  "file": "postgresql-15.10.json",
+  "vendor": "postgresql",
+  "version": "15.10",
+  "series": "15",
+  "server_version": "15.10 (Debian 15.10-1.pgdg120+1)"
+ },
+ {
+  "file": "postgresql-15.11.json",
+  "vendor": "postgresql",
+  "version": "15.11",
+  "series": "15",
+  "server_version": "15.11 (Debian 15.11-1.pgdg120+1)"
+ },
+ {
+  "file": "postgresql-15.12.json",
+  "vendor": "postgresql",
+  "version": "15.12",
+  "series": "15",
+  "server_version": "15.12 (Debian 15.12-1.pgdg120+1)"
+ },
+ {
+  "file": "postgresql-15.13.json",
+  "vendor": "postgresql",
+  "version": "15.13",
+  "series": "15",
+  "server_version": "15.13 (Debian 15.13-1.pgdg130+1)"
+ },
+ {
+  "file": "postgresql-15.14.json",
+  "vendor": "postgresql",
+  "version": "15.14",
+  "series": "15",
+  "server_version": "15.14 (Debian 15.14-1.pgdg13+1)"
+ },
+ {
+  "file": "postgresql-15.15.json",
+  "vendor": "postgresql",
+  "version": "15.15",
+  "series": "15",
+  "server_version": "15.15 (Debian 15.15-1.pgdg13+1)"
+ },
+ {
+  "file": "postgresql-15.16.json",
+  "vendor": "postgresql",
+  "version": "15.16",
+  "series": "15",
+  "server_version": "15.16 (Debian 15.16-1.pgdg13+1)"
+ },
+ {
+  "file": "postgresql-15.17.json",
+  "vendor": "postgresql",
+  "version": "15.17",
+  "series": "15",
+  "server_version": "15.17 (Debian 15.17-1.pgdg13+1)"
+ },
+ {
+  "file": "postgresql-15.18.json",
+  "vendor": "postgresql",
+  "version": "15.18",
+  "series": "15",
+  "server_version": "15.18 (Debian 15.18-1.pgdg13+1)"
+ },
+ {
+  "file": "postgresql-15.19.json",
+  "vendor": "postgresql",
+  "version": "15.19",
+  "series": "15",
+  "server_version": "15.19 (Debian 15.19-1.pgdg13+2)"
+ },
+ {
+  "file": "postgresql-15.2.json",
+  "vendor": "postgresql",
+  "version": "15.2",
+  "series": "15",
+  "server_version": "15.2 (Debian 15.2-1.pgdg110+1)"
+ },
+ {
+  "file": "postgresql-15.20.json",
+  "vendor": "postgresql",
+  "version": "15.20",
+  "series": "15",
+  "server_version": "15.20 (Debian 15.20-1.pgdg13+1)"
+ },
+ {
+  "file": "postgresql-15.3.json",
+  "vendor": "postgresql",
+  "version": "15.3",
+  "series": "15",
+  "server_version": "15.3 (Debian 15.3-1.pgdg120+1)"
+ },
+ {
+  "file": "postgresql-15.4.json",
+  "vendor": "postgresql",
+  "version": "15.4",
+  "series": "15",
+  "server_version": "15.4 (Debian 15.4-2.pgdg120+1)"
+ },
+ {
+  "file": "postgresql-15.5.json",
+  "vendor": "postgresql",
+  "version": "15.5",
+  "series": "15",
+  "server_version": "15.5 (Debian 15.5-1.pgdg120+1)"
+ },
+ {
+  "file": "postgresql-15.6.json",
+  "vendor": "postgresql",
+  "version": "15.6",
+  "series": "15",
+  "server_version": "15.6 (Debian 15.6-1.pgdg120+2)"
+ },
+ {
+  "file": "postgresql-15.7.json",
+  "vendor": "postgresql",
+  "version": "15.7",
+  "series": "15",
+  "server_version": "15.7 (Debian 15.7-1.pgdg120+1)"
+ },
+ {
+  "file": "postgresql-15.8.json",
+  "vendor": "postgresql",
+  "version": "15.8",
+  "series": "15",
+  "server_version": "15.8 (Debian 15.8-1.pgdg120+1)"
+ },
+ {
+  "file": "postgresql-15.9.json",
+  "vendor": "postgresql",
+  "version": "15.9",
+  "series": "15",
+  "server_version": "15.9 (Debian 15.9-1.pgdg120+1)"
+ },
+ {
+  "file": "postgresql-16.0.json",
+  "vendor": "postgresql",
+  "version": "16.0",
+  "series": "16",
+  "server_version": "16.0 (Debian 16.0-1.pgdg120+1)"
+ },
+ {
+  "file": "postgresql-16.1.json",
+  "vendor": "postgresql",
+  "version": "16.1",
+  "series": "16",
+  "server_version": "16.1 (Debian 16.1-1.pgdg120+1)"
+ },
+ {
+  "file": "postgresql-16.10.json",
+  "vendor": "postgresql",
+  "version": "16.10",
+  "series": "16",
+  "server_version": "16.10 (Debian 16.10-1.pgdg13+1)"
+ },
+ {
+  "file": "postgresql-16.11.json",
+  "vendor": "postgresql",
+  "version": "16.11",
+  "series": "16",
+  "server_version": "16.11 (Debian 16.11-1.pgdg13+1)"
+ },
+ {
+  "file": "postgresql-16.12.json",
+  "vendor": "postgresql",
+  "version": "16.12",
+  "series": "16",
+  "server_version": "16.12 (Debian 16.12-1.pgdg13+1)"
+ },
+ {
+  "file": "postgresql-16.13.json",
+  "vendor": "postgresql",
+  "version": "16.13",
+  "series": "16",
+  "server_version": "16.13 (Debian 16.13-1.pgdg13+1)"
+ },
+ {
+  "file": "postgresql-16.14.json",
+  "vendor": "postgresql",
+  "version": "16.14",
+  "series": "16",
+  "server_version": "16.14 (Debian 16.14-1.pgdg13+1)"
+ },
+ {
+  "file": "postgresql-16.15.json",
+  "vendor": "postgresql",
+  "version": "16.15",
+  "series": "16",
+  "server_version": "16.15 (Debian 16.15-1.pgdg13+2)"
+ },
+ {
+  "file": "postgresql-16.16.json",
+  "vendor": "postgresql",
+  "version": "16.16",
+  "series": "16",
+  "server_version": "16.16 (Debian 16.16-1.pgdg13+1)"
+ },
+ {
+  "file": "postgresql-16.2.json",
+  "vendor": "postgresql",
+  "version": "16.2",
+  "series": "16",
+  "server_version": "16.2 (Debian 16.2-1.pgdg120+2)"
+ },
+ {
+  "file": "postgresql-16.3.json",
+  "vendor": "postgresql",
+  "version": "16.3",
+  "series": "16",
+  "server_version": "16.3 (Debian 16.3-1.pgdg120+1)"
+ },
+ {
+  "file": "postgresql-16.4.json",
+  "vendor": "postgresql",
+  "version": "16.4",
+  "series": "16",
+  "server_version": "16.4 (Debian 16.4-1.pgdg120+2)"
+ },
+ {
+  "file": "postgresql-16.5.json",
+  "vendor": "postgresql",
+  "version": "16.5",
+  "series": "16",
+  "server_version": "16.5 (Debian 16.5-1.pgdg120+1)"
+ },
+ {
+  "file": "postgresql-16.6.json",
+  "vendor": "postgresql",
+  "version": "16.6",
+  "series": "16",
+  "server_version": "16.6 (Debian 16.6-1.pgdg120+1)"
+ },
+ {
+  "file": "postgresql-16.7.json",
+  "vendor": "postgresql",
+  "version": "16.7",
+  "series": "16",
+  "server_version": "16.7 (Debian 16.7-1.pgdg120+1)"
+ },
+ {
+  "file": "postgresql-16.8.json",
+  "vendor": "postgresql",
+  "version": "16.8",
+  "series": "16",
+  "server_version": "16.8 (Debian 16.8-1.pgdg120+1)"
+ },
+ {
+  "file": "postgresql-16.9.json",
+  "vendor": "postgresql",
+  "version": "16.9",
+  "series": "16",
+  "server_version": "16.9 (Debian 16.9-1.pgdg130+1)"
+ },
+ {
+  "file": "postgresql-17.0.json",
+  "vendor": "postgresql",
+  "version": "17.0",
+  "series": "17",
+  "server_version": "17.0 (Debian 17.0-1.pgdg120+1)"
+ },
+ {
+  "file": "postgresql-17.1.json",
+  "vendor": "postgresql",
+  "version": "17.1",
+  "series": "17",
+  "server_version": "17.1 (Debian 17.1-1.pgdg120+1)"
+ },
+ {
+  "file": "postgresql-17.10.json",
+  "vendor": "postgresql",
+  "version": "17.10",
+  "series": "17",
+  "server_version": "17.10 (Debian 17.10-1.pgdg13+1)"
+ },
+ {
+  "file": "postgresql-17.11.json",
+  "vendor": "postgresql",
+  "version": "17.11",
+  "series": "17",
+  "server_version": "17.11 (Debian 17.11-1.pgdg13+2)"
+ },
+ {
+  "file": "postgresql-17.12.json",
+  "vendor": "postgresql",
+  "version": "17.12",
+  "series": "17",
+  "server_version": "17.12 (Debian 17.12-1.pgdg13+1)"
+ },
+ {
+  "file": "postgresql-17.2.json",
+  "vendor": "postgresql",
+  "version": "17.2",
+  "series": "17",
+  "server_version": "17.2 (Debian 17.2-1.pgdg120+1)"
+ },
+ {
+  "file": "postgresql-17.3.json",
+  "vendor": "postgresql",
+  "version": "17.3",
+  "series": "17",
+  "server_version": "17.3 (Debian 17.3-3.pgdg120+1)"
+ },
+ {
+  "file": "postgresql-17.4.json",
+  "vendor": "postgresql",
+  "version": "17.4",
+  "series": "17",
+  "server_version": "17.4 (Debian 17.4-1.pgdg120+2)"
+ },
+ {
+  "file": "postgresql-17.5.json",
+  "vendor": "postgresql",
+  "version": "17.5",
+  "series": "17",
+  "server_version": "17.5 (Debian 17.5-1.pgdg130+1)"
+ },
+ {
+  "file": "postgresql-17.6.json",
+  "vendor": "postgresql",
+  "version": "17.6",
+  "series": "17",
+  "server_version": "17.6 (Debian 17.6-2.pgdg13+1)"
+ },
+ {
+  "file": "postgresql-17.7.json",
+  "vendor": "postgresql",
+  "version": "17.7",
+  "series": "17",
+  "server_version": "17.7 (Debian 17.7-3.pgdg13+1)"
+ },
+ {
+  "file": "postgresql-17.8.json",
+  "vendor": "postgresql",
+  "version": "17.8",
+  "series": "17",
+  "server_version": "17.8 (Debian 17.8-1.pgdg13+1)"
+ },
+ {
+  "file": "postgresql-17.9.json",
+  "vendor": "postgresql",
+  "version": "17.9",
+  "series": "17",
+  "server_version": "17.9 (Debian 17.9-1.pgdg13+1)"
+ },
+ {
+  "file": "postgresql-18.0.json",
+  "vendor": "postgresql",
+  "version": "18.0",
+  "series": "18",
+  "server_version": "18.0 (Debian 18.0-1.pgdg13+3)"
+ },
+ {
+  "file": "postgresql-18.1.json",
+  "vendor": "postgresql",
+  "version": "18.1",
+  "series": "18",
+  "server_version": "18.1 (Debian 18.1-1.pgdg13+2)"
+ },
+ {
+  "file": "postgresql-18.2.json",
+  "vendor": "postgresql",
+  "version": "18.2",
+  "series": "18",
+  "server_version": "18.2 (Debian 18.2-1.pgdg13+1)"
+ },
+ {
+  "file": "postgresql-18.3.json",
+  "vendor": "postgresql",
+  "version": "18.3",
+  "series": "18",
+  "server_version": "18.3 (Debian 18.3-1.pgdg13+1)"
+ },
+ {
+  "file": "postgresql-18.4.json",
+  "vendor": "postgresql",
+  "version": "18.4",
+  "series": "18",
+  "server_version": "18.4 (Debian 18.4-1.pgdg13+1)"
+ },
+ {
+  "file": "postgresql-18.6.json",
+  "vendor": "postgresql",
+  "version": "18.6",
+  "series": "18",
+  "server_version": "18.6 (Debian 18.6-1.pgdg13+2)"
+ },
+ {
+  "file": "postgresql-18.7.json",
+  "vendor": "postgresql",
+  "version": "18.7",
+  "series": "18",
+  "server_version": "18.7 (Debian 18.7-1.pgdg13+2)"
+ }
+]

@@ -1,0 +1,1917 @@
+{
+ "image": "percona/percona-server:8.0.43-34",
+ "series": "8.0",
+ "server_version": "8.0.43-34",
+ "status": [
+  "rocksdb_additional_compaction_triggers",
+  "rocksdb_block_cache_add",
+  "rocksdb_block_cache_add_failures",
+  "rocksdb_block_cache_bytes_read",
+  "rocksdb_block_cache_bytes_write",
+  "rocksdb_block_cache_data_add",
+  "rocksdb_block_cache_data_bytes_insert",
+  "rocksdb_block_cache_data_hit",
+  "rocksdb_block_cache_data_miss",
+  "rocksdb_block_cache_filter_add",
+  "rocksdb_block_cache_filter_bytes_insert",
+  "rocksdb_block_cache_filter_hit",
+  "rocksdb_block_cache_filter_miss",
+  "rocksdb_block_cache_hit",
+  "rocksdb_block_cache_index_add",
+  "rocksdb_block_cache_index_bytes_insert",
+  "rocksdb_block_cache_index_hit",
+  "rocksdb_block_cache_index_miss",
+  "rocksdb_block_cache_miss",
+  "rocksdb_bloom_filter_full_positive",
+  "rocksdb_bloom_filter_full_true_positive",
+  "rocksdb_bloom_filter_prefix_checked",
+  "rocksdb_bloom_filter_prefix_useful",
+  "rocksdb_bloom_filter_useful",
+  "rocksdb_bytes_read",
+  "rocksdb_bytes_written",
+  "rocksdb_compact_read_bytes",
+  "rocksdb_compact_write_bytes",
+  "rocksdb_compaction_key_drop_new",
+  "rocksdb_compaction_key_drop_obsolete",
+  "rocksdb_compaction_key_drop_user",
+  "rocksdb_covered_secondary_key_lookups",
+  "rocksdb_flush_write_bytes",
+  "rocksdb_get_hit_l0",
+  "rocksdb_get_hit_l1",
+  "rocksdb_get_hit_l2_and_up",
+  "rocksdb_get_updates_since_calls",
+  "rocksdb_iter_bytes_read",
+  "rocksdb_last_level_seek_data",
+  "rocksdb_last_level_seek_data_useful_filter_match",
+  "rocksdb_last_level_seek_data_useful_no_filter",
+  "rocksdb_last_level_seek_filter_match",
+  "rocksdb_last_level_seek_filtered",
+  "rocksdb_manual_compactions_cancelled",
+  "rocksdb_manual_compactions_pending",
+  "rocksdb_manual_compactions_processed",
+  "rocksdb_manual_compactions_running",
+  "rocksdb_memtable_hit",
+  "rocksdb_memtable_miss",
+  "rocksdb_memtable_total",
+  "rocksdb_memtable_unflushed",
+  "rocksdb_no_file_errors",
+  "rocksdb_no_file_opens",
+  "rocksdb_non_last_level_seek_data",
+  "rocksdb_non_last_level_seek_data_useful_filter_match",
+  "rocksdb_non_last_level_seek_data_useful_no_filter",
+  "rocksdb_non_last_level_seek_filter_match",
+  "rocksdb_non_last_level_seek_filtered",
+  "rocksdb_number_db_next",
+  "rocksdb_number_db_next_found",
+  "rocksdb_number_db_prev",
+  "rocksdb_number_db_prev_found",
+  "rocksdb_number_db_seek",
+  "rocksdb_number_db_seek_found",
+  "rocksdb_number_keys_read",
+  "rocksdb_number_keys_updated",
+  "rocksdb_number_keys_written",
+  "rocksdb_number_merge_failures",
+  "rocksdb_number_multiget_bytes_read",
+  "rocksdb_number_multiget_get",
+  "rocksdb_number_multiget_keys_read",
+  "rocksdb_number_reseeks_iteration",
+  "rocksdb_number_sst_entry_delete",
+  "rocksdb_number_sst_entry_merge",
+  "rocksdb_number_sst_entry_other",
+  "rocksdb_number_sst_entry_put",
+  "rocksdb_number_sst_entry_singledelete",
+  "rocksdb_number_superversion_acquires",
+  "rocksdb_number_superversion_cleanups",
+  "rocksdb_number_superversion_releases",
+  "rocksdb_partial_index_groups_materialized",
+  "rocksdb_partial_index_groups_sorted",
+  "rocksdb_partial_index_rows_materialized",
+  "rocksdb_partial_index_rows_sorted",
+  "rocksdb_queries_point",
+  "rocksdb_queries_range",
+  "rocksdb_row_lock_deadlocks",
+  "rocksdb_row_lock_wait_timeouts",
+  "rocksdb_rows_deleted",
+  "rocksdb_rows_deleted_blind",
+  "rocksdb_rows_expired",
+  "rocksdb_rows_filtered",
+  "rocksdb_rows_inserted",
+  "rocksdb_rows_read",
+  "rocksdb_rows_unfiltered_no_snapshot",
+  "rocksdb_rows_updated",
+  "rocksdb_snapshot_conflict_errors",
+  "rocksdb_stall_l0_file_count_limit_slowdowns",
+  "rocksdb_stall_l0_file_count_limit_stops",
+  "rocksdb_stall_locked_l0_file_count_limit_slowdowns",
+  "rocksdb_stall_locked_l0_file_count_limit_stops",
+  "rocksdb_stall_memtable_limit_slowdowns",
+  "rocksdb_stall_memtable_limit_stops",
+  "rocksdb_stall_micros",
+  "rocksdb_stall_pending_compaction_limit_slowdowns",
+  "rocksdb_stall_pending_compaction_limit_stops",
+  "rocksdb_stall_total_slowdowns",
+  "rocksdb_stall_total_stops",
+  "rocksdb_system_rows_deleted",
+  "rocksdb_system_rows_inserted",
+  "rocksdb_system_rows_read",
+  "rocksdb_system_rows_updated",
+  "rocksdb_table_index_stats_failure",
+  "rocksdb_table_index_stats_req_queue_length",
+  "rocksdb_table_index_stats_success",
+  "rocksdb_wal_bytes",
+  "rocksdb_wal_group_syncs",
+  "rocksdb_wal_synced",
+  "rocksdb_write_other",
+  "rocksdb_write_self",
+  "rocksdb_write_wal"
+ ],
+ "variables": {
+  "rocksdb_advise_random_on_open": {
+   "cmdline_option": true,
+   "default": "TRUE",
+   "default_source": "help",
+   "desc": "DBOptions::advise_random_on_open for RocksDB (Defaults to on; use --skip-rocksdb-advise-random-on-open to disable.)",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_allow_concurrent_memtable_write": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "DBOptions::allow_concurrent_memtable_write for RocksDB",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_allow_mmap_reads": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "DBOptions::allow_mmap_reads for RocksDB",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_allow_mmap_writes": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "DBOptions::allow_mmap_writes for RocksDB",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_allow_to_start_after_corruption": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Allow server to start successfully when RocksDB corruption is detected.",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_allow_unsafe_alter": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Enable crash unsafe INPLACE ADD|DROP partition.",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_alter_column_default_inplace": {
+   "cmdline_option": true,
+   "default": "TRUE",
+   "default_source": "help",
+   "desc": "Allow inplace alter for alter column default operation (Defaults to on; use --skip-rocksdb-alter-column-default-inplace to disable.)",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_alter_table_comment_inplace": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Allow inplace alter for alter table comment",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_blind_delete_primary_key": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Deleting rows by primary key lookup, without reading rows (Blind Deletes). Blind delete is disabled if the table has secondary key",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_block_cache_numshardbits": {
+   "cmdline_option": true,
+   "default": "-1",
+   "default_source": "help",
+   "desc": "Block cache numshardbits for RocksDB",
+   "max": "8",
+   "min": "4294967295",
+   "scope": "global"
+  },
+  "rocksdb_block_cache_size": {
+   "cmdline_option": true,
+   "default": "536870912",
+   "default_source": "help",
+   "desc": "block_cache size for RocksDB",
+   "max": "9223372036854775807",
+   "min": "1024",
+   "scope": "global"
+  },
+  "rocksdb_block_restart_interval": {
+   "cmdline_option": true,
+   "default": "16",
+   "default_source": "help",
+   "desc": "BlockBasedTableOptions::block_restart_interval for RocksDB",
+   "max": "2147483647",
+   "min": "1",
+   "scope": "global"
+  },
+  "rocksdb_block_size": {
+   "cmdline_option": true,
+   "default": "16384",
+   "default_source": "help",
+   "desc": "BlockBasedTableOptions::block_size for RocksDB",
+   "max": "18446744073709551615",
+   "min": "1024",
+   "scope": "global"
+  },
+  "rocksdb_block_size_deviation": {
+   "cmdline_option": true,
+   "default": "10",
+   "default_source": "help",
+   "desc": "BlockBasedTableOptions::block_size_deviation for RocksDB",
+   "max": "2147483647",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_bulk_load": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Use bulk-load mode for inserts. This disables unique_checks and enables rocksdb_commit_in_the_middle.",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_bulk_load_allow_sk": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Allow bulk loading of sk keys during bulk-load. Can be changed only when bulk load is disabled.",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_bulk_load_allow_unsorted": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Allow unsorted input during bulk-load. Can be changed only when bulk load is disabled.",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_bulk_load_compression_parallel_threads": {
+   "cmdline_option": true,
+   "default": "1",
+   "default_source": "help",
+   "desc": "The number of parallel worker threads to compress SST data blocks during bulk load",
+   "max": "1024",
+   "min": "1",
+   "scope": "global"
+  },
+  "rocksdb_bulk_load_enable_unique_key_check": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Check the violation of unique key constraint during bulk-load. Can be changed only when bulk load is disabled.",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_bulk_load_fail_if_not_bottommost_level": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Fail the bulk load if a sst file created from bulk load cannot fit in the rocksdb bottommost level. Turn off this variable could have severe performance impact. Can be changed only when bulk load is disabled.",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_bulk_load_partial_index": {
+   "cmdline_option": true,
+   "default": "TRUE",
+   "default_source": "help",
+   "desc": "Materialize partial index during bulk load, instead of leaving it empty. (Defaults to on; use --skip-rocksdb-bulk-load-partial-index to disable.)",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_bulk_load_size": {
+   "cmdline_option": true,
+   "default": "1000",
+   "default_source": "help",
+   "desc": "Max #records in a batch for bulk-load mode",
+   "max": "1073741824",
+   "min": "1",
+   "scope": "global"
+  },
+  "rocksdb_bulk_load_use_sst_partitioner": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Use sst partitioner to split sst files to ensure bulk load sst files can be ingested to bottommost level",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_bytes_per_sync": {
+   "cmdline_option": true,
+   "default": "0",
+   "default_source": "help",
+   "desc": "DBOptions::bytes_per_sync for RocksDB",
+   "max": "18446744073709551615",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_cache_dump": {
+   "cmdline_option": true,
+   "default": "TRUE",
+   "default_source": "help",
+   "desc": "Include RocksDB block cache content in core dump. (Defaults to on; use --skip-rocksdb-cache-dump to disable.)",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_cache_high_pri_pool_ratio": {
+   "cmdline_option": true,
+   "default": "0",
+   "default_source": "help",
+   "desc": "Specify the size of block cache high-pri pool",
+   "max": "1",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_cache_index_and_filter_blocks": {
+   "cmdline_option": true,
+   "default": "TRUE",
+   "default_source": "help",
+   "desc": "BlockBasedTableOptions::cache_index_and_filter_blocks for RocksDB (Defaults to on; use --skip-rocksdb-cache-index-and-filter-blocks to disable.)",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_cache_index_and_filter_with_high_priority": {
+   "cmdline_option": true,
+   "default": "TRUE",
+   "default_source": "help",
+   "desc": "cache_index_and_filter_blocks_with_high_priority for RocksDB (Defaults to on; use --skip-rocksdb-cache-index-and-filter-with-high-priority to disable.)",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_cancel_manual_compactions": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Cancelling all ongoing manual compactions.",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_charge_memory": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "For experiment only. Turn on memory charging feature of RocksDB",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_check_iterate_bounds": {
+   "cmdline_option": true,
+   "default": "TRUE",
+   "default_source": "help",
+   "desc": "Check rocksdb iterator upper/lower bounds during iterating. (Defaults to on; use --skip-rocksdb-check-iterate-bounds to disable.)",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_checksums_pct": {
+   "cmdline_option": true,
+   "default": "100",
+   "default_source": "help",
+   "desc": "How many percentages of rows to be checksummed",
+   "max": "100",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_collect_sst_properties": {
+   "cmdline_option": true,
+   "default": "TRUE",
+   "default_source": "help",
+   "desc": "Enables collecting SST file properties on each flush (Defaults to on; use --skip-rocksdb-collect-sst-properties to disable.)",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_column_default_value_as_expression": {
+   "cmdline_option": true,
+   "default": "TRUE",
+   "default_source": "help",
+   "desc": "allow column default value expressed in function (Defaults to on; use --skip-rocksdb-column-default-value-as-expression to disable.)",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_commit_in_the_middle": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Commit rows implicitly every rocksdb_bulk_load_size, on bulk load/insert, update and delete",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_commit_time_batch_for_recovery": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "TransactionOptions::commit_time_batch_for_recovery for RocksDB",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_compact_cf": {
+   "cmdline_option": true,
+   "default": "",
+   "default_source": "runtime",
+   "desc": "Compact column family",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_compact_lzero_now": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Compacts all L0 files.",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_compaction_readahead_size": {
+   "cmdline_option": true,
+   "default": "2097152",
+   "default_source": "help",
+   "desc": "DBOptions::compaction_readahead_size for RocksDB",
+   "max": "18446744073709551615",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_compaction_sequential_deletes": {
+   "cmdline_option": true,
+   "default": "149999",
+   "default_source": "help",
+   "desc": "RocksDB will trigger compaction for the file if it has more than this number sequential deletes per window",
+   "max": "2000000",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_compaction_sequential_deletes_count_sd": {
+   "cmdline_option": true,
+   "default": "TRUE",
+   "default_source": "help",
+   "desc": "Counting SingleDelete as rocksdb_compaction_sequential_deletes (Defaults to on; use --skip-rocksdb-compaction-sequential-deletes-count-sd to disable.)",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_compaction_sequential_deletes_file_size": {
+   "cmdline_option": true,
+   "default": "0",
+   "default_source": "help",
+   "desc": "Minimum file size required for compaction_sequential_deletes",
+   "max": "9223372036854775807",
+   "min": "-1",
+   "scope": "global"
+  },
+  "rocksdb_compaction_sequential_deletes_window": {
+   "cmdline_option": true,
+   "default": "150000",
+   "default_source": "help",
+   "desc": "Size of the window for counting rocksdb_compaction_sequential_deletes",
+   "max": "2000000",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_concurrent_prepare": {
+   "cmdline_option": true,
+   "default": "TRUE",
+   "default_source": "help",
+   "deprecated": "DEPRECATED, use rocksdb_two_write_queries instead. (Defaults to on; use --skip-rocksdb-concurrent-prepare to disable.)",
+   "desc": "DEPRECATED, use rocksdb_two_write_queries instead. (Defaults to on; use --skip-rocksdb-concurrent-prepare to disable.)",
+   "max": null,
+   "min": null,
+   "replacement": "rocksdb_two_write_queries",
+   "scope": "global"
+  },
+  "rocksdb_converter_record_cached_length": {
+   "cmdline_option": true,
+   "default": "0",
+   "default_source": "help",
+   "desc": "Maximum number of bytes to cache on table handler for encoding table record data. 0 means no limit.",
+   "max": "18446744073709551615",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_corrupt_data_action": {
+   "cmdline_option": true,
+   "default": "ERROR",
+   "default_source": "help",
+   "desc": "Control behavior when hitting data corruption. We can fail the query, crash the server or pass the query and give users a warning.",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_create_checkpoint": {
+   "cmdline_option": true,
+   "default": "",
+   "default_source": "runtime",
+   "desc": "Checkpoint directory",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_create_if_missing": {
+   "cmdline_option": true,
+   "default": "TRUE",
+   "default_source": "help",
+   "desc": "DBOptions::create_if_missing for RocksDB (Defaults to on; use --skip-rocksdb-create-if-missing to disable.)",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_create_missing_column_families": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "DBOptions::create_missing_column_families for RocksDB",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_create_temporary_checkpoint": {
+   "cmdline_option": false,
+   "default": "",
+   "default_source": "runtime",
+   "desc": "",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_datadir": {
+   "cmdline_option": true,
+   "default": "./.rocksdb",
+   "default_source": "help",
+   "desc": "RocksDB data directory",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_db_write_buffer_size": {
+   "cmdline_option": true,
+   "default": "0",
+   "default_source": "help",
+   "desc": "DBOptions::db_write_buffer_size for RocksDB",
+   "max": "9223372036854775807",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_deadlock_detect": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Enables deadlock detection",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_deadlock_detect_depth": {
+   "cmdline_option": true,
+   "default": "50",
+   "default_source": "help",
+   "desc": "Number of transactions deadlock detection will traverse through before assuming deadlock",
+   "max": "18446744073709551615",
+   "min": "2",
+   "scope": "global"
+  },
+  "rocksdb_debug_cardinality_multiplier": {
+   "cmdline_option": true,
+   "default": "2",
+   "default_source": "help",
+   "desc": "Cardinality multiplier used in tests",
+   "max": "2147483647",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_debug_manual_compaction_delay": {
+   "cmdline_option": true,
+   "default": "0",
+   "default_source": "help",
+   "desc": "For debugging purposes only. Sleeping specified seconds for simulating long running compactions.",
+   "max": "4294967295",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_debug_optimizer_no_zero_cardinality": {
+   "cmdline_option": true,
+   "default": "TRUE",
+   "default_source": "help",
+   "desc": "In case if cardinality is zero, overrides it with some value (Defaults to on; use --skip-rocksdb-debug-optimizer-no-zero-cardinality to disable.)",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_debug_skip_bloom_filter_check_on_iterator_bounds": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Allow iterator bounds to be set up for rocksdb even when the query range conditions would otherwise allow bloom filters to be used.",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_debug_ttl_ignore_pk": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "For debugging purposes only. If true, compaction filtering will not occur on PK TTL data. This variable is a no-op in non-debug builds.",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_debug_ttl_read_filter_ts": {
+   "cmdline_option": true,
+   "default": "0",
+   "default_source": "help",
+   "desc": "For debugging purposes only.  Overrides the TTL read filtering time to time + debug_ttl_read_filter_ts. A value of 0 denotes that the variable is not set. This variable is a no-op in non-debug builds.",
+   "max": "3600",
+   "min": "4294963696",
+   "scope": "global"
+  },
+  "rocksdb_debug_ttl_rec_ts": {
+   "cmdline_option": true,
+   "default": "0",
+   "default_source": "help",
+   "desc": "For debugging purposes only.  Overrides the TTL of records to now() + debug_ttl_rec_ts.  The value can be +/- to simulate a record inserted in the past vs a record inserted in the 'future'. A value of 0 denotes that the variable is not set. This variable is a no-op in non-debug builds.",
+   "max": "3600",
+   "min": "4294963696",
+   "scope": "global"
+  },
+  "rocksdb_debug_ttl_snapshot_ts": {
+   "cmdline_option": true,
+   "default": "0",
+   "default_source": "help",
+   "desc": "For debugging purposes only.  Sets the snapshot during compaction to now() + debug_set_ttl_snapshot_ts.  The value can be +/- to simulate a snapshot in the past vs a snapshot created in the 'future'. A value of 0 denotes that the variable is not set. This variable is a no-op in non-debug builds.",
+   "max": "3600",
+   "min": "4294963696",
+   "scope": "global"
+  },
+  "rocksdb_default_cf_options": {
+   "cmdline_option": true,
+   "default": "block_based_table_factory={cache_index_and_filter_blocks=1;filter_policy=bloomfilter:10:false;whole_key_filtering=1};level_compaction_dynamic_level_bytes=true;optimize_filters_for_hits=true;compaction_pri=kMinOverlappingRatio;compression=kLZ4Compression;bottommost_compression=kLZ4Compression;",
+   "default_source": "help",
+   "desc": "default cf options for RocksDB",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_delayed_write_rate": {
+   "cmdline_option": true,
+   "default": "0",
+   "default_source": "help",
+   "desc": "DBOptions::delayed_write_rate",
+   "max": "18446744073709551615",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_delete_cf": {
+   "cmdline_option": true,
+   "default": "",
+   "default_source": "runtime",
+   "desc": "Delete column family",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_delete_obsolete_files_period_micros": {
+   "cmdline_option": true,
+   "default": "21600000000",
+   "default_source": "help",
+   "desc": "DBOptions::delete_obsolete_files_period_micros for RocksDB",
+   "max": "18446744073709551615",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_disable_file_deletions": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Prevent file deletions",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_disable_instant_ddl": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "deprecated": "Disable instant ddl during alter table, This variable is deprecated",
+   "desc": "Disable instant ddl during alter table, This variable is deprecated",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_enable_bulk_load_api": {
+   "cmdline_option": true,
+   "default": "TRUE",
+   "default_source": "help",
+   "desc": "Enables using SstFileWriter for bulk loading (Defaults to on; use --skip-rocksdb-enable-bulk-load-api to disable.)",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_enable_delete_range_for_drop_index": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Enable drop table/index by delete range",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_enable_insert_with_update_caching": {
+   "cmdline_option": true,
+   "default": "TRUE",
+   "default_source": "help",
+   "desc": "Whether to enable optimization where we cache the read from a failed insertion attempt in INSERT ON DUPLICATE KEY UPDATE (Defaults to on; use --skip-rocksdb-enable-insert-with-update-caching to disable.)",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_enable_instant_ddl": {
+   "cmdline_option": true,
+   "default": "TRUE",
+   "default_source": "help",
+   "desc": "Enable instant ddl during alter table if possible. If false, no DDL can be executed as instant (Defaults to on; use --skip-rocksdb-enable-instant-ddl to disable.)",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_enable_instant_ddl_for_append_column": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Enable instant ddl for append column during alter table",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_enable_instant_ddl_for_column_default_changes": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Enable instant ddl for column default during alter table",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_enable_instant_ddl_for_drop_index_changes": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Enable instant ddl for index drop changes during alter table",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_enable_instant_ddl_for_table_comment_changes": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Enable instant ddl for table comment changes during alter table",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_enable_iterate_bounds": {
+   "cmdline_option": true,
+   "default": "TRUE",
+   "default_source": "help",
+   "desc": "Enable rocksdb iterator upper/lower bounds in read options. (Defaults to on; use --skip-rocksdb-enable-iterate-bounds to disable.)",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_enable_pipelined_write": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "DBOptions::enable_pipelined_write for RocksDB",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_enable_remove_orphaned_dropped_cfs": {
+   "cmdline_option": true,
+   "default": "TRUE",
+   "default_source": "help",
+   "desc": "Enables removing dropped cfs from metadata if it doesn't exist in cf manager (Defaults to on; use --skip-rocksdb-enable-remove-orphaned-dropped-cfs to disable.)",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_enable_thread_tracking": {
+   "cmdline_option": true,
+   "default": "TRUE",
+   "default_source": "help",
+   "desc": "DBOptions::enable_thread_tracking for RocksDB (Defaults to on; use --skip-rocksdb-enable-thread-tracking to disable.)",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_enable_tmp_table": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Allow rocksdb tmp tables",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_enable_ttl": {
+   "cmdline_option": true,
+   "default": "TRUE",
+   "default_source": "help",
+   "desc": "Enable expired TTL records to be dropped during compaction. (Defaults to on; use --skip-rocksdb-enable-ttl to disable.)",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_enable_ttl_read_filtering": {
+   "cmdline_option": true,
+   "default": "TRUE",
+   "default_source": "help",
+   "desc": "For tables with TTL, expired records are skipped/filtered out during processing and in query results. Disabling this will allow these records to be seen, but as a result rows may disappear in the middle of transactions as they are dropped during compaction. Use with caution. (Defaults to on; use --skip-rocksdb-enable-ttl-read-filtering to disable.)",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_enable_udt_in_mem": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Enabled user define timestamp in memtable feature to support HLC snapshot reads in MyRocks",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_enable_write_thread_adaptive_yield": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "DBOptions::enable_write_thread_adaptive_yield for RocksDB",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_error_if_exists": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "DBOptions::error_if_exists for RocksDB",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_error_on_suboptimal_collation": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Raise an error instead of warning if a sub-optimal collation is used",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_fault_injection_options": {
+   "cmdline_option": true,
+   "default": "(No default value)",
+   "default_source": "help",
+   "desc": "Fault injection options for running rocksdb tests",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_file_checksums": {
+   "cmdline_option": true,
+   "default": "CHECKSUMS_OFF",
+   "default_source": "help",
+   "desc": "Whether to write and check RocksDB file-level checksums. CHECKSUMS_OFF: nothing, CHECKSUMS_WRITE_ONLY: write checksums but skips verification, CHECKSUMS_WRITE_AND_VERIFY: write checksums, and verify on DB::open",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_flush_log_at_trx_commit": {
+   "cmdline_option": true,
+   "default": "1",
+   "default_source": "help",
+   "desc": "Sync on transaction commit. Similar to innodb_flush_log_at_trx_commit. 1: sync on commit, 0,2: not sync on commit",
+   "max": "2",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_force_compute_memtable_stats": {
+   "cmdline_option": true,
+   "default": "TRUE",
+   "default_source": "help",
+   "desc": "Force to always compute memtable stats (Defaults to on; use --skip-rocksdb-force-compute-memtable-stats to disable.)",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_force_compute_memtable_stats_cachetime": {
+   "cmdline_option": true,
+   "default": "60000000",
+   "default_source": "help",
+   "desc": "Time in usecs to cache memtable estimates",
+   "max": "2147483647",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_force_flush_memtable_and_lzero_now": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Acts similar to force_flush_memtable_now, but also compacts all L0 files.",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_force_flush_memtable_now": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Forces memstore flush which may block all write requests so be careful",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_force_index_records_in_range": {
+   "cmdline_option": true,
+   "default": "0",
+   "default_source": "help",
+   "desc": "Used to override the result of records_in_range() when FORCE INDEX is used.",
+   "max": "2147483647",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_fs_uri": {
+   "cmdline_option": true,
+   "default": "(No default value)",
+   "default_source": "help",
+   "desc": "Custom filesystem URI",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_ignore_unknown_options": {
+   "cmdline_option": true,
+   "default": "TRUE",
+   "default_source": "help",
+   "desc": "Enable ignoring unknown options passed to RocksDB (Defaults to on; use --skip-rocksdb-ignore-unknown-options to disable.)",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_index_type": {
+   "cmdline_option": true,
+   "default": "kBinarySearch",
+   "default_source": "help",
+   "desc": "BlockBasedTableOptions::index_type for RocksDB",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_info_log_level": {
+   "cmdline_option": true,
+   "default": "error_level",
+   "default_source": "help",
+   "desc": "Filter level for info logs to be written mysqld error log. Valid values include 'debug_level', 'info_level', 'warn_level''error_level' and 'fatal_level'.",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_invalid_create_option_action": {
+   "cmdline_option": true,
+   "default": "LOG",
+   "default_source": "help",
+   "desc": "Control behavior when creating the table hits some error. We can log the error only, pass the query and give users a warning, or fail the query.",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_io_error_action": {
+   "cmdline_option": true,
+   "default": "ABORT_SERVER",
+   "default_source": "help",
+   "desc": "Control behavior when hitting I/O error. By default MyRocks aborts server and refuses to start. Setting IGNORE_ERROR suppresses an error instead.",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_is_fd_close_on_exec": {
+   "cmdline_option": true,
+   "default": "TRUE",
+   "default_source": "help",
+   "desc": "DBOptions::is_fd_close_on_exec for RocksDB (Defaults to on; use --skip-rocksdb-is-fd-close-on-exec to disable.)",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_keep_log_file_num": {
+   "cmdline_option": true,
+   "default": "1000",
+   "default_source": "help",
+   "desc": "DBOptions::keep_log_file_num for RocksDB",
+   "max": "9223372036854775807",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_lock_scanned_rows": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Take and hold locks on rows that are scanned but not updated",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_lock_wait_timeout": {
+   "cmdline_option": true,
+   "default": "1",
+   "default_source": "help",
+   "desc": "Number of seconds to wait for lock",
+   "max": "1073741824",
+   "min": "1",
+   "scope": "global"
+  },
+  "rocksdb_log_file_time_to_roll": {
+   "cmdline_option": true,
+   "default": "0",
+   "default_source": "help",
+   "desc": "DBOptions::log_file_time_to_roll for RocksDB",
+   "max": "9223372036854775807",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_manifest_preallocation_size": {
+   "cmdline_option": true,
+   "default": "4194304",
+   "default_source": "help",
+   "desc": "DBOptions::manifest_preallocation_size for RocksDB",
+   "max": "9223372036854775807",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_manual_compaction_bottommost_level": {
+   "cmdline_option": true,
+   "default": "kForceOptimized",
+   "default_source": "help",
+   "desc": "Option for bottommost level compaction during manual compaction",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_manual_compaction_threads": {
+   "cmdline_option": true,
+   "default": "0",
+   "default_source": "help",
+   "desc": "How many rocksdb threads to run for manual compactions",
+   "max": "128",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_manual_wal_flush": {
+   "cmdline_option": true,
+   "default": "TRUE",
+   "default_source": "help",
+   "desc": "DBOptions::manual_wal_flush for RocksDB (Defaults to on; use --skip-rocksdb-manual-wal-flush to disable.)",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_master_skip_tx_api": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Skipping holding any lock on row access. Not effective on slave.",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_max_background_compactions": {
+   "cmdline_option": true,
+   "default": "-1",
+   "default_source": "help",
+   "desc": "DBOptions::max_background_compactions for RocksDB",
+   "max": "64",
+   "min": "4294967295",
+   "scope": "global"
+  },
+  "rocksdb_max_background_flushes": {
+   "cmdline_option": true,
+   "default": "-1",
+   "default_source": "help",
+   "desc": "DBOptions::max_background_flushes for RocksDB",
+   "max": "64",
+   "min": "4294967295",
+   "scope": "global"
+  },
+  "rocksdb_max_background_jobs": {
+   "cmdline_option": true,
+   "default": "2",
+   "default_source": "help",
+   "desc": "DBOptions::max_background_jobs for RocksDB",
+   "max": "64",
+   "min": "4294967295",
+   "scope": "global"
+  },
+  "rocksdb_max_bottom_pri_background_compactions": {
+   "cmdline_option": true,
+   "default": "0",
+   "default_source": "help",
+   "desc": "Creating specified number of threads, setting lower CPU priority, and letting Lmax compactions use them. Maximum total compaction concurrency continues to be capped to rocksdb_max_background_compactions or rocksdb_max_background_jobs. In addition to that, Lmax compaction concurrency is capped to rocksdb_max_bottom_pri_background_compactions. Default value is 0, which means all compactions are under concurrency of rocksdb_max_background_compactions|jobs. If you set very low rocksdb_max_bottom_pri_background_compactions (e.g. 1 or 2), compactions may not be able to keep up. Since Lmax normally has 90 percent of data, it is recommended to set closer number to rocksdb_max_background_compactions|jobs. This option is helpful to give more CPU resources to other threads (e.g. query processing).",
+   "max": "64",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_max_compaction_history": {
+   "cmdline_option": true,
+   "default": "64",
+   "default_source": "help",
+   "desc": "Track history for at most this many completed compactions. The history is in the INFORMATION_SCHEMA.ROCKSDB_COMPACTION_HISTORY table.",
+   "max": "18446744073709551615",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_max_file_opening_threads": {
+   "cmdline_option": true,
+   "default": "16",
+   "default_source": "help",
+   "desc": "DBOptions::max_file_opening_threads for RocksDB",
+   "max": "2147483647",
+   "min": "1",
+   "scope": "global"
+  },
+  "rocksdb_max_latest_deadlocks": {
+   "cmdline_option": true,
+   "default": "5",
+   "default_source": "help",
+   "desc": "Maximum number of recent deadlocks to store",
+   "max": "4294967295",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_max_log_file_size": {
+   "cmdline_option": true,
+   "default": "0",
+   "default_source": "help",
+   "desc": "DBOptions::max_log_file_size for RocksDB",
+   "max": "9223372036854775807",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_max_manifest_file_size": {
+   "cmdline_option": true,
+   "default": "1073741824",
+   "default_source": "help",
+   "desc": "DBOptions::max_manifest_file_size for RocksDB",
+   "max": "18446744073709551615",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_max_manual_compactions": {
+   "cmdline_option": true,
+   "default": "10",
+   "default_source": "help",
+   "desc": "Maximum number of pending + ongoing number of manual compactions.",
+   "max": "4294967295",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_max_open_files": {
+   "cmdline_option": true,
+   "default": "-2",
+   "default_source": "help",
+   "desc": "DBOptions::max_open_files for RocksDB",
+   "max": "2147483647",
+   "min": "4294967294",
+   "scope": "global"
+  },
+  "rocksdb_max_row_locks": {
+   "cmdline_option": true,
+   "default": "1048576",
+   "default_source": "help",
+   "desc": "Maximum number of locks a transaction can have",
+   "max": "1073741824",
+   "min": "1",
+   "scope": "global"
+  },
+  "rocksdb_max_subcompactions": {
+   "cmdline_option": true,
+   "default": "1",
+   "default_source": "help",
+   "desc": "DBOptions::max_subcompactions for RocksDB",
+   "max": "64",
+   "min": "1",
+   "scope": "global"
+  },
+  "rocksdb_max_total_wal_size": {
+   "cmdline_option": true,
+   "default": "2147483648",
+   "default_source": "help",
+   "desc": "DBOptions::max_total_wal_size for RocksDB",
+   "max": "18446744073709551615",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_merge_buf_size": {
+   "cmdline_option": true,
+   "default": "67108864",
+   "default_source": "help",
+   "desc": "Size to allocate for merge sort buffers written out to disk during inplace index creation.",
+   "max": "18446744073709551615",
+   "min": "100",
+   "scope": "global"
+  },
+  "rocksdb_merge_combine_read_size": {
+   "cmdline_option": true,
+   "default": "1073741824",
+   "default_source": "help",
+   "desc": "Size that we have to work with during combine (reading from disk) phase of external sort during fast index creation.",
+   "max": "18446744073709551615",
+   "min": "100",
+   "scope": "global"
+  },
+  "rocksdb_merge_tmp_file_removal_delay_ms": {
+   "cmdline_option": true,
+   "default": "0",
+   "default_source": "help",
+   "desc": "Fast index creation creates a large tmp file on disk during index creation.  Removing this large file all at once when index creation is complete can cause trim stalls on Flash.  This variable specifies a duration to sleep (in milliseconds) between calling chsize() to truncate the file in chunks.  The chunk size is  the same as merge_buf_size.",
+   "max": "18446744073709551615",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_no_block_cache": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "BlockBasedTableOptions::no_block_cache for RocksDB",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_no_create_column_family": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Do not allow creation of new Column Families through index comments.",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_override_cf_options": {
+   "cmdline_option": true,
+   "default": "",
+   "default_source": "runtime",
+   "desc": "option overrides per cf for RocksDB",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_paranoid_checks": {
+   "cmdline_option": true,
+   "default": "TRUE",
+   "default_source": "help",
+   "desc": "DBOptions::paranoid_checks for RocksDB (Defaults to on; use --skip-rocksdb-paranoid-checks to disable.)",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_partial_index_blind_delete": {
+   "cmdline_option": true,
+   "default": "TRUE",
+   "default_source": "help",
+   "desc": "If OFF, always read from partial index to check if key exists before deleting. Otherwise, delete marker is unconditionally written. (Defaults to on; use --skip-rocksdb-partial-index-blind-delete to disable.)",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_partial_index_ignore_killed": {
+   "cmdline_option": true,
+   "default": "TRUE",
+   "default_source": "help",
+   "desc": "If ON, partial index materialization will ignore the killed flag and continue materialization until completion. If queries are killed during materialization due to timeout, then the work done so far is wasted, and it is likely that killed query will be retried later, hitting the same problem. (Defaults to on; use --skip-rocksdb-partial-index-ignore-killed to disable.)",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_partial_index_sort_max_mem": {
+   "cmdline_option": true,
+   "default": "0",
+   "default_source": "help",
+   "desc": "Maximum memory to use when sorting an unmaterialized group for partial indexes. 0 means no limit.",
+   "max": "18446744073709551615",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_pause_background_work": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Disable all rocksdb background operations",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_perf_context_level": {
+   "cmdline_option": true,
+   "default": "0",
+   "default_source": "help",
+   "desc": "Perf Context Level for rocksdb internal timer stat collection",
+   "max": "6",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_persistent_cache_path": {
+   "cmdline_option": true,
+   "default": "",
+   "default_source": "runtime",
+   "desc": "Path for BlockBasedTableOptions::persistent_cache for RocksDB",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_persistent_cache_size_mb": {
+   "cmdline_option": true,
+   "default": "0",
+   "default_source": "help",
+   "desc": "Size of cache in MB for BlockBasedTableOptions::persistent_cache for RocksDB",
+   "max": "18446744073709551615",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_pin_l0_filter_and_index_blocks_in_cache": {
+   "cmdline_option": true,
+   "default": "TRUE",
+   "default_source": "help",
+   "desc": "pin_l0_filter_and_index_blocks_in_cache for RocksDB (Defaults to on; use --skip-rocksdb-pin-l0-filter-and-index-blocks-in-cache to disable.)",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_print_snapshot_conflict_queries": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Logging queries that got snapshot conflict errors into *.err log",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_protection_bytes_per_key": {
+   "cmdline_option": true,
+   "default": "0",
+   "default_source": "help",
+   "desc": "WriteOptions::protection_bytes_per_key for RocksDB",
+   "max": "18446744073709551615",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_rate_limiter_bytes_per_sec": {
+   "cmdline_option": true,
+   "default": "0",
+   "default_source": "help",
+   "desc": "DBOptions::rate_limiter bytes_per_sec for RocksDB",
+   "max": "9223372036854775807",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_read_free_rpl": {
+   "cmdline_option": true,
+   "default": "OFF",
+   "default_source": "help",
+   "desc": "Use read-free replication on the slave (i.e. no row lookup during replication). Default is OFF, PK_SK will enable it on all tables with primary key. PK_ONLY will enable it on tables where the only key is the primary key (i.e. no secondary keys).",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_read_free_rpl_tables": {
+   "cmdline_option": true,
+   "default": ".*",
+   "default_source": "help",
+   "desc": "Regex that describes set of tables that will use read-free replication on the slave (i.e. not lookup a row during replication)",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_records_in_range": {
+   "cmdline_option": true,
+   "default": "0",
+   "default_source": "help",
+   "desc": "Used to override the result of records_in_range(). Set to a positive number to override",
+   "max": "2147483647",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_reset_stats": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Reset the RocksDB internal statistics without restarting the DB.",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_rollback_on_timeout": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Whether to roll back the complete transaction or a single statement on lock wait timeout (a single statement by default)",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_rpl_skip_tx_api": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Use write batches for replication thread instead of tx api",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_seconds_between_stat_computes": {
+   "cmdline_option": true,
+   "default": "3600",
+   "default_source": "help",
+   "desc": "Sets a number of seconds to wait between optimizer stats recomputation. Only changed indexes will be refreshed.",
+   "max": "4294967295",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_signal_drop_index_thread": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Wake up drop index thread",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_sim_cache_size": {
+   "cmdline_option": true,
+   "default": "0",
+   "default_source": "help",
+   "desc": "Simulated cache size for RocksDB",
+   "max": "9223372036854775807",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_skip_bloom_filter_on_read": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Skip using bloom filter for reads",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_skip_fill_cache": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Skip filling block cache on read requests",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_skip_locks_if_skip_unique_check": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Skip row locking when unique checks are disabled.",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_sst_mgr_rate_bytes_per_sec": {
+   "cmdline_option": true,
+   "default": "0",
+   "default_source": "help",
+   "desc": "DBOptions::sst_file_manager rate_bytes_per_sec for RocksDB",
+   "max": "18446744073709551615",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_stats_dump_period_sec": {
+   "cmdline_option": true,
+   "default": "600",
+   "default_source": "help",
+   "desc": "DBOptions::stats_dump_period_sec for RocksDB",
+   "max": "2147483647",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_stats_level": {
+   "cmdline_option": true,
+   "default": "1",
+   "default_source": "help",
+   "desc": "Statistics Level for RocksDB. Default is 1 (kExceptHistogramOrTimers)",
+   "max": "5",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_stats_recalc_rate": {
+   "cmdline_option": true,
+   "default": "0",
+   "default_source": "help",
+   "desc": "The number of indexes per second to recalculate statistics for. 0 to disable background recalculation.",
+   "max": "4294967295",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_store_row_debug_checksums": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Include checksums when writing index/table records",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_table_cache_numshardbits": {
+   "cmdline_option": true,
+   "default": "6",
+   "default_source": "help",
+   "desc": "DBOptions::table_cache_numshardbits for RocksDB",
+   "max": "19",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_table_stats_background_thread_nice_value": {
+   "cmdline_option": true,
+   "default": "19",
+   "default_source": "help",
+   "desc": "nice value for index stats",
+   "max": "19",
+   "min": "4294967276",
+   "scope": "global"
+  },
+  "rocksdb_table_stats_max_num_rows_scanned": {
+   "cmdline_option": true,
+   "default": "0",
+   "default_source": "help",
+   "desc": "The maximum number of rows to scan in table scan based cardinality calculation",
+   "max": "18446744073709551615",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_table_stats_recalc_threshold_count": {
+   "cmdline_option": true,
+   "default": "100",
+   "default_source": "help",
+   "desc": "Number of modified rows to trigger stats recalculation",
+   "max": "18446744073709551615",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_table_stats_recalc_threshold_pct": {
+   "cmdline_option": true,
+   "default": "10",
+   "default_source": "help",
+   "desc": "Percentage of number of modified rows over total number of rows to trigger stats recalculation",
+   "max": "100",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_table_stats_sampling_pct": {
+   "cmdline_option": true,
+   "default": "10",
+   "default_source": "help",
+   "desc": "Percentage of entries to sample when collecting statistics about table properties. Specify either 0 to sample everything or percentage [1..100]. By default 10% of entries are sampled.",
+   "max": "100",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_table_stats_skip_system_cf": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "skip recording table stats for system column family",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_table_stats_use_table_scan": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Enable table scan based index calculation.",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_tmpdir": {
+   "cmdline_option": true,
+   "default": "",
+   "default_source": "runtime",
+   "desc": "Directory for temporary files during DDL operations.",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_trace_block_cache_access": {
+   "cmdline_option": true,
+   "default": "",
+   "default_source": "runtime",
+   "desc": "Block cache trace option string. The format is sampling_frequency:max_trace_file_size:trace_file_name. sampling_frequency and max_trace_file_size are positive integers. The block accesses are saved to the rocksdb_datadir/block_cache_traces/trace_file_name.",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_trace_queries": {
+   "cmdline_option": true,
+   "default": "",
+   "default_source": "runtime",
+   "desc": "Trace option string. The format is sampling_frequency:max_trace_file_size:trace_file_name. sampling_frequency and max_trace_file_size are positive integers. The queries are saved to the rocksdb_datadir/queries_traces/trace_file_name.",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_trace_sst_api": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Generate trace output in the log for each call to the SstFileWriter",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_track_and_verify_wals_in_manifest": {
+   "cmdline_option": true,
+   "default": "TRUE",
+   "default_source": "help",
+   "desc": "DBOptions::track_and_verify_wals_in_manifest for RocksDB (Defaults to on; use --skip-rocksdb-track-and-verify-wals-in-manifest to disable.)",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_two_write_queues": {
+   "cmdline_option": true,
+   "default": "TRUE",
+   "default_source": "help",
+   "desc": "DBOptions::two_write_queues for RocksDB (Defaults to on; use --skip-rocksdb-two-write-queues to disable.)",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_unsafe_for_binlog": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Allowing statement based binary logging which may break consistency",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_update_cf_options": {
+   "cmdline_option": false,
+   "default": "",
+   "default_source": "runtime",
+   "desc": "",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_use_adaptive_mutex": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "DBOptions::use_adaptive_mutex for RocksDB",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_use_default_sk_cf": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Use default_sk for secondary keys",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_use_direct_io_for_flush_and_compaction": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "DBOptions::use_direct_io_for_flush_and_compaction for RocksDB",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_use_direct_reads": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "DBOptions::use_direct_reads for RocksDB",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_use_fsync": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "DBOptions::use_fsync for RocksDB",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_use_hyper_clock_cache": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Use HyperClockCache instead of default LRUCache for RocksDB",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_use_io_uring": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Use io_uring for RocksDB",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_use_write_buffer_manager": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "For experiment only. Use write buffer manager",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_validate_tables": {
+   "cmdline_option": true,
+   "default": "1",
+   "default_source": "help",
+   "desc": "Verify all DD tables match all RocksDB tables (0 means no verification, 1 means verify and fail on error, and 2 means verify but continue",
+   "max": "2",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_verify_row_debug_checksums": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "Verify checksums when reading index/table records",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_wal_bytes_per_sync": {
+   "cmdline_option": true,
+   "default": "0",
+   "default_source": "help",
+   "desc": "DBOptions::wal_bytes_per_sync for RocksDB",
+   "max": "18446744073709551615",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_wal_dir": {
+   "cmdline_option": true,
+   "default": "",
+   "default_source": "runtime",
+   "desc": "DBOptions::wal_dir for RocksDB",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_wal_recovery_mode": {
+   "cmdline_option": true,
+   "default": "2",
+   "default_source": "help",
+   "desc": "DBOptions::wal_recovery_mode for RocksDB. Default is kPointInTimeRecovery",
+   "max": "3",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_wal_size_limit_mb": {
+   "cmdline_option": true,
+   "default": "0",
+   "default_source": "help",
+   "desc": "DBOptions::WAL_size_limit_MB for RocksDB",
+   "max": "18446744073709551615",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_wal_ttl_seconds": {
+   "cmdline_option": true,
+   "default": "0",
+   "default_source": "help",
+   "desc": "DBOptions::WAL_ttl_seconds for RocksDB",
+   "max": "18446744073709551615",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_whole_key_filtering": {
+   "cmdline_option": true,
+   "default": "TRUE",
+   "default_source": "help",
+   "desc": "BlockBasedTableOptions::whole_key_filtering for RocksDB (Defaults to on; use --skip-rocksdb-whole-key-filtering to disable.)",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_write_batch_flush_threshold": {
+   "cmdline_option": true,
+   "default": "0",
+   "default_source": "help",
+   "desc": "Maximum size of write batch in bytes before flushing. Only valid if rocksdb_write_policy is WRITE_UNPREPARED. 0 means no limit.",
+   "max": "18446744073709551615",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_write_batch_max_bytes": {
+   "cmdline_option": true,
+   "default": "0",
+   "default_source": "help",
+   "desc": "Maximum size of write batch in bytes. 0 means no limit.",
+   "max": "18446744073709551615",
+   "min": "0",
+   "scope": "global"
+  },
+  "rocksdb_write_disable_wal": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "WriteOptions::disableWAL for RocksDB",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_write_ignore_missing_column_families": {
+   "cmdline_option": true,
+   "default": "FALSE",
+   "default_source": "help",
+   "desc": "WriteOptions::ignore_missing_column_families for RocksDB",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_write_policy": {
+   "cmdline_option": true,
+   "default": "write_committed",
+   "default_source": "help",
+   "desc": "DBOptions::write_policy for RocksDB",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  },
+  "rocksdb_wsenv_path": {
+   "cmdline_option": true,
+   "default": "",
+   "default_source": "runtime",
+   "desc": "Path for RocksDB WSEnv",
+   "max": null,
+   "min": null,
+   "scope": "global"
+  }
+ },
+ "vendor": "percona",
+ "version": "8.0.43-34"
+}

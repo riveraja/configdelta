@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Extractor run output (failure logs are for local debugging)
+*.log
+extractor/failures/
+
+# Local tooling and editors
+.claude/
+.idea/
+.vscode/
+*.swp
+*.bak
+.env
+.DS_Store
