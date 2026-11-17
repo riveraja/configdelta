@@ -177,7 +177,7 @@ async function render() {
     const tags = (optOnly ? '<span class="tag option" title="Not a system variable: only available as a mysqld startup/plugin option">startup option</span> ' : "") +
       r.tags.map((t) => `<span class="tag ${t}">${t === "changed" ? "default changed" : t}</span>`).join(" ");
     const notes = r.notes.map(([k, t]) => `<li class="${k}">${t}</li>`).join("");
-    return `<tr><td class="name">${esc(r.name)}<br>${tags}` +
+    return `<tr><td class="name">${esc(r.orig || r.name)}<br>${tags}` +
       (r.desc ? `<div class="desc">${esc(r.desc.slice(0, 200))}</div>` : "") + `</td>${tds}` +
       `<td class="notes"><ul>${notes}</ul><div class="links">${docLinks(r.name, cols)}</div></td></tr>`;
   }).join("");
@@ -193,7 +193,7 @@ function exportCsv() {
   const lines = [["name", "tags", ...cols.map(label), "notes"].map(q).join(",")];
   for (const r of rows) {
     const vals = r.cells.map((c) => (c ? (state.kind === "status" ? "present" : valueOf(c)) : "absent"));
-    lines.push([r.name, r.tags.join("|"), ...vals, r.notes.map(([, t]) => stripTags(t)).join(" | ")].map(q).join(","));
+    lines.push([r.orig || r.name, r.tags.join("|"), ...vals, r.notes.map(([, t]) => stripTags(t)).join(" | ")].map(q).join(","));
   }
   const a = document.createElement("a");
   a.href = URL.createObjectURL(new Blob([lines.join("\n")], { type: "text/csv" }));
