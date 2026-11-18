@@ -868,6 +868,13 @@
   "server_version": "8.3.13-4"
  },
  {
+  "file": "percona-8.3.17-5.json",
+  "vendor": "percona",
+  "version": "8.3.17-5",
+  "series": "8.3",
+  "server_version": "8.3.17-5"
+ },
+ {
   "file": "percona-8.3.7-1.json",
   "vendor": "percona",
   "version": "8.3.7-1",
