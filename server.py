@@ -10,9 +10,14 @@ New releases are discovered on Docker Hub: for every series already tracked
 (e.g. 8.0, 8.4, 9.7) any tag newer than the newest one on disk is extracted
 with the engine's extractor, then the index/history are rebuilt. Engines with
 track_new_series also pick up series newer than any tracked one.
+
+Ctrl-C / SIGTERM stop the server gracefully: no new requests, the running extraction is
+interrupted (so its container and image are removed), releases already extracted are
+still recorded and indexed, then the process exits. A second signal exits immediately.
 """
 import json
 import re
+import signal
 import subprocess
 import sys
 import threading
@@ -131,27 +136,51 @@ def record_versions(engine, new):
     path.write_text(json.dumps(versions, indent=1))
 
 
+stopping = threading.Event()
+proc_lock = threading.Lock()
+current = [None]  # the extractor subprocess that is running, if any
+worker = [None]
+
+
+def run_child(cmd):
+    """Run an extractor; None if the server began stopping before it could start."""
+    with proc_lock:
+        if stopping.is_set():
+            return None
+        # own session: a terminal Ctrl-C must not reach it, we forward exactly one SIGINT ourselves
+        current[0] = proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, start_new_session=True)
+    out, err = proc.communicate()
+    with proc_lock:
+        current[0] = None
+    return proc.returncode, out, err
+
+
 def job(engine):
     try:
         status.update(state="checking", engine=engine, message="Checking Docker Hub for new releases…", found=[], done=[], failed=[])
         new = find_new(engine)
-        if not new:
+        if not new or stopping.is_set():
             status.update(state="uptodate", message="No new releases found.")
             return
         status.update(state="extracting", found=[f"{v} {t}" for v, t in new])
         for vendor, ver in new:
             status["message"] = f"Extracting {vendor} {ver} ({len(status['done']) + len(status['failed']) + 1}/{len(new)})…"
-            r = subprocess.run([sys.executable, str(EXT / ENGINES[engine]["script"]), vendor, ver], capture_output=True, text=True)
-            (status["done"] if r.returncode == 0 else status["failed"]).append(f"{vendor} {ver}")
-            if r.returncode != 0:
+            res = run_child([sys.executable, str(EXT / ENGINES[engine]["script"]), vendor, ver])
+            if res is None or (stopping.is_set() and res[0] != 0):
+                break  # interrupted by shutdown: neither done nor failed
+            code, out, err = res
+            (status["done"] if code == 0 else status["failed"]).append(f"{vendor} {ver}")
+            if code != 0:
                 (EXT / "failures").mkdir(exist_ok=True)
-                (EXT / "failures" / f"{vendor}-{ver}.log").write_text(r.stdout + r.stderr)
+                (EXT / "failures" / f"{vendor}-{ver}.log").write_text(out + err)
         ok = [tuple(s.split()) for s in status["done"]]
         if ok:
+            status["message"] = "Rebuilding index and documentation links…"
             record_versions(engine, ok)
             subprocess.run([sys.executable, str(EXT / "build_index.py"), engine], check=True, capture_output=True)
             subprocess.run([sys.executable, str(EXT / "build_doclinks.py"), engine], capture_output=True)  # best effort
-        status.update(state="done", message=f"Added {len(ok)} release(s)." + (f" {len(status['failed'])} failed." if status["failed"] else ""))
+        note = " Stopped early: server is shutting down." if stopping.is_set() else ""
+        status.update(state="done", message=f"Added {len(ok)} release(s)." + (f" {len(status['failed'])} failed." if status["failed"] else "") + note)
     except Exception as e:  # network, docker, etc.
         status.update(state="error", message=f"Update failed: {e}")
     finally:
@@ -178,8 +207,11 @@ class Handler(SimpleHTTPRequestHandler):
         engine = parse_qs(url.query).get("engine", ["mysql"])[0]
         if url.path != "/api/update" or engine not in ENGINES:
             return self.send_error(404)
+        if stopping.is_set():
+            return self.send_error(503, "server is shutting down")
         if lock.acquire(blocking=False):
-            threading.Thread(target=job, args=(engine,), daemon=True).start()
+            worker[0] = threading.Thread(target=job, args=(engine,), daemon=True)
+            worker[0].start()
         self.send_json(status, 202)
 
     def end_headers(self):
@@ -188,7 +220,35 @@ class Handler(SimpleHTTPRequestHandler):
         super().end_headers()
 
 
+def serve(port):
+    httpd = ThreadingHTTPServer(("127.0.0.1", port), partial(Handler, directory=str(WEB)))
+
+    def on_signal(signum, _frame):
+        if stopping.is_set():  # second signal: stop waiting
+            signal.signal(signum, signal.SIG_DFL)
+            raise KeyboardInterrupt
+        print(f"\n{signal.Signals(signum).name} received: shutting down (repeat to force)…", flush=True)
+        stopping.set()
+        with proc_lock:
+            if current[0]:
+                current[0].send_signal(signal.SIGINT)  # lets the extractor remove its container and image
+        threading.Thread(target=httpd.shutdown, daemon=True).start()  # must not run on the serving thread
+
+    signal.signal(signal.SIGINT, on_signal)
+    signal.signal(signal.SIGTERM, on_signal)
+    print(f"http://localhost:{port}  (Ctrl-C to stop)", flush=True)
+    try:
+        httpd.serve_forever()
+    finally:
+        httpd.server_close()
+        if worker[0] and worker[0].is_alive():
+            print("Waiting for the running update to stop…", flush=True)
+            worker[0].join(timeout=120)
+    print("Stopped.", flush=True)
+
+
 if __name__ == "__main__":
-    port = int(sys.argv[1]) if len(sys.argv) > 1 else 8765
-    print(f"http://localhost:{port}")
-    ThreadingHTTPServer(("127.0.0.1", port), partial(Handler, directory=str(WEB))).serve_forever()
+    try:
+        serve(int(sys.argv[1]) if len(sys.argv) > 1 else 8765)
+    except KeyboardInterrupt:
+        sys.exit(130)
