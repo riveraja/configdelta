@@ -37,6 +37,7 @@ python3 server.py            # open http://localhost:8765 and press Update
 # or, without the UI:
 python3 extractor/run_all.py <engine>
 
+python3 stamp.py            # only if you changed docs/app.js or docs/style.css
 git add docs && git commit -m "Update data" && git push
 ```
 
