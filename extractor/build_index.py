@@ -38,11 +38,12 @@ print(f"{len(items)} versions indexed")
 
 def timeline(snapshots, get):
     """Yield (name, [record-or-None per snapshot]) for every name seen."""
+    maps = [get(s) for s in snapshots]  # once per snapshot: get() can be expensive (status lists are rebuilt into dicts)
     names = set()
-    for s in snapshots:
-        names |= set(get(s))
+    for m in maps:
+        names |= set(m)
     for n in sorted(names):
-        yield n, [get(s).get(n) for s in snapshots]
+        yield n, [m.get(n) for m in maps]
 
 
 history = {}
